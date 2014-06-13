@@ -1,0 +1,25 @@
+[user]
+  name = Federico Ragona
+  email = federico.ragona@gmail.com
+[credential]
+  helper = cache --timeout=3600
+[alias]
+  aa = add -A
+  c = commit -v
+  cam = commit -a --amend -v
+  co = checkout
+  cob = checkout -b
+  d = diff
+  s = status
+  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+  report = log --since='2 week ago' --until='yesterday' --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+[push]
+  default = matching
+[color]
+  diff = auto
+  status = auto
+  branch = auto
+  interactive = auto
+  ui = true
+  pager = true
+
