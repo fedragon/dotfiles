@@ -1,7 +1,7 @@
 # Path to your oh-my-fish.
 set fish_path $HOME/.oh-my-fish
 
-# Theme
+# Theme (https://github.com/fedragon/oh-my-fish)
 set fish_theme umad 
 
 function ll 
