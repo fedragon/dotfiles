@@ -1,38 +1,45 @@
-""" Vundle configuration
-set shell=/bin/bash
-set nocompatible
-filetype off
+""" Vundle settings
+
+set shell=/bin/bash "required by vundle
+set nocompatible    "required by vundle
+filetype off        "required by vundle
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
 Plugin 'Shougo/unite.vim'
-Plugin 'tpope/vim-fugitive'
 Plugin 'Shougo/vimproc.vim'
+Plugin 'tpope/vim-fugitive'
 
 call vundle#end()
-
-""" Appearance
-syntax on
 filetype plugin indent on
 
-colorscheme desert
+""" General settings
 
-""" Tab & indentation
+syntax on                  " Enable syntax highlighting
+set number                 " Enable line numbers
+set autoread               " Refresh buffers if they were changed from outside
+set autowriteall           " Save on buffer switch
+set splitright             " Split new buffers to the right
+
+set hlsearch               " Highlight search matches
+set list                   " Highlight whitespaces
+set listchar=tab:▸\ ,eol:¬ " Display tabs as ▸, end of line as ¬
+
+set guioptions-=r          " Remove scrollbars
+set guioptions-=L
+
+colorscheme desert         " Color scheme
+
+" Soft tab indentation with 2 spaces
 set tabstop=2
 set shiftwidth=2
 
 set smarttab
-set expandtab
+set expandtab              " Use spaces instead of tabs
 
-""" Mappings
-imap jk <Esc>
-
-nnoremap <leader>ev :tabnew $MYVIMRC <CR>
-nnoremap <leader>sv :source $MYVIMRC <CR>
-
-""" Unite
+""" Unite settings
 let g:unite_source_history_yank_enable = 1
 call unite#custom#source('file,file/new,buffer,file_rec,file_rec/async', 'matchers', 'matcher_fuzzy')
 call unite#custom#source('file,file/new,buffer,file_rec,file_rec/async', 'sorters', 'sorter_rank')
@@ -40,4 +47,11 @@ call unite#custom#source('file,file/new,buffer,file_rec,file_rec/async', 'sorter
 call unite#custom#source('file,file_rec,file_rec/async', 'ignore_pattern',
       \'tmp\|vendor\|\.bundle\|target\|\.git')
 
+""" Mappings
+imap jk <Esc>
+
+nnoremap <leader>ev :tabnew $MYVIMRC <CR>
+nnoremap <leader>sv :source $MYVIMRC <CR>
+
 nnoremap <C-p> :Unite -no-split -buffer-name=files -start-insert file_rec/async:!<cr>
+
