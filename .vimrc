@@ -1,7 +1,8 @@
-""" Vundle settings 
-set shell=/bin/bash "required if using another shell 
-set nocompatible    "required by vundle
-filetype off        "required by vundle
+""" Vundle settings
+
+set shell=/bin/bash "required if using another shell
+set nocompatible
+filetype off
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -16,27 +17,29 @@ filetype plugin indent on
 
 """ General settings
 
-syntax on                  " Enable syntax highlighting
-set number                 " Enable line numbers
-set autoread               " Refresh buffers if they were changed from outside
-set autowriteall           " Save on buffer switch
-set splitright             " Split new buffers to the right
+syntax on                   " Enable syntax highlighting
+set number                  " Enable line numbers
+set autoread                " Refresh buffers if they were changed from outside
+set autowriteall            " Save on buffer switch
+set splitright              " Split new buffers to the right
 
-set hlsearch               " Highlight search matches
-set list                   " Highlight whitespaces
-set listchars=tab:▸\ ,eol:¬ " Display tabs as ▸, end of line as ¬
+set directory=~/.vim/tmp    " Temporary swap files directory
 
-set guioptions-=r          " Remove scrollbars
+set hlsearch                " Highlight search matches
+set nolist                  " Do not highlight whitespaces by default
+set listchars=tab:▸\ ,eol:¬ " Display tabs as ▸, end of line as `¬`
+
+set guioptions-=r           " Remove scrollbars
 set guioptions-=L
 
-colorscheme desert         " Color scheme
+colorscheme desert          " Color scheme
 
 " Soft tab indentation with 2 spaces
 set tabstop=2
 set shiftwidth=2
 
 set smarttab
-set expandtab              " Use spaces instead of tabs
+set expandtab               " Use spaces instead of tabs
 
 """ Unite settings
 let g:unite_source_history_yank_enable = 1
@@ -47,11 +50,10 @@ call unite#custom#source('file,file_rec,file_rec/async', 'ignore_pattern',
       \'tmp\|vendor\|\.bundle\|target\|\.git')
 
 """ Mappings
-nnoremap jk <Esc>
+imap jk <Esc>
 
+" Toggle whitespaces/end of line display
 nnoremap <leader>l :set list!<CR>
-nnoremap <leader>ev :tabnew $MYVIMRC <CR>
-nnoremap <leader>sv :source $MYVIMRC <CR>
 
 nnoremap <C-p> :Unite -no-split -buffer-name=files -start-insert file_rec/async:!<cr>
 
