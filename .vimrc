@@ -1,3 +1,4 @@
+""" Vundle configuration
 set shell=/bin/bash
 set nocompatible
 filetype off
@@ -12,22 +13,24 @@ Plugin 'Shougo/vimproc.vim'
 
 call vundle#end()
 
+""" Appearance
 syntax on
 filetype plugin indent on
 
 colorscheme desert
 
+""" Tab & indentation
 set tabstop=2
 set shiftwidth=2
 
 set smarttab
 set expandtab
 
+""" Mappings
 imap jk <Esc>
 
 nnoremap <leader>ev :tabnew $MYVIMRC <CR>
 nnoremap <leader>sv :source $MYVIMRC <CR>
-
 
 """ Unite
 let g:unite_source_history_yank_enable = 1
