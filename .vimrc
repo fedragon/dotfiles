@@ -1,6 +1,5 @@
-""" Vundle settings
-
-set shell=/bin/bash "required by vundle
+""" Vundle settings 
+set shell=/bin/bash "required if using another shell 
 set nocompatible    "required by vundle
 filetype off        "required by vundle
 
@@ -25,7 +24,7 @@ set splitright             " Split new buffers to the right
 
 set hlsearch               " Highlight search matches
 set list                   " Highlight whitespaces
-set listchar=tab:▸\ ,eol:¬ " Display tabs as ▸, end of line as ¬
+set listchars=tab:▸\ ,eol:¬ " Display tabs as ▸, end of line as ¬
 
 set guioptions-=r          " Remove scrollbars
 set guioptions-=L
@@ -48,8 +47,9 @@ call unite#custom#source('file,file_rec,file_rec/async', 'ignore_pattern',
       \'tmp\|vendor\|\.bundle\|target\|\.git')
 
 """ Mappings
-imap jk <Esc>
+nnoremap jk <Esc>
 
+nnoremap <leader>l :set list!<CR>
 nnoremap <leader>ev :tabnew $MYVIMRC <CR>
 nnoremap <leader>sv :source $MYVIMRC <CR>
 
