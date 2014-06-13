@@ -4,9 +4,10 @@ set fish_path $HOME/.oh-my-fish
 # Theme (https://github.com/fedragon/oh-my-fish)
 set fish_theme umad 
 
-function ll 
-  ls -la 
+function la 
+  ls -la $argv
 end
+
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-fish/plugins/*)
 # Custom plugins may be added to ~/.oh-my-fish/custom/plugins/
