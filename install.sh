@@ -9,7 +9,12 @@
 
 ## Fish shell
 
-  sudo apt-add-repository ppa:fish-shell/release-2
+  sudo -s
+  apt-key adv --keyserver keyserver.ubuntu.com --recv-key D880C8E4
+  echo 'deb http://download.opensuse.org/repositories/shells:/fish:/nightly:/master/Debian_6.0/ ./' > /etc/apt/sources.list.d/fish-shell.list
+
+  # the official repository does not have yet the version integrated with vi-mode
+  # sudo apt-add-repository ppa:fish-shell/release-2
   sudo apt-get update
   sudo apt-get install fish
 
