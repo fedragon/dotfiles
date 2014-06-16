@@ -50,7 +50,7 @@ call unite#custom#source('file,file_rec,file_rec/async', 'ignore_pattern',
       \'tmp\|vendor\|\.bundle\|target\|\.git')
 
 """ Mappings
-imap jk <Esc>
+inoremap jk <Esc>
 
 " Toggle whitespaces/end of line display
 nnoremap <leader>l :set list!<CR>
