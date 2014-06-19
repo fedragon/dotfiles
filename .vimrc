@@ -29,6 +29,7 @@ set hlsearch                " Highlight search matches
 set nolist                  " Do not highlight whitespaces by default
 set listchars=tab:▸\ ,eol:¬ " Display tabs as ▸, end of line as `¬`
 
+set guioptions+=a           " Copy highlighted text to system clipboard
 set guioptions-=r           " Remove scrollbars
 set guioptions-=L
 
