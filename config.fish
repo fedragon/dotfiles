@@ -7,9 +7,6 @@ set fish_theme umad
 set fish_key_bindings fish_vi_key_bindings
 set fish_bind_mode insert
 
-set -x JAVA_HOME /usr/lib/jvm/java-7-openjdk-amd64/
-set -x SCALA_HOME /usr/share/scala
-
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-fish/plugins/*)
 # Custom plugins may be added to ~/.oh-my-fish/custom/plugins/
 # Example format: set fish_plugins autojump bundler
