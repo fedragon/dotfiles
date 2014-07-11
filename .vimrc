@@ -47,6 +47,9 @@ set shiftwidth=2
 set smarttab
 set expandtab               " Use spaces instead of tabs
 
+""" Airline settings
+let g:airline#extensions#tabline#enabled = 1
+
 """ Unite settings
 let g:unite_source_history_yank_enable = 1
 call unite#custom#source('file,file/new,buffer,file_rec,file_rec/async', 'matchers', 'matcher_fuzzy')
