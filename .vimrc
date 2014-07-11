@@ -11,6 +11,11 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'Shougo/unite.vim'
 Plugin 'Shougo/vimproc.vim'
 Plugin 'tpope/vim-fugitive'
+Plugin 'bitc/vim-hdevtools'
+Plugin 'scrooloose/syntastic'
+Plugin 'bling/vim-airline'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'mhinz/vim-signify'
 
 call vundle#end()
 filetype plugin indent on
@@ -57,4 +62,6 @@ inoremap jk <Esc>
 nnoremap <leader>l :set list!<CR>
 
 nnoremap <C-p> :Unite -no-split -buffer-name=files -start-insert file_rec/async:!<cr>
+au FileType haskell nnoremap <buffer> <F1> :HdevtoolsType<CR>
+au FileType haskell nnoremap <buffer> <silent> <F2> :HdevtoolsClear<CR>
 
