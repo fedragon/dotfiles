@@ -16,6 +16,7 @@ Plugin 'scrooloose/syntastic'
 Plugin 'bling/vim-airline'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'mhinz/vim-signify'
+Plugin 'vim-scripts/Haskell-Conceal'
 
 call vundle#end()
 filetype plugin indent on

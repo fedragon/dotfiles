@@ -1,12 +1,12 @@
-#!/bin/bash
+#!/usr/bin/fish
 sudo apt-get install cabal-install
 
 cabal install hoogle
 
-echo >> ~/.ghci ':def hoogle \x -> return $ ":!hoogle \"" ++ x ++ "\""'
-echo >> ~/.ghci ':def doc \x -> return $ ":!hoogle --info \"" ++ x ++ "\""'
+rm -f ~/.ghci
+ln -s (pwd)/ghc/.ghci ~/.ghci
 
-sudo ln -s ~/.cabal/bin/hoogle /usr/bin/hoogle
+set -U fish_user_paths $fish_user_paths ~/.cabal/bin
 
 hoogle data
 
