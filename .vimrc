@@ -7,16 +7,18 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
+Plugin 'airblade/vim-gitgutter'
+Plugin 'bling/vim-airline'
 Plugin 'gmarik/Vundle.vim'
+Plugin 'mhinz/vim-signify'
 Plugin 'Shougo/unite.vim'
 Plugin 'Shougo/vimproc.vim'
 Plugin 'tpope/vim-fugitive'
-Plugin 'bitc/vim-hdevtools'
-Plugin 'scrooloose/syntastic'
-Plugin 'bling/vim-airline'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'mhinz/vim-signify'
-Plugin 'vim-scripts/Haskell-Conceal'
+" Haskell
+Plugin 'bitc/vim-hdevtools'           " Provide type information
+Plugin 'eagletmt/ghcmod-vim'          " Load buffer in ghc, infer types
+Plugin 'scrooloose/syntastic'         " Syntax highlighting
+Plugin 'vim-scripts/Haskell-Conceal'  " Replace characters with unicode equivalents
 
 call vundle#end()
 filetype plugin indent on
@@ -49,7 +51,9 @@ set smarttab
 set expandtab               " Use spaces instead of tabs
 
 """ Airline settings
+set laststatus=2
 let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#fnamemod = ':t'
 
 """ Unite settings
 let g:unite_source_history_yank_enable = 1
@@ -65,7 +69,26 @@ inoremap jk <Esc>
 " Toggle whitespaces/end of line display
 nnoremap <leader>l :set list!<CR>
 
+" Unite
 nnoremap <C-p> :Unite -no-split -buffer-name=files -start-insert file_rec/async:!<cr>
+
+" Buffer navigation
+nnoremap be :enew<CR>
+nnoremap bl :bnext<CR>
+nnoremap bh :bprevious<CR>
+nnoremap bq :bdelete<CR>
+
+""" syntastic
+map <silent> <leader>e :Errors<CR>
+map <Leader>s :SyntasticToggleMode<CR>
+
+""" hdevtools
 au FileType haskell nnoremap <buffer> <F1> :HdevtoolsType<CR>
 au FileType haskell nnoremap <buffer> <silent> <F2> :HdevtoolsClear<CR>
+au FileType haskell nnoremap <buffer> <silent> <F3> :HdevtoolsInfo<CR>
+
+""" ghc-mod
+
+map <silent> tu :call GHC_BrowseAll()<CR>
+map <silent> tw :call GHC_ShowType(1)<CR>
 

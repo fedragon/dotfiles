@@ -2,6 +2,8 @@
 sudo apt-get install cabal-install
 
 cabal install hoogle
+cabal install ghc-mod
+cabal install hdevtools
 
 rm -f ~/.ghci
 ln -s (pwd)/ghc/.ghci ~/.ghci
