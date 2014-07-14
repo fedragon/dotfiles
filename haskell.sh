@@ -1,6 +1,7 @@
 #!/usr/bin/fish
 sudo apt-get install cabal-install
 
+cabal install alex happy
 cabal install hoogle
 cabal install ghc-mod
 cabal install hdevtools
