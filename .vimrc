@@ -14,6 +14,7 @@ Plugin 'mhinz/vim-signify'
 Plugin 'Shougo/unite.vim'
 Plugin 'Shougo/vimproc.vim'
 Plugin 'tpope/vim-fugitive'
+
 " Haskell
 Plugin 'bitc/vim-hdevtools'           " Provide type information
 Plugin 'eagletmt/ghcmod-vim'          " Load buffer in ghc, infer types
@@ -91,7 +92,7 @@ au FileType haskell nnoremap <buffer> <silent> <F2> :HdevtoolsClear<CR>
 au FileType haskell nnoremap <buffer> <silent> <F3> :HdevtoolsInfo<CR>
 
 """ ghc-mod
-
-map <silent> tu :call GHC_BrowseAll()<CR>
-map <silent> tw :call GHC_ShowType(1)<CR>
+map <silent> hb :GhcModCheck<CR>
+map <silent> ht :GhcModType<CR>
+map <silent> hc :GhcModTypeClear<CR>
 
