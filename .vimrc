@@ -20,6 +20,7 @@ Plugin 'bitc/vim-hdevtools'           " Provide type information
 Plugin 'eagletmt/ghcmod-vim'          " Load buffer in ghc, infer types
 Plugin 'scrooloose/syntastic'         " Syntax highlighting
 Plugin 'vim-scripts/Haskell-Conceal'  " Replace characters with unicode equivalents
+Plugin 'wlangstroth/vim-haskell'
 
 call vundle#end()
 filetype plugin indent on
