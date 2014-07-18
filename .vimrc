@@ -16,8 +16,8 @@ Plugin 'Shougo/vimproc.vim'
 Plugin 'tpope/vim-fugitive'
 
 " Haskell
-Plugin 'bitc/vim-hdevtools'           " Provide type information
 Plugin 'eagletmt/ghcmod-vim'          " Load buffer in ghc, infer types
+Plugin 'bitc/vim-hdevtools'           " Provide type information
 Plugin 'scrooloose/syntastic'         " Syntax highlighting
 Plugin 'vim-scripts/Haskell-Conceal'  " Replace characters with unicode equivalents
 Plugin 'wlangstroth/vim-haskell'
@@ -84,16 +84,11 @@ nnoremap bh :bprevious<CR>
 nnoremap bq :bdelete<CR>
 
 """ syntastic
-map <silent> <leader>e :Errors<CR>
+" map <silent> <leader>e :Errors<CR>
 map <Leader>s :SyntasticToggleMode<CR>
 
-""" hdevtools
-au FileType haskell nnoremap <buffer> <F1> :HdevtoolsType<CR>
-au FileType haskell nnoremap <buffer> <silent> <F2> :HdevtoolsClear<CR>
-au FileType haskell nnoremap <buffer> <silent> <F3> :HdevtoolsInfo<CR>
-
 """ ghc-mod
-map <silent> hb :GhcModCheck<CR>
-map <silent> ht :GhcModType<CR>
-map <silent> hc :GhcModTypeClear<CR>
+nnoremap <silent> gb :GhcModCheck<CR>
+nnoremap <silent> gt :GhcModType<CR>
+nnoremap <silent> gc :GhcModTypeClear<CR>
 
