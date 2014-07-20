@@ -18,10 +18,11 @@ Plugin 'tpope/vim-fugitive'
 
 " Haskell
 Plugin 'eagletmt/ghcmod-vim'          " Load buffer in ghc, infer types
+Plugin 'eagletmt/neco-ghc'            " Auto completion
 Plugin 'bitc/vim-hdevtools'           " Provide type information
-" Plugin 'scrooloose/syntastic'         " Syntax highlighting
+Plugin 'scrooloose/syntastic'         " Syntax highlighting
 Plugin 'vim-scripts/Haskell-Conceal'  " Replace characters with unicode equivalents
-Plugin 'wlangstroth/vim-haskell'
+Plugin 'wlangstroth/vim-haskell'      " Haskell syntax highlighting
 
 call vundle#end()
 filetype plugin indent on
@@ -59,7 +60,7 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
 
 """ Syntastic
-" let g:syntastic_auto_loc_list=1
+let g:syntastic_auto_loc_list=1
 
 """ Unite settings
 let g:unite_source_history_yank_enable = 1
@@ -85,13 +86,15 @@ nnoremap bh :bprevious<CR>
 nnoremap bq :bdelete<CR>
 
 """ syntastic
-" map <silent> <leader>e :Errors<CR>
-" map <Leader>s :SyntasticToggleMode<CR>
+map <silent> <leader>e :Errors<CR>
+map <Leader>s :SyntasticToggleMode<CR>
 
 """ ghc-mod
 nnoremap <silent> gb :GhcModCheck<CR>
 nnoremap <silent> gt :GhcModType<CR>
 nnoremap <silent> gc :GhcModTypeClear<CR>
+nnoremap <silent> gn :GhcModLint<CR>
+nnoremap <silent> ge :GhcModExpand<CR>
 
 """ rainbow-parentheses
 au VimEnter * RainbowParenthesesToggle
