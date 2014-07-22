@@ -2,10 +2,10 @@
 set fish_path $HOME/.oh-my-fish
 
 # Theme (https://github.com/fedragon/oh-my-fish)
-set fish_theme umad 
+set fish_theme robbyrussell 
 
-set fish_key_bindings fish_vi_key_bindings
-set fish_bind_mode insert
+# set fish_key_bindings fish_vi_key_bindings
+# set fish_bind_mode insert
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-fish/plugins/*)
 # Custom plugins may be added to ~/.oh-my-fish/custom/plugins/

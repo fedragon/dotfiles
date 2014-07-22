@@ -5,7 +5,7 @@
 
 ## Git
 
-  ln -s ~/Workspace/dotfiles/.gitconfig ~/.gitconfig
+  ln -s ~/Workspace/dotfiles/gitconfig ~/.gitconfig
 
 ## Fish shell
 
@@ -36,7 +36,7 @@
 
   mkdir -p ~/.vim/bundle
   git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-  ln -s ~/Workspace/dotfiles/.vimrc ~/.vimrc
+  ln -s ~/Workspace/dotfiles/vimrc ~/.vimrc
   mkdir -p ~/.vim/tmp
 
 ### Install scala syntax
