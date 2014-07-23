@@ -23,4 +23,6 @@
   interactive = auto
   ui = true
   pager = true
+[core]
+  editor = /usr/bin/vim
 
