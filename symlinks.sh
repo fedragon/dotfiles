@@ -1,14 +1,14 @@
-#!/bin/bash
+#!/usr/local/bin/fish
 
 rm ~/.config/fish/config.fish
-ln -s ~/Workspace/dotfiles/config.fish ~/.config/fish/config.fish
+ln -s ~/Workspace/dotfiles/fish/config.fish ~/.config/fish/config.fish
 
-rm ~/.config/fish/config.fish
-ln -s ~/Workspace/dotfiles/gitconfig ~/.gitconfig
+rm ~/.gitconfig
+ln -s ~/Workspace/dotfiles/git/gitconfig ~/.gitconfig
 
-rm ~/.config/fish/config.fish
-ln -s ~/Workspace/dotfiles/vimrc ~/.vimrc
+rm ~/.vimrc
+ln -s ~/Workspace/dotfiles/vim/vimrc ~/.vimrc
 
-rm ~/.config/fish/config.fish
+rm ~/.oh-my-fish
 ln -s ~/Workspace/oh-my-fish/ ~/.oh-my-fish
 

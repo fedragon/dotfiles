@@ -15,6 +15,7 @@ Plugin 'mhinz/vim-signify'
 Plugin 'Shougo/unite.vim'
 Plugin 'Shougo/vimproc.vim'
 Plugin 'tpope/vim-fugitive'
+  Plugin 'vim-scripts/fish-syntax'
 
 " Haskell
 Plugin 'eagletmt/ghcmod-vim'          " Load buffer in ghc, infer types

@@ -1,5 +1,6 @@
-#!/usr/bin/fish
-sudo apt-get install cabal-install
+#!/usr/local/bin/fish
+
+brew install cabal-install
 
 cabal install alex happy
 cabal install hoogle
@@ -7,7 +8,7 @@ cabal install ghc-mod
 cabal install hdevtools
 
 rm -f ~/.ghci
-ln -s (pwd)/ghc/ghci ~/.ghci
+ln -s ~/Workspace/dotfiles/haskell/ghci ~/.ghci
 
 set -U fish_user_paths $fish_user_paths ~/.cabal/bin
 
