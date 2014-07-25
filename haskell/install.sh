@@ -8,7 +8,7 @@ cabal install ghc-mod
 cabal install hdevtools
 
 rm -f ~/.ghci
-ln -s ~/Workspace/dotfiles/haskell/ghci ~/.ghci
+ln -s ~/Playground/dotfiles/haskell/ghci ~/.ghci
 
 set -U fish_user_paths $fish_user_paths ~/.cabal/bin
 

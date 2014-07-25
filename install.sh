@@ -3,8 +3,8 @@
 ./homebrew.sh
 ./git/install.sh
 
-mkdir -p ~/Workspace
-git clone https://github.com/fedragon/dotfiles.git ~/Workspace/dotfiles
+mkdir -p ~/Playground
+git clone https://github.com/fedragon/dotfiles.git ~/Playground/dotfiles
 
 ./fish/install.sh
 ./vim/install.sh
