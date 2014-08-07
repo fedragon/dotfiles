@@ -15,7 +15,7 @@ Plugin 'mhinz/vim-signify'
 Plugin 'Shougo/unite.vim'
 Plugin 'Shougo/vimproc.vim'
 Plugin 'tpope/vim-fugitive'
-  Plugin 'vim-scripts/fish-syntax'
+Plugin 'vim-scripts/fish-syntax'
 
 " Haskell
 Plugin 'eagletmt/ghcmod-vim'          " Load buffer in ghc, infer types
@@ -24,6 +24,10 @@ Plugin 'bitc/vim-hdevtools'           " Provide type information
 Plugin 'scrooloose/syntastic'         " Syntax highlighting
 Plugin 'vim-scripts/Haskell-Conceal'  " Replace characters with unicode equivalents
 Plugin 'wlangstroth/vim-haskell'      " Haskell syntax highlighting
+
+" Javascript/Purescript
+Plugin 'raichoo/purescript-vim'
+Plugin 'walm/jshint.vim'
 
 call vundle#end()
 filetype plugin indent on
