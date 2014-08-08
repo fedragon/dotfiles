@@ -10,24 +10,31 @@ call vundle#begin()
 Plugin 'airblade/vim-gitgutter'
 Plugin 'bling/vim-airline'
 Plugin 'gmarik/Vundle.vim'
-Plugin 'kien/rainbow_parentheses.vim'
+Plugin 'kien/rainbow_parentheses.vim' " Colorful parentheses
+Plugin 'Lokaltog/vim-easymotion'      " Improved motion
 Plugin 'mhinz/vim-signify'
+Plugin 'Raimondi/delimitMate'         " Add matching parentheses
+Plugin 'scrooloose/syntastic'         " Syntax highlighting
 Plugin 'Shougo/unite.vim'
 Plugin 'Shougo/vimproc.vim'
-Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-fugitive'           " Git integration
 Plugin 'vim-scripts/fish-syntax'
 
 " Haskell
 Plugin 'eagletmt/ghcmod-vim'          " Load buffer in ghc, infer types
 Plugin 'eagletmt/neco-ghc'            " Auto completion
 Plugin 'bitc/vim-hdevtools'           " Provide type information
-Plugin 'scrooloose/syntastic'         " Syntax highlighting
 Plugin 'vim-scripts/Haskell-Conceal'  " Replace characters with unicode equivalents
-Plugin 'wlangstroth/vim-haskell'      " Haskell syntax highlighting
+Plugin 'wlangstroth/vim-haskell'      " syntax highlighting
 
-" Javascript/Purescript
+" Javascript
+Plugin 'jelera/vim-javascript-syntax'     " Syntax highlighting
+Plugin 'nathanaelkane/vim-indent-guides'  " Show indent guides
+Plugin 'pangloss/vim-javascript'          " Highlighting + better indentation
+Plugin 'walm/jshint.vim'                  " Hints
+
+" Purescript
 Plugin 'raichoo/purescript-vim'
-Plugin 'walm/jshint.vim'
 
 call vundle#end()
 filetype plugin indent on
@@ -76,7 +83,11 @@ call unite#custom#source('file,file_rec,file_rec/async', 'ignore_pattern',
       \'tmp\|vendor\|\.bundle\|target\|\.git')
 
 """ Mappings
+
+" go back to Normal Mode
 inoremap jk <Esc>
+" split line
+imap <C-c> <CR><Esc>O
 
 " Toggle whitespaces/end of line display
 nnoremap <leader>l :set list!<CR>
