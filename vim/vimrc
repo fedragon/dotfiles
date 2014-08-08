@@ -139,3 +139,6 @@ let g:rbpt_colorpairs = [
 " let g:rbpt_max = 16
 " let g:rbpt_loadcmd_toggle = 0
 
+" Remove trailing whitespaces on save
+autocmd BufWritePre *.* :%s/\s\+$//e
+
