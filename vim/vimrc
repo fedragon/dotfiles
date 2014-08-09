@@ -86,7 +86,8 @@ call unite#custom#source('file,file_rec,file_rec/async', 'ignore_pattern',
 " go back to Normal Mode
 inoremap jk <Esc>
 " split line
-imap <leader>c <CR><Esc>O
+inoremap <leader>c <CR><Esc>O
+nnoremap <leader>c <CR><Esc>O
 
 " Toggle whitespaces/end of line display
 nnoremap <leader>l :set list!<CR>
