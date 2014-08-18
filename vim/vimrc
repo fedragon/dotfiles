@@ -44,6 +44,7 @@ set number                  " Enable line numbers
 set autoread                " Refresh buffers if they were changed from outside
 set autowriteall            " Save on buffer switch
 set splitright              " Split new buffers to the right
+set mouse=a
 
 set directory=~/.vim/tmp    " Temporary swap files directory
 
@@ -54,6 +55,10 @@ set listchars=tab:▸\ ,eol:¬ " Display tabs as ▸, end of line as `¬`
 set guioptions+=a           " Copy highlighted text to system clipboard
 set guioptions-=r           " Remove scrollbars
 set guioptions-=L
+
+set t_Co=256
+set guifont=Source\ Code\ Pro\ for\ Powerline:h14
+set noshowmode " Hide the default mode text
 
 colorscheme desert          " Color scheme
 
@@ -139,3 +144,5 @@ let g:rbpt_colorpairs = [
 " Remove trailing whitespaces on save
 autocmd BufWritePre *.* :%s/\s\+$//e
 
+" Powerline integration
+source /usr/local/lib/python2.7/site-packages/powerline/bindings/vim/plugin/powerline.vim

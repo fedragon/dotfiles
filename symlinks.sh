@@ -14,3 +14,6 @@ ln -s ~/Playground/dotfiles/vim/vimrc ~/.vimrc
 rm ~/.oh-my-fish
 ln -s ~/Playground/oh-my-fish/ ~/.oh-my-fish
 
+rm ~/.tmux.conf
+ln -s ~/Playground/dotfiles/tmux/tmux.conf ~/.tmux.conf
+

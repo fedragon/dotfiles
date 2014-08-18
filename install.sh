@@ -7,6 +7,8 @@ mkdir -p ~/Playground
 git clone https://github.com/fedragon/dotfiles.git ~/Playground/dotfiles
 
 ./fish/install.sh
+./powerline.sh
+./tmux/install.sh
 ./vim/install.sh
 ./haskell/install.sh
 
