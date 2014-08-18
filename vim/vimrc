@@ -92,10 +92,10 @@ nnoremap <leader>l :set list!<CR>
 nnoremap <C-p> :Unite -no-split -buffer-name=files -start-insert file_rec/async:!<cr>
 
 " Buffer navigation
-nnoremap be :enew<CR>
-nnoremap bl :bnext<CR>
-nnoremap bh :bprevious<CR>
-nnoremap bq :bdelete<CR>
+" nnoremap be :enew<CR>
+" nnoremap bl :bnext<CR>
+" nnoremap bh :bprevious<CR>
+" nnoremap bq :bdelete<CR>
 
 """ syntastic
 map <silent> <leader>e :Errors<CR>
