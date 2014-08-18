@@ -8,7 +8,6 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'airblade/vim-gitgutter'
-Plugin 'bling/vim-airline'
 Plugin 'gmarik/Vundle.vim'
 Plugin 'kien/rainbow_parentheses.vim' " Colorful parentheses
 Plugin 'Lokaltog/vim-easymotion'      " Improved motion
@@ -65,10 +64,7 @@ set shiftwidth=2
 set smarttab
 set expandtab               " Use spaces instead of tabs
 
-""" Airline settings
-set laststatus=2
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#fnamemod = ':t'
+set laststatus=2            " Always show status bar
 
 """ Syntastic
 let g:syntastic_auto_loc_list=1
