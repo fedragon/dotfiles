@@ -12,6 +12,7 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'kien/rainbow_parentheses.vim' " Colorful parentheses
 Plugin 'Lokaltog/vim-easymotion'      " Improved motion
 Plugin 'mhinz/vim-signify'
+Plugin 'rizzatti/dash.vim'            " Dash integration
 Plugin 'scrooloose/syntastic'         " Syntax highlighting
 Plugin 'Shougo/unite.vim'
 Plugin 'Shougo/vimproc.vim'
