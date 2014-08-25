@@ -17,7 +17,8 @@ Plugin 'scrooloose/syntastic'         " Syntax highlighting
 Plugin 'Shougo/unite.vim'
 Plugin 'Shougo/vimproc.vim'
 Plugin 'tpope/vim-fugitive'           " Git integration
-Plugin 'tpope/vim-haml'                   " HAML, SASS, SCSS support
+Plugin 'tpope/vim-haml'               " HAML, SASS, SCSS support
+Plugin 'tpope/vim-surround'           " Surround words
 Plugin 'tpope/vim-vinegar'            " File explorer
 Plugin 'vim-scripts/fish-syntax'      " Fish syntax highlighting
 
@@ -105,14 +106,23 @@ call unite#custom#source('file,file_rec,file_rec/async', 'ignore_pattern',
 
 " go back to Normal Mode
 inoremap jk <Esc>
+
 " split line
 inoremap <leader>c <CR><Esc>O
 nnoremap <leader>c <CR><Esc>O
 
-" Toggle whitespaces/end of line display
+" toggle whitespaces/end of line display
 nnoremap <leader>l :set list!<CR>
 
-" Unite
+" resize split panes with arrows
+if bufwinnr(1)
+  nmap <Up> <C-w>+
+  nmap <Down> <C-w>-
+  nmap <Right> <C-w>>
+  nmap <Left> <C-w><
+endif
+
+" unite
 nnoremap <C-p> :Unite -no-split -buffer-name=files -start-insert file_rec/async:!<cr>
 
 " Buffer navigation
@@ -121,11 +131,11 @@ nnoremap <C-p> :Unite -no-split -buffer-name=files -start-insert file_rec/async:
 " nnoremap bh :bprevious<CR>
 " nnoremap bq :bdelete<CR>
 
-""" syntastic
+" syntastic
 map <silent> <leader>e :Errors<CR>
 map <Leader>s :SyntasticToggleMode<CR>
 
-""" ghc-mod
+" ghc-mod
 nnoremap <silent> gb :GhcModCheck<CR>
 nnoremap <silent> gt :GhcModType<CR>
 nnoremap <silent> gc :GhcModTypeClear<CR>
@@ -157,9 +167,6 @@ let g:rbpt_colorpairs = [
     \ ['red',         'firebrick3'],
     \ ]
 
-" let g:rbpt_max = 16
-" let g:rbpt_loadcmd_toggle = 0
-
 " Remove trailing whitespaces on save
 autocmd BufWritePre *.* :%s/\s\+$//e
 
@@ -169,10 +176,3 @@ source /usr/local/lib/python2.7/site-packages/powerline/bindings/vim/plugin/powe
 " Automatically close html tags in html files
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 
-" Resize split panes with arrows when in Normal mode
-if bufwinnr(1)
-  nmap <Up> <C-w>+
-  nmap <Down> <C-w>-
-  nmap <Right> <C-w>>
-  nmap <Left> <C-w><
-endif
