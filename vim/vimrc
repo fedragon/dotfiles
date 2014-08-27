@@ -1,36 +1,34 @@
 """ Vundle settings
 
-set shell=/bin/bash "required if using another shell
+set shell=/bin/bash                       "required if using another shell
 set nocompatible
 filetype off
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-Plugin 'airblade/vim-gitgutter'
-Plugin 'gmarik/Vundle.vim'
-Plugin 'kien/rainbow_parentheses.vim' " Colorful parentheses
-Plugin 'Lokaltog/vim-easymotion'      " Improved motion
-Plugin 'mhinz/vim-signify'
-Plugin 'rizzatti/dash.vim'            " Dash integration
-Plugin 'scrooloose/syntastic'         " Syntax highlighting
+Plugin 'gmarik/Vundle.vim'                " Plugin manager
+Plugin 'kien/rainbow_parentheses.vim'     " Colorful parentheses
+Plugin 'Lokaltog/vim-easymotion'          " Improved motion
+Plugin 'scrooloose/syntastic'             " Syntax highlighting
 Plugin 'Shougo/unite.vim'
-Plugin 'Shougo/vimproc.vim'
-Plugin 'tpope/vim-fugitive'           " Git integration
-Plugin 'tpope/vim-haml'               " HAML, SASS, SCSS support
-Plugin 'tpope/vim-surround'           " Surround words
-Plugin 'tpope/vim-vinegar'            " File explorer
-Plugin 'vim-scripts/fish-syntax'      " Fish syntax highlighting
+Plugin 'Shougo/vimproc.vim'               " Required by unite.vim
+Plugin 'tpope/vim-surround'               " Surround words
+Plugin 'tpope/vim-vinegar'                " Improved file explorer
 
 " Color scheme
 Plugin 'nanotech/jellybeans.vim'
 
+" Git integration
+Plugin 'airblade/vim-gitgutter'           " Git info in gutter
+Plugin 'tpope/vim-fugitive'               " Git integration
+
 " Haskell
-Plugin 'bitc/vim-hdevtools'           " Provide type information
-Plugin 'eagletmt/ghcmod-vim'          " Load buffer in ghc, infer types
-Plugin 'eagletmt/neco-ghc'            " Auto completion
-Plugin 'vim-scripts/Haskell-Conceal'  " Replace characters with unicode equivalents
-Plugin 'wlangstroth/vim-haskell'      " syntax highlighting
+Plugin 'bitc/vim-hdevtools'               " Provide type information
+Plugin 'eagletmt/ghcmod-vim'              " Load buffer in ghc, infer types
+Plugin 'eagletmt/neco-ghc'                " Auto completion
+Plugin 'vim-scripts/Haskell-Conceal'      " Replace characters with unicode equivalents
+Plugin 'wlangstroth/vim-haskell'          " syntax highlighting
 
 " Javascript
 Plugin 'jelera/vim-javascript-syntax'     " Syntax highlighting
@@ -41,17 +39,26 @@ Plugin 'walm/jshint.vim'                  " Hints
 " Angular
 Plugin 'burnettk/vim-angular'
 
+" SASS
+Plugin 'tpope/vim-haml'
+
+" Fish
+Plugin 'vim-scripts/fish-syntax'
+
 call vundle#end()
 filetype plugin indent on
 
 """ General settings
 
 syntax on                   " Enable syntax highlighting
+set t_Co=256                " Set terminal colours
 set number                  " Enable line numbers
 set autoread                " Refresh buffers if they were changed from outside
 set autowriteall            " Save on buffer switch
 set splitright              " Split new buffers to the right
-set mouse=a
+set mouse=a                 " Enable mouse
+set encoding=utf8
+set guifont=Source\ Code\ Pro\ for\ Powerline:h14
 
 set cursorcolumn            " Highlight current column
 set cursorline              " Highlight current line
@@ -59,10 +66,10 @@ set hlsearch                " Highlight search matches
 set incsearch               " Highlight search matches as you type
 
 set ignorecase              " Ignore case when searching
-set smartcase
+set smartcase               " Ignore case if pattern is lowercase, case-sensitive otherwise
 
 set nobackup                " Disable backup
-set noswapfile              " Disable swap file
+set directory=~/.vim/tmp    " Temporary swap files directory
 
 set nolist                  " Do not highlight whitespaces by default
 set listchars=tab:▸\ ,eol:¬ " Display tabs as ▸, end of line as `¬`
@@ -71,8 +78,6 @@ set guioptions+=a           " Copy highlighted text to system clipboard
 set guioptions-=r           " Remove scrollbars
 set guioptions-=L
 
-set t_Co=256
-set guifont=Source\ Code\ Pro\ for\ Powerline:h14
 set noshowmode              " Hide the default mode text
 
 colorscheme jellybeans      " Set default color scheme
@@ -89,12 +94,8 @@ set laststatus=2            " Always show status bar
 if has("gui_running")
     set guioptions-=T
     set guioptions+=e
-    set t_Co=256
     set guitablabel=%M\ %t
 endif
-
-" Set utf8 as standard encoding and en_US as the standard language
-set encoding=utf8
 
 """ Syntastic
 let g:syntastic_auto_loc_list=1
@@ -112,8 +113,9 @@ call unite#custom#source('file,file_rec,file_rec/async', 'ignore_pattern',
 " Remap leader to backtick
 let mapleader="`"
 
-" Quickly edit ~/.vimrc
+" Quickly edit and source ~/.vimrc
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
+nmap <silent> <leader>es :so $MYVIMRC<CR>
 
 " Use ; to write commands, insteaf of :
 nnoremap ; :
@@ -150,14 +152,14 @@ nnoremap <C-p> :Unite -no-split -buffer-name=files -start-insert file_rec/async:
 
 " syntastic
 map <silent> <leader>e :Errors<CR>
-map <Leader>s :SyntasticToggleMode<CR>
+map <leader>s :SyntasticToggleMode<CR>
 
 " ghc-mod
-nnoremap <silent> gb :GhcModCheck<CR>
-nnoremap <silent> gt :GhcModType<CR>
-nnoremap <silent> gc :GhcModTypeClear<CR>
-nnoremap <silent> gn :GhcModLint<CR>
-nnoremap <silent> ge :GhcModExpand<CR>
+" nnoremap <silent> gb :GhcModCheck<CR>
+" nnoremap <silent> gt :GhcModType<CR>
+" nnoremap <silent> gc :GhcModTypeClear<CR>
+" nnoremap <silent> gn :GhcModLint<CR>
+" nnoremap <silent> ge :GhcModExpand<CR>
 
 """ rainbow-parentheses
 au VimEnter * RainbowParenthesesToggle
@@ -190,8 +192,8 @@ autocmd BufWritePre *.* :%s/\s\+$//e
 " Powerline integration
 source /usr/local/lib/python2.7/site-packages/powerline/bindings/vim/plugin/powerline.vim
 
-" Automatically close html tags in html files
+" Provide autocompletion options for tags in css, html files
+" (triggered with <C-x><C-o>)
+autocmd FileType css set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 
-" Automatically source ~/.vimrc after saving it
-au! BufWritePost .vimrc source %
