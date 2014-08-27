@@ -122,7 +122,7 @@ nnoremap ; :
 inoremap jk <Esc>
 
 " clear search highlightings
-nmap <silent> <leader><leader> :nohlsearch<CR>
+nmap <silent> `` :nohlsearch<CR>
 
 " split line
 inoremap <leader>c <CR><Esc>O
