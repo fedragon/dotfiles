@@ -38,9 +38,6 @@ Plugin 'nathanaelkane/vim-indent-guides'  " Show indent guides
 Plugin 'pangloss/vim-javascript'          " Highlighting + better indentation
 Plugin 'walm/jshint.vim'                  " Hints
 
-" Purescript
-Plugin 'raichoo/purescript-vim'
-
 " Angular
 Plugin 'burnettk/vim-angular'
 
@@ -55,12 +52,18 @@ set autoread                " Refresh buffers if they were changed from outside
 set autowriteall            " Save on buffer switch
 set splitright              " Split new buffers to the right
 set mouse=a
+
 set cursorcolumn            " Highlight current column
 set cursorline              " Highlight current line
-
-set directory=~/.vim/tmp    " Temporary swap files directory
-
 set hlsearch                " Highlight search matches
+set incsearch               " Highlight search matches as you type
+
+set ignorecase              " Ignore case when searching
+set smartcase
+
+set nobackup                " Disable backup
+set noswapfile              " Disable swap file
+
 set nolist                  " Do not highlight whitespaces by default
 set listchars=tab:▸\ ,eol:¬ " Display tabs as ▸, end of line as `¬`
 
@@ -106,8 +109,20 @@ call unite#custom#source('file,file_rec,file_rec/async', 'ignore_pattern',
 
 """ Mappings
 
+" Remap leader to backtick
+let mapleader="`"
+
+" Quickly edit ~/.vimrc
+nmap <silent> <leader>ev :e $MYVIMRC<CR>
+
+" Use ; to write commands, insteaf of :
+nnoremap ; :
+
 " go back to Normal Mode
 inoremap jk <Esc>
+
+" clear search highlightings
+nmap <silent> `` :nohlsearch<CR>
 
 " split line
 inoremap <leader>c <CR><Esc>O
@@ -178,3 +193,5 @@ source /usr/local/lib/python2.7/site-packages/powerline/bindings/vim/plugin/powe
 " Automatically close html tags in html files
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 
+" Automatically source ~/.vimrc after saving it
+au! BufWritePost .vimrc source %
