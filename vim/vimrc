@@ -55,6 +55,8 @@ set autoread                " Refresh buffers if they were changed from outside
 set autowriteall            " Save on buffer switch
 set splitright              " Split new buffers to the right
 set mouse=a
+set cursorcolumn            " Highlight current column
+set cursorline              " Highlight current line
 
 set directory=~/.vim/tmp    " Temporary swap files directory
 
