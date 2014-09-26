@@ -23,4 +23,27 @@
       <autogen>__KeyToKey__ KeyCode::S, ModifierFlag::OPTION_R, KeyCode::CURSOR_DOWN</autogen>
     </item>
   </item>
+  <item>
+    <name>Federico - Remap Arrow Keys to Fn + HJKL</name>
+    <item>
+      <name>Arrow up to Fn + K</name>
+      <identifier>remap.arrowUpToFnK</identifier>
+      <autogen>__KeyToKey__ KeyCode::K, ModifierFlag::FN, KeyCode::CURSOR_UP</autogen>
+    </item>
+    <item>
+      <name>Arrow left to Fn + H</name>
+      <identifier>remap.arrowLeftToFnH</identifier>
+      <autogen>__KeyToKey__ KeyCode::H, ModifierFlag::FN, KeyCode::CURSOR_LEFT</autogen>
+    </item>
+    <item>
+      <name>Arrow right to Fn + L</name>
+      <identifier>remap.arrowRightToFnL</identifier>
+      <autogen>__KeyToKey__ KeyCode::L, ModifierFlag::FN, KeyCode::CURSOR_RIGHT</autogen>
+    </item>
+    <item>
+      <name>Arrow down to Fn + J</name>
+      <identifier>remap.arrowDownToFnJ</identifier>
+      <autogen>__KeyToKey__ KeyCode::J, ModifierFlag::FN, KeyCode::CURSOR_DOWN</autogen>
+    </item>
+  </item>
 </root>
