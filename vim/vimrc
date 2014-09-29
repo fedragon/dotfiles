@@ -92,6 +92,8 @@ set expandtab               " Use spaces instead of tabs
 
 set laststatus=2            " Always show status bar
 
+set clipboard=unnamed
+
 " Set extra options when running in GUI mode
 if has("gui_running")
     set guioptions-=T
