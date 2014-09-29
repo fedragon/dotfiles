@@ -1,23 +1,26 @@
 """ Vundle settings
-
-set shell=/bin/bash                       "required if using another shell
+set shell=/bin/bash                       " required if using another shell
 set nocompatible
 filetype off
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
+"""""""""""""""
+""" Plugins """
+"""""""""""""""
+
 Plugin 'gmarik/Vundle.vim'                " Plugin manager
 Plugin 'kien/rainbow_parentheses.vim'     " Colorful parentheses
 Plugin 'Lokaltog/vim-easymotion'          " Improved motion
+Plugin 'nanotech/jellybeans.vim'          " Color scheme
 Plugin 'scrooloose/syntastic'             " Syntax highlighting
-Plugin 'Shougo/unite.vim'
-Plugin 'Shougo/vimproc.vim'               " Required by unite.vim
 Plugin 'tpope/vim-surround'               " Surround words
 Plugin 'tpope/vim-vinegar'                " Improved file explorer
 
-" Color scheme
-Plugin 'nanotech/jellybeans.vim'
+" Unite.vim
+Plugin 'Shougo/unite.vim'
+Plugin 'Shougo/vimproc.vim'               " Required dependency
 
 " Git integration
 Plugin 'airblade/vim-gitgutter'           " Git info in gutter
@@ -45,10 +48,19 @@ Plugin 'tpope/vim-haml'
 " Fish
 Plugin 'vim-scripts/fish-syntax'
 
+" Notes
+Plugin 'xolox/vim-notes'
+Plugin 'xolox/vim-misc'                   " Required dependency
+
+" Scala
+Plugin 'derekwyatt/vim-scala'
+
 call vundle#end()
 filetype plugin indent on
 
-""" General settings
+""""""""""""""""""""""""
+""" General settings """
+""""""""""""""""""""""""
 
 syntax on                   " Enable syntax highlighting
 set t_Co=256                " Set terminal colours
@@ -101,10 +113,20 @@ if has("gui_running")
     set guitablabel=%M\ %t
 endif
 
-""" Syntastic
+""""""""""""""""""""""""""""""""
+""" Plugin-specific settings """
+""""""""""""""""""""""""""""""""
+
+""" Powerline """
+source /usr/local/lib/python2.7/site-packages/powerline/bindings/vim/plugin/powerline.vim
+
+""" Syntastic """
 let g:syntastic_auto_loc_list=1
 
-""" Unite
+map <silent> <leader>e :Errors<CR>
+map <leader>s :SyntasticToggleMode<CR>
+
+""" Unite """
 let g:unite_source_history_yank_enable = 1
 call unite#custom#source('file,file/new,buffer,file_rec,file_rec/async', 'matchers', 'matcher_fuzzy')
 call unite#custom#source('file,file/new,buffer,file_rec,file_rec/async', 'sorters', 'sorter_rank')
@@ -112,10 +134,61 @@ call unite#custom#source('file,file/new,buffer,file_rec,file_rec/async', 'sorter
 call unite#custom#source('file,file_rec,file_rec/async', 'ignore_pattern',
       \'tmp\|vendor\|\.bundle\|target\|\.git')
 
-""" Mappings
+function! UniteClearCache()
+  let result = system("rm ~/.cache/unite -rf")
+endfunction
+command! UniteClearCache call UniteClearCache()
 
-" Remap leader to backtick
-let mapleader="`"
+autocmd FileType unite call s:unite_settings()
+
+function! s:unite_settings()
+  let b:SuperTabDisabled=1
+  imap <buffer><C-j> <Plug>(unite_select_next_line)
+  imap <buffer><C-k> <Plug>(unite_select_previous_line)
+
+  imap <silent><buffer><expr> <C-s> unite#do_action('split')
+  imap <silent><buffer><expr> <C-v> unite#do_action('vsplit')
+  nmap <silent><buffer><expr> <C-s> unite#do_action('split')
+  nmap <silent><buffer><expr> <C-v> unite#do_action('vsplit')
+
+
+  nmap <buffer> <ESC> <Plug>(unite_exit)
+endfunction
+
+nnoremap <C-p> :Unite -buffer-name=files -start-insert file_rec/async:!<cr>
+nnoremap <C-n> :Unite grep:.<cr>
+
+""" Note """
+:let g:notes_directories = ['~/Notes']
+
+""" Rainbow parentheses """
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
+
+" let g:rbpt_colorpairs = [
+"   \ ['brown',       'RoyalBlue3'],
+"   \ ['Darkblue',    'SeaGreen3'],
+"   \ ['darkgray',    'DarkOrchid3'],
+"   \ ['darkgreen',   'firebrick3'],
+"   \ ['darkcyan',    'RoyalBlue3'],
+"   \ ['darkred',     'SeaGreen3'],
+"   \ ['darkmagenta', 'DarkOrchid3'],
+"   \ ['brown',       'firebrick3'],
+"   \ ['gray',        'RoyalBlue3'],
+"   \ ['black',       'SeaGreen3'],
+"   \ ['darkmagenta', 'DarkOrchid3'],
+"   \ ['Darkblue',    'firebrick3'],
+"   \ ['darkgreen',   'RoyalBlue3'],
+"   \ ['darkcyan',    'SeaGreen3'],
+"   \ ['darkred',     'DarkOrchid3'],
+"   \ ['red',         'firebrick3'],
+"   \ ]
+
+""""""""""""""""
+""" Mappings """
+""""""""""""""""
 
 " Quickly edit and source ~/.vimrc
 nmap <silent> <leader>ev :tabnew $MYVIMRC<CR>
@@ -128,7 +201,7 @@ nnoremap ; :
 inoremap jk <Esc>
 
 " clear search highlightings
-nmap <silent> `` :nohlsearch<CR>
+nmap <silent> <leader>q :nohlsearch<CR>
 
 " split line
 inoremap <leader>c <CR><Esc>O
@@ -136,6 +209,14 @@ nnoremap <leader>c <CR><Esc>O
 
 " toggle whitespaces/end of line display
 nnoremap <leader>l :set list!<CR>
+
+" copy text to "+ (clipboard)
+nmap <Leader>yy "+yy
+vmap <Leader>y "+y
+
+" paste text from "+ (clipboard)
+map <Leader>p "+p
+vmap <Leader>p "+p
 
 " resize split panes with arrows
 if bufwinnr(1)
@@ -145,59 +226,24 @@ if bufwinnr(1)
   nmap <Left> <C-w><
 endif
 
-" unite
-nnoremap <C-p> :Unite -no-split -buffer-name=files -start-insert file_rec/async:!<cr>
-
 " Buffer navigation
 " nnoremap be :enew<CR>
 " nnoremap bl :bnext<CR>
 " nnoremap bh :bprevious<CR>
 " nnoremap bq :bdelete<CR>
 
-" syntastic
-map <silent> <leader>e :Errors<CR>
-map <leader>s :SyntasticToggleMode<CR>
-
-" ghc-mod
-" nnoremap <silent> gb :GhcModCheck<CR>
-" nnoremap <silent> gt :GhcModType<CR>
-" nnoremap <silent> gc :GhcModTypeClear<CR>
-" nnoremap <silent> gn :GhcModLint<CR>
-" nnoremap <silent> ge :GhcModExpand<CR>
-
-""" rainbow-parentheses
-au VimEnter * RainbowParenthesesToggle
-au Syntax * RainbowParenthesesLoadRound
-au Syntax * RainbowParenthesesLoadSquare
-au Syntax * RainbowParenthesesLoadBraces
-
-let g:rbpt_colorpairs = [
-    \ ['brown',       'RoyalBlue3'],
-    \ ['Darkblue',    'SeaGreen3'],
-    \ ['darkgray',    'DarkOrchid3'],
-    \ ['darkgreen',   'firebrick3'],
-    \ ['darkcyan',    'RoyalBlue3'],
-    \ ['darkred',     'SeaGreen3'],
-    \ ['darkmagenta', 'DarkOrchid3'],
-    \ ['brown',       'firebrick3'],
-    \ ['gray',        'RoyalBlue3'],
-    \ ['black',       'SeaGreen3'],
-    \ ['darkmagenta', 'DarkOrchid3'],
-    \ ['Darkblue',    'firebrick3'],
-    \ ['darkgreen',   'RoyalBlue3'],
-    \ ['darkcyan',    'SeaGreen3'],
-    \ ['darkred',     'DarkOrchid3'],
-    \ ['red',         'firebrick3'],
-    \ ]
+"""""""""""""""""""""""""""
+""" File types settings """
+"""""""""""""""""""""""""""
 
 " Remove trailing whitespaces on save
 autocmd BufWritePre *.* :%s/\s\+$//e
-
-" Powerline integration
-source /usr/local/lib/python2.7/site-packages/powerline/bindings/vim/plugin/powerline.vim
 
 " Provide autocompletion options for tags in css, html files
 " (triggered with <C-x><C-o>)
 autocmd FileType css set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 
+" Set filetype
+au BufRead,BufNewFile *.md        setlocal filetype=markdown
+au BufRead,BufNewFile *.scala     setlocal filetype=scala
