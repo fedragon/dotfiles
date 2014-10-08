@@ -232,3 +232,10 @@ autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 au BufRead,BufNewFile *.md        setlocal filetype=markdown
 au BufRead,BufNewFile *.scala     setlocal filetype=scala
 au BufRead,BufNewFile *.sbt       setlocal filetype=sbt
+
+" Reload when entering buffer or gaining focus
+au FocusGained,BufEnter * :silent! !
+
+" Autosave on focus lost or when exiting the buffer
+au FocusLost,WinLeave * :silent! w
+
