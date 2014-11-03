@@ -173,10 +173,15 @@ nnoremap <C-n> :Unite grep:.<cr>
 :let g:notes_directories = ['~/Notes']
 
 """ Rainbow parentheses """
-au VimEnter * RainbowParenthesesToggle
+au VimEnter * RainbowParenthesesActivate
 au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
+
+""" Paredit """
+let g:paredit_leader = '\'
+let g:paredit_electric_return = 1
+let g:paredit_smartjump = 1
 
 """ vim-expand-selection """
 vmap v <Plug>(expand_region_expand)
