@@ -12,9 +12,10 @@ call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'                " Plugin manager
 Plugin 'kien/rainbow_parentheses.vim'     " Colorful parentheses
-Plugin 'Lokaltog/vim-easymotion'          " Improved motion
+" Plugin 'Lokaltog/vim-easymotion'          " Improved motion
 Plugin 'nanotech/jellybeans.vim'          " Color scheme
 Plugin 'scrooloose/syntastic'             " Syntax highlighting
+Plugin 'terryma/vim-expand-region'        " Expand selection
 Plugin 'tpope/vim-surround'               " Surround words
 Plugin 'tpope/vim-vinegar'                " Improved file explorer
 
@@ -23,7 +24,7 @@ Plugin 'Shougo/unite.vim'
 Plugin 'Shougo/vimproc.vim'               " Required dependency
 
 " Git integration
-Plugin 'airblade/vim-gitgutter'           " Git info in gutter
+Plugin 'mhinz/vim-signify'                " Git info in gutter
 Plugin 'tpope/vim-fugitive'               " Git integration
 
 " Haskell
@@ -78,6 +79,7 @@ set splitright              " Split new buffers to the right
 set mouse=a                 " Enable mouse
 set encoding=utf8
 set guifont=Source\ Code\ Pro\ for\ Powerline:h14
+set nowrap
 
 set nocursorline            " Don't paint cursor line (scrolling becomes painfully slow)
 set nocursorcolumn          " Don't paint cursor column (scrolling becomes painfully slow)
@@ -176,6 +178,10 @@ au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 
+""" vim-expand-selection """
+vmap v <Plug>(expand_region_expand)
+vmap <C-v> <Plug>(expand_region_shrink)
+
 """"""""""""""""
 """ Mappings """
 """"""""""""""""
@@ -192,10 +198,6 @@ inoremap jk <Esc>
 
 " clear search highlightings
 nmap <silent> <leader>q :nohlsearch<CR>
-
-" split line
-inoremap <leader>c <CR><Esc>O
-nnoremap <leader>c <CR><Esc>O
 
 " toggle whitespaces/end of line display
 nnoremap <leader>l :set list!<CR>
