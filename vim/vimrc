@@ -12,12 +12,12 @@ call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'                " Plugin manager
 Plugin 'kien/rainbow_parentheses.vim'     " Colorful parentheses
-" Plugin 'Lokaltog/vim-easymotion'          " Improved motion
 Plugin 'nanotech/jellybeans.vim'          " Color scheme
 Plugin 'scrooloose/syntastic'             " Syntax highlighting
 Plugin 'terryma/vim-expand-region'        " Expand selection
 Plugin 'tpope/vim-surround'               " Surround words
 Plugin 'tpope/vim-vinegar'                " Improved file explorer
+Plugin 'godlygeek/tabular'                " Tabularizing made easy
 
 " Unite.vim
 Plugin 'Shougo/unite.vim'
@@ -57,7 +57,7 @@ Plugin 'xolox/vim-misc'                   " Required dependency
 Plugin 'derekwyatt/vim-scala'
 
 " Clojure
-Plugin 'guns/vim-clojure-static'          " Syntax highlighting, indentation, ...
+Plugin 'guns/vim-clojure-static'          " Syntax highlighting, indentation, etc
 Plugin 'tpope/vim-fireplace'              " Evaluate code from a running repl
 Plugin 'tpope/vim-projectionist'
 Plugin 'vim-scripts/paredit.vim'          " Easy parens management
@@ -169,14 +169,14 @@ endfunction
 nnoremap <C-p> :Unite -buffer-name=files -start-insert file_rec/async:!<cr>
 nnoremap <C-n> :Unite grep:.<cr>
 
-""" Note """
+""" vim-notes """
 :let g:notes_directories = ['~/Notes']
 
 """ Rainbow parentheses """
 au VimEnter * RainbowParenthesesActivate
-au Syntax * RainbowParenthesesLoadRound
-au Syntax * RainbowParenthesesLoadSquare
-au Syntax * RainbowParenthesesLoadBraces
+au Syntax   * RainbowParenthesesLoadRound
+au Syntax   * RainbowParenthesesLoadSquare
+au Syntax   * RainbowParenthesesLoadBraces
 
 """ Paredit """
 let g:paredit_leader = '\'
@@ -184,7 +184,7 @@ let g:paredit_electric_return = 1
 let g:paredit_smartjump = 1
 
 """ vim-expand-selection """
-vmap v <Plug>(expand_region_expand)
+vmap     v <Plug>(expand_region_expand)
 vmap <C-v> <Plug>(expand_region_shrink)
 
 """"""""""""""""
@@ -212,7 +212,7 @@ nmap <Leader>yy "+yy
 vmap <Leader>y "+y
 
 " paste text from "+ (clipboard)
-map <Leader>p "+p
+map  <Leader>p "+p
 vmap <Leader>p "+p
 
 " resize split panes with arrows
@@ -233,18 +233,22 @@ endif
 """ File types settings """
 """""""""""""""""""""""""""
 
-" Remove trailing whitespaces on save
-autocmd BufWritePre *.* :%s/\s\+$//e
-
 " Provide autocompletion options for tags in css, html files
 " (triggered with <C-x><C-o>)
-autocmd FileType css set omnifunc=htmlcomplete#CompleteTags
+autocmd FileType css  set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 
 " Set filetype
 au BufRead,BufNewFile *.md        setlocal filetype=markdown
 au BufRead,BufNewFile *.scala     setlocal filetype=scala
 au BufRead,BufNewFile *.sbt       setlocal filetype=sbt
+
+""""""""""""""""""""""""""""""""""
+""" File manipulation settings """
+""""""""""""""""""""""""""""""""""
+
+" Remove trailing whitespaces on save
+autocmd BufWritePre *.* :%s/\s\+$//e
 
 " Reload when entering buffer or gaining focus
 au FocusGained,BufEnter * :silent! !
