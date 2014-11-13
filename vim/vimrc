@@ -12,12 +12,15 @@ call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'                " Plugin manager
 Plugin 'kien/rainbow_parentheses.vim'     " Colorful parentheses
-Plugin 'nanotech/jellybeans.vim'          " Color scheme
 Plugin 'scrooloose/syntastic'             " Syntax highlighting
 Plugin 'terryma/vim-expand-region'        " Expand selection
 Plugin 'tpope/vim-surround'               " Surround words
 Plugin 'tpope/vim-vinegar'                " Improved file explorer
 Plugin 'godlygeek/tabular'                " Tabularizing made easy
+
+" Color schemes
+Plugin 'morhetz/gruvbox'
+Plugin 'nanotech/jellybeans.vim'
 
 " Unite.vim
 Plugin 'Shougo/unite.vim'
@@ -79,7 +82,6 @@ set autowriteall            " Save on buffer switch
 set splitright              " Split new buffers to the right
 set mouse=a                 " Enable mouse
 set encoding=utf8
-set guifont=Source\ Code\ Pro\ for\ Powerline:h14
 set nowrap
 
 set nocursorline            " Don't paint cursor line (scrolling becomes painfully slow)
@@ -104,7 +106,8 @@ set guioptions-=L
 
 set noshowmode              " Hide the default mode text
 
-colorscheme jellybeans      " Set default color scheme
+set background=dark
+colorscheme gruvbox         " Set default color scheme
 
 set tabstop=2               " Soft tab indentation with 2 spaces
 set shiftwidth=2
@@ -123,12 +126,20 @@ if has("gui_running")
     set guitablabel=%M\ %t
 endif
 
+""""""""""""""""""""""""""""
+""" OS-specific settings """
+""""""""""""""""""""""""""""
+
+if system("uname -s") == "Darwin\n"
+  set guifont=Source\ Code\ Pro\ for\ Powerline:h14
+
+  """ Powerline """
+  source /usr/local/lib/python2.7/site-packages/powerline/bindings/vim/plugin/powerline.vim
+endif
+
 """"""""""""""""""""""""""""""""
 """ Plugin-specific settings """
 """"""""""""""""""""""""""""""""
-
-""" Powerline """
-source /usr/local/lib/python2.7/site-packages/powerline/bindings/vim/plugin/powerline.vim
 
 """ Syntastic """
 let g:syntastic_auto_loc_list=1
