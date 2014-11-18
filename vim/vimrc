@@ -238,11 +238,9 @@ if bufwinnr(1)
   nmap <Left> <C-w><
 endif
 
-" Buffer navigation
-" nnoremap be :enew<CR>
-" nnoremap bl :bnext<CR>
-" nnoremap bh :bprevious<CR>
-" nnoremap bq :bdelete<CR>
+" thyme integration
+nmap <leader>ts :!thyme -d<CR>
+nmap <leader>tb :!thyme -b<CR>
 
 """""""""""""""""""""""""""
 """ File types settings """
