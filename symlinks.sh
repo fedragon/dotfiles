@@ -17,3 +17,5 @@ ln -s ~/Playground/oh-my-fish/ ~/.oh-my-fish
 rm ~/.tmux.conf
 ln -s ~/Playground/dotfiles/tmux/tmux.conf ~/.tmux.conf
 
+rm ~/.thymerc
+ln -s ~/Playground/dotfiles/thymerc ~/.thymerc
