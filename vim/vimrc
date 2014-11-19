@@ -24,6 +24,7 @@ Plugin 'nanotech/jellybeans.vim'
 
 " Unite.vim
 Plugin 'Shougo/unite.vim'
+Plugin 'Shougo/neomru.vim'                " Show recently opened files
 Plugin 'Shougo/vimproc.vim'               " Required dependency
 
 " Git integration
@@ -178,7 +179,11 @@ function! s:unite_settings()
   nmap <buffer> <Esc> <Plug>(unite_exit)
 endfunction
 
+" Search files
 nnoremap <C-p> :Unite -buffer-name=files -start-insert file_rec/async:!<cr>
+" Go through recently opened files
+nnoremap <C-h> :Unite -no-split -buffer-name=mru -start-insert file_mru<cr>
+" Search text in files
 nnoremap <C-n> :Unite grep:.<cr>
 
 """ vim-notes """
