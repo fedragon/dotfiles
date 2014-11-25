@@ -216,29 +216,27 @@ vmap <C-v> <Plug>(expand_region_shrink)
 nmap <silent> <Leader>ev :tabnew $MYVIMRC<CR>
 nmap <silent> <Leader>es :so $MYVIMRC<CR>
 
+" Quickly install new plugins
+nmap <silent> <Leader>pi :PluginInstall<CR>
+
 " Use ; to write commands, insteaf of :
 nnoremap ; :
 
-" go back to Normal Mode
+" Use jk to return to Normal Mode
 inoremap jk <Esc>
 
 " clear search highlightings
-nmap <silent> <Leader>q :nohlsearch<CR>
+nmap <silent> <Leader>l :nohlsearch<CR>
 
-" toggle whitespaces/end of line display
-nnoremap <Leader>l :set list!<CR>
-
-" cut text to clipboard
+" clipboard shortcuts
 nmap <Leader>dd "+dd
 vmap <Leader>d "+d
-
-" copy text to clipboard
 nmap <Leader>yy "+yy
 vmap <Leader>y "+y
-
-" paste text from clipboard
-map  <Leader>p "+p
+nmap <Leader>p "+p
 vmap <Leader>p "+p
+nmap <Leader>P "+P
+vmap <Leader>P "+P
 
 " resize split panes with arrows
 if bufwinnr(1)
