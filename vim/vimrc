@@ -10,43 +10,30 @@ call vundle#begin()
 """ Plugins """
 """""""""""""""
 
+Plugin 'ervandew/supertab'                " Autocomplete with Tab
 Plugin 'gmarik/Vundle.vim'                " Plugin manager
 Plugin 'kien/rainbow_parentheses.vim'     " Colorful parentheses
 Plugin 'scrooloose/syntastic'             " Syntax highlighting
 Plugin 'terryma/vim-expand-region'        " Expand selection
-Plugin 'tpope/vim-surround'               " Surround words
 Plugin 'tpope/vim-vinegar'                " Improved file explorer
-Plugin 'godlygeek/tabular'                " Tabularizing made easy
-Plugin 'ervandew/supertab'                " Autocomplete with Tab
 
 " Color schemes
 Plugin 'morhetz/gruvbox'
 Plugin 'nanotech/jellybeans.vim'
 
 " Unite.vim
-Plugin 'Shougo/unite.vim'
 Plugin 'Shougo/neomru.vim'                " Show recently opened files
+Plugin 'Shougo/unite.vim'                 " Find files, grep & more
 Plugin 'Shougo/vimproc.vim'               " Required dependency
 
 " Git integration
 Plugin 'mhinz/vim-signify'                " Git info in gutter
-Plugin 'tpope/vim-fugitive'               " Git integration
-
-" Haskell
-Plugin 'bitc/vim-hdevtools'               " Provide type information
-Plugin 'eagletmt/ghcmod-vim'              " Load buffer in ghc, infer types
-Plugin 'eagletmt/neco-ghc'                " Auto completion
-Plugin 'vim-scripts/Haskell-Conceal'      " Replace characters with unicode equivalents
-Plugin 'wlangstroth/vim-haskell'          " syntax highlighting
 
 " Javascript
 Plugin 'jelera/vim-javascript-syntax'     " Syntax highlighting
 Plugin 'nathanaelkane/vim-indent-guides'  " Show indent guides
 Plugin 'pangloss/vim-javascript'          " Highlighting + better indentation
 Plugin 'walm/jshint.vim'                  " Hints
-
-" Angular
-Plugin 'burnettk/vim-angular'
 
 " SASS
 Plugin 'tpope/vim-haml'
@@ -65,8 +52,22 @@ Plugin 'derekwyatt/vim-scala'
 Plugin 'guns/vim-clojure-static'          " Clojure syntax, basic indentation, indentation
 Plugin 'guns/vim-clojure-highlight'       " Improved syntax highlighting
 Plugin 'tpope/vim-fireplace'              " Evaluate code from a running repl
-Plugin 'tpope/vim-projectionist'
 Plugin 'vim-scripts/paredit.vim'          " Easy parens management
+
+""" Useful but currently not in use
+
+" Plugin 'godlygeek/tabular'                " Tabularizing made easy
+" Plugin 'tpope/vim-surround'               " Surround words
+
+" Angular
+" Plugin 'burnettk/vim-angular'
+
+" Haskell
+" Plugin 'bitc/vim-hdevtools'               " Provide type information
+" Plugin 'eagletmt/ghcmod-vim'              " Load buffer in ghc, infer types
+" Plugin 'eagletmt/neco-ghc'                " Auto completion
+" Plugin 'vim-scripts/Haskell-Conceal'      " Replace characters with unicode equivalents
+" Plugin 'wlangstroth/vim-haskell'          " syntax highlighting
 
 cal vundle#end()
 filetype plugin indent on
