@@ -149,9 +149,6 @@ endif
 """ Syntastic """
 let g:syntastic_auto_loc_list=1
 
-" Disable syntax checking for sbt files
-let g:syntastic_mode_map = { "mode": "active", "passive_filetypes": ["sbt"] }
-
 map <silent> <Leader>e :Errors<CR>
 map <Leader>s :SyntasticToggleMode<CR>
 
@@ -267,7 +264,6 @@ autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 " Set filetype
 au BufRead,BufNewFile *.md        setlocal filetype=markdown
 au BufRead,BufNewFile *.scala     setlocal filetype=scala
-au BufRead,BufNewFile *.sbt       setlocal filetype=sbt
 
 """"""""""""""""""""""""""""""""""
 """ File manipulation settings """
