@@ -17,6 +17,7 @@ Plugin 'terryma/vim-expand-region'        " Expand selection
 Plugin 'tpope/vim-surround'               " Surround words
 Plugin 'tpope/vim-vinegar'                " Improved file explorer
 Plugin 'godlygeek/tabular'                " Tabularizing made easy
+Plugin 'ervandew/supertab'                " Autocomplete with Tab
 
 " Color schemes
 Plugin 'morhetz/gruvbox'
@@ -120,6 +121,8 @@ set laststatus=2            " Always show status bar
 
 set clipboard=unnamed
 
+let mapleader = "\<Space>"  " Remap leader to Space
+
 " Set extra options when running in GUI mode
 if has("gui_running")
     set guioptions-=T
@@ -148,8 +151,8 @@ let g:syntastic_auto_loc_list=1
 " Disable syntax checking for sbt files
 let g:syntastic_mode_map = { "mode": "active", "passive_filetypes": ["sbt"] }
 
-map <silent> <leader>e :Errors<CR>
-map <leader>s :SyntasticToggleMode<CR>
+map <silent> <Leader>e :Errors<CR>
+map <Leader>s :SyntasticToggleMode<CR>
 
 """ Unite """
 let g:unite_source_history_yank_enable = 1
@@ -212,8 +215,8 @@ vmap <C-v> <Plug>(expand_region_shrink)
 """"""""""""""""
 
 " Quickly edit and source ~/.vimrc
-nmap <silent> <leader>ev :tabnew $MYVIMRC<CR>
-nmap <silent> <leader>es :so $MYVIMRC<CR>
+nmap <silent> <Leader>ev :tabnew $MYVIMRC<CR>
+nmap <silent> <Leader>es :so $MYVIMRC<CR>
 
 " Use ; to write commands, insteaf of :
 nnoremap ; :
@@ -222,16 +225,20 @@ nnoremap ; :
 inoremap jk <Esc>
 
 " clear search highlightings
-nmap <silent> <leader>q :nohlsearch<CR>
+nmap <silent> <Leader>q :nohlsearch<CR>
 
 " toggle whitespaces/end of line display
-nnoremap <leader>l :set list!<CR>
+nnoremap <Leader>l :set list!<CR>
 
-" copy text to "+ (clipboard)
+" cut text to clipboard
+nmap <Leader>dd "+dd
+vmap <Leader>d "+d
+
+" copy text to clipboard
 nmap <Leader>yy "+yy
 vmap <Leader>y "+y
 
-" paste text from "+ (clipboard)
+" paste text from clipboard
 map  <Leader>p "+p
 vmap <Leader>p "+p
 
@@ -244,8 +251,8 @@ if bufwinnr(1)
 endif
 
 " thyme integration
-nmap <leader>ts :!thyme -d<CR>
-nmap <leader>tb :!thyme -b<CR>
+nmap <Leader>ts :!thyme -d<CR>
+nmap <Leader>tb :!thyme -b<CR>
 
 """""""""""""""""""""""""""
 """ File types settings """
