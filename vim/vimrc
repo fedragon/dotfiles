@@ -13,6 +13,7 @@ call vundle#begin()
 Plugin 'ervandew/supertab'                " Autocomplete with Tab
 Plugin 'gmarik/Vundle.vim'                " Plugin manager
 Plugin 'kien/rainbow_parentheses.vim'     " Colorful parentheses
+Plugin 'rking/ag.vim'                     " Better grep
 Plugin 'scrooloose/syntastic'             " Syntax highlighting
 Plugin 'terryma/vim-expand-region'        " Expand selection
 Plugin 'tpope/vim-vinegar'                " Improved file explorer
@@ -184,10 +185,13 @@ endfunction
 nnoremap <C-p> :Unite -buffer-name=files -start-insert file_rec/async:!<cr>
 " Go through recently opened files
 nnoremap <C-h> :Unite -no-split -buffer-name=mru -start-insert file_mru<cr>
-" Search text in files
-nnoremap <C-n> :Unite grep:.<cr>
 
-""" vim-notes """
+""" ag.vim """
+
+" Search text in files (defaults to current directory), smart case
+nnoremap <C-n> :Ag -S 
+
+"" vim-notes """
 :let g:notes_directories = ['~/Notes']
 
 """ Rainbow parentheses """

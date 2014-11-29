@@ -13,8 +13,10 @@ cd -
 ln -s ~/Workspace/dotfiles/vim/vimrc ~/.vimrc
 
 # Scala syntax
-for d in ftdetect indent syntax 
+for d in ftdetect indent syntax
   mkdir -p ~/.vim/$d
-  curl -o ~/.vim/$d/scala.vim https://raw.githubusercontent.com/scala/scala-dist/master/tool-support/src/vim/$d/scala.vim 
+  curl -o ~/.vim/$d/scala.vim https://raw.githubusercontent.com/scala/scala-dist/master/tool-support/src/vim/$d/scala.vim
 end
+
+brew install the_silver_searcher
 
