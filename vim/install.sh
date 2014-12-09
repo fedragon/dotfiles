@@ -18,5 +18,6 @@ for d in ftdetect indent syntax
   curl -o ~/.vim/$d/scala.vim https://raw.githubusercontent.com/scala/scala-dist/master/tool-support/src/vim/$d/scala.vim
 end
 
+# Ag.vim
 brew install the_silver_searcher
 

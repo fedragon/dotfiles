@@ -48,6 +48,7 @@ Plugin 'xolox/vim-misc'                   " Required dependency
 
 " Scala
 Plugin 'derekwyatt/vim-scala'
+Plugin 'mpollmeier/vim-scalaConcealmpollmeier/vim-scalaConceal'
 
 " Clojure
 Plugin 'guns/vim-clojure-highlight'       " Improved syntax highlighting
@@ -189,7 +190,10 @@ nnoremap <C-h> :Unite -no-split -buffer-name=mru -start-insert file_mru<cr>
 """ ag.vim """
 
 " Search text in files (defaults to current directory), smart case
-nnoremap <C-n> :Ag -S 
+nnoremap <C-n> :Ag -S
+
+""" ctags """
+set tags=tags;/
 
 "" vim-notes """
 :let g:notes_directories = ['~/Notes']
