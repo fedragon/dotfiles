@@ -12,6 +12,7 @@ call vundle#begin()
 
 Plugin 'ervandew/supertab'                " Autocomplete with Tab
 Plugin 'gmarik/Vundle.vim'                " Plugin manager
+Plugin 'godlygeek/tabular'                " Tabularize text
 Plugin 'kien/rainbow_parentheses.vim'     " Colorful parentheses
 Plugin 'rking/ag.vim'                     " Better grep
 Plugin 'scrooloose/syntastic'             " Syntax highlighting
@@ -48,7 +49,7 @@ Plugin 'xolox/vim-misc'                   " Required dependency
 
 " Scala
 Plugin 'derekwyatt/vim-scala'
-Plugin 'mpollmeier/vim-scalaConcealmpollmeier/vim-scalaConceal'
+Plugin 'mpollmeier/vim-scalaConceal'
 
 " Clojure
 Plugin 'guns/vim-clojure-highlight'       " Improved syntax highlighting
