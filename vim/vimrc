@@ -152,6 +152,8 @@ endif
 """ Syntastic """
 let g:syntastic_auto_loc_list=1
 
+let g:syntastic_mode_map = { "mode": "active", "passive_filetypes": ["sbt"] }
+
 map <silent> <Leader>e :Errors<CR>
 map <Leader>s :SyntasticToggleMode<CR>
 
@@ -269,8 +271,10 @@ autocmd FileType css  set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 
 " Set filetype
-au BufRead,BufNewFile *.md        setlocal filetype=markdown
-au BufRead,BufNewFile *.scala     setlocal filetype=scala
+au BufRead,BufNewFile *.md              setlocal filetype = markdown
+au BufRead,BufNewFile *.scala           setlocal filetype = scala
+au BufRead,BufNewFile build.sbt         setlocal filetype = sbt
+au BufRead,BufNewFile project/*.scala   setlocal filetype = sbt
 
 """"""""""""""""""""""""""""""""""
 """ File manipulation settings """
