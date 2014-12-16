@@ -10,11 +10,11 @@
   co = checkout
   cob = checkout -b
   d = diff
+  dc = diff --cached
   s = status
   lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
-  report = log --since='2 week ago' --until='yesterday' --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
-  pl = pull --rebase
-  ps = push -u
+  pr = pull --rebase
+  pu = push -u
 [push]
 	default = simple
 [color]
@@ -24,6 +24,11 @@
   interactive = auto
   ui = true
   pager = true
+[color "diff"]
+  meta = yellow bold
+  frag = magenta bold
+  old  = red bold
+  new  = green bold
 [core]
   editor = /usr/bin/vim
 	excludesfile = ~/.gitignore
