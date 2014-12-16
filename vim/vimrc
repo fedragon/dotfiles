@@ -282,9 +282,8 @@ autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 
 " Set filetype
 au BufRead,BufNewFile *.md                setlocal filetype=markdown
-au BufRead,BufNewFile project/*.scala     setlocal filetype=sbt
-au BufRead,BufNewFile project/*.sbt       setlocal filetype=sbt
-au BufRead,BufNewFile ^project/*.scala    setlocal filetype=scala
+au BufRead,BufNewFile *.sbt               setlocal filetype=sbt
+au BufRead,BufNewFile *.scala             setlocal filetype=scala
 
 """"""""""""""""""""""""""""""""""
 """ File manipulation settings """
