@@ -88,6 +88,7 @@ set number                  " Enable line numbers
 set autoread                " Refresh buffers if they were changed from outside
 set autowriteall            " Save on buffer switch
 set splitright              " Split new buffers to the right
+set splitbelow              " Split new buffers below
 set mouse=a                 " Enable mouse
 set encoding=utf8
 set nowrap
