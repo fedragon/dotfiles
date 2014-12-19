@@ -15,6 +15,7 @@ Plugin 'gmarik/Vundle.vim'                " Plugin manager
 Plugin 'godlygeek/tabular'                " Tabularize text
 Plugin 'kien/rainbow_parentheses.vim'     " Colorful parentheses
 Plugin 'rking/ag.vim'                     " Better grep
+Plugin 'scrooloose/nerdcommenter'         " Block comments
 Plugin 'scrooloose/syntastic'             " Syntax highlighting
 Plugin 'terryma/vim-expand-region'        " Expand selection
 Plugin 'tpope/vim-vinegar'                " Improved file explorer
