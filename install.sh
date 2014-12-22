@@ -12,7 +12,7 @@ git clone https://github.com/fedragon/dotfiles.git ~/Playground/dotfiles
 ./vim/install.sh
 ./haskell/install.sh
 
-./scala.sh
+./scala/install.sh
 
 ./symlinks.sh
 

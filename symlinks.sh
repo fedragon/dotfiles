@@ -22,3 +22,4 @@ ln -s ~/Playground/dotfiles/ctags ~/.ctags
 
 rm ~/.thymerc
 ln -s ~/Playground/dotfiles/thymerc ~/.thymerc
+
