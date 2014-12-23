@@ -251,6 +251,7 @@ nmap <silent> <Leader>pi :PluginInstall<CR>
 
 " Use ; to write commands, insteaf of :
 nnoremap ; :
+vnoremap ; :
 
 " Use jk to return to Normal Mode
 inoremap jk <Esc>
