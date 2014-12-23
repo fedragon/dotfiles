@@ -10,8 +10,11 @@ git clone https://github.com/fedragon/dotfiles.git ~/Playground/dotfiles
 ./powerline.sh
 ./tmux/install.sh
 ./vim/install.sh
-./haskell/install.sh
 
+./clojure/install.sh
+./clojurescript/install.sh
+./haskell/install.sh
+./javascript/install.sh
 ./scala/install.sh
 
 ./symlinks.sh
