@@ -51,8 +51,8 @@ Plugin 'xolox/vim-notes'
 Plugin 'xolox/vim-misc'                   " Required dependency
 
 " Scala
-Plugin 'mpollmeier/vim-scalaConceal'
 Plugin 'derekwyatt/vim-scala'             " Basic syntax highlighting
+Plugin 'fedragon/vim-scalaConceal'        " Fancy unicode symbols
 
 " Clojure
 Plugin 'guns/vim-clojure-highlight'       " Improved syntax highlighting
