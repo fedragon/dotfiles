@@ -51,8 +51,8 @@ Plugin 'xolox/vim-notes'
 Plugin 'xolox/vim-misc'                   " Required dependency
 
 " Scala
-Plugin 'derekwyatt/vim-scala'
 Plugin 'mpollmeier/vim-scalaConceal'
+Plugin 'derekwyatt/vim-scala'             " Basic syntax highlighting
 
 " Clojure
 Plugin 'guns/vim-clojure-highlight'       " Improved syntax highlighting
@@ -115,7 +115,7 @@ set guioptions+=a           " Copy highlighted text to system clipboard
 set guioptions-=r           " Remove scrollbars
 set guioptions-=L
 
-set noshowmode              " Hide the default mode text
+" set noshowmode              " Hide the default mode text
 
 set background=dark
 colorscheme gruvbox         " Set default color scheme
@@ -128,7 +128,7 @@ set expandtab               " Use spaces instead of tabs
 
 set laststatus=2            " Always show status bar
 
-set clipboard=unnamed
+set clipboard=unnamed       " Needed for clipboard integration
 
 let mapleader = "\<Space>"  " Remap leader to Space
 
@@ -218,7 +218,7 @@ set tags=.tags,tags,.git/tags
 let g:notes_directories = ['~/Notes']
 
 """ vim-scala """
-let g:scala_sort_across_groups = 1
+let g:scala_sort_across_groups = 1          " Sort imports in groups
 
 """ Rainbow parentheses """
 au VimEnter * RainbowParenthesesActivate
@@ -232,7 +232,7 @@ let g:paredit_electric_return = 1   " Insert an empty line if Enter is pressed b
 let g:paredit_smartjump       = 1   " When pressing '(' jump to the nearest '(', '[', '{'
 
 " Enable short mappings only for Clojure files (to avoid J, O and other " mappings to be permanently overwritten)
-au Filetype clojure let g:paredit_shortmaps=1
+au Filetype clojure let g:paredit_shortmaps = 1
 
 """ vim-expand-selection """
 vmap     v <Plug>(expand_region_expand)
