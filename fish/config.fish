@@ -1,7 +1,7 @@
 # Path to your oh-my-fish.
 set fish_path $HOME/.oh-my-fish
 
-# Theme (https://github.com/fedragon/oh-my-fish)
+# Theme
 set fish_theme robbyrussell
 
 # set fish_key_bindings fish_vi_key_bindings
@@ -23,3 +23,10 @@ powerline-daemon -q
 set fish_function_path $fish_function_path "/usr/local/lib/python2.7/site-packages/powerline/bindings/fish"
 
 powerline-setup
+
+# Environment variables
+switch (uname)
+  case Darwin
+    set -x JAVA_HOME (/usr/libexec/java_home)
+  case '*'
+end

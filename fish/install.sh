@@ -9,5 +9,7 @@ git clone https://github.com/fedragon/oh-my-fish.git ~/Playground/oh-my-fish
 ~/Playground/oh-my-fish/tools/install.sh | fish
 
 ## Custom functions
-rm ~/.oh-my-fish/functions/fish_greeting.fish
-cp ~/Playground/dotfiles/fish/fish_greeting.fish ~/.oh-my-fish/functions/fish_greeting.fish
+mkdir -p .config/fish/functions
+rm ~/.config/fish/functions/*
+
+cp ~/Playground/dotfiles/fish/functions/* ~/.config/fish/functions/
