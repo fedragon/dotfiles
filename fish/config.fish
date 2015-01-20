@@ -19,21 +19,5 @@ alias tmux="tmux -2"
 # Load oh-my-fish configuration.
 . $fish_path/oh-my-fish.fish
 
-# Environment variables
-set -x EDITOR vim
-set -x MAVEN_OPTS "-Xmx512m"
-
-# OS-specific configuration
-switch (uname)
-  case Darwin
-    # Powerline integration
-    powerline-daemon -q
-
-    set fish_function_path $fish_function_path "/usr/local/lib/python2.7/site-packages/powerline/bindings/fish"
-
-    powerline-setup
-    set -x JAVA_HOME (/usr/libexec/java_home)
-  case  Linux
-    set -x JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64
-  case '*'
-end
+# Load environment variables and components
+. env.fish

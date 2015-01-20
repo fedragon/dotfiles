@@ -1,4 +1,3 @@
 function stop_spark
-  set path (brew info apache-spark | grep /usr/local/Cellar/ | cut -d ' ' -f 1)
-  eval $path/libexec/sbin/stop-all.sh
+  eval $SPARK_HOME/libexec/sbin/stop-all.sh
 end
