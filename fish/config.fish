@@ -20,4 +20,22 @@ alias tmux="tmux -2"
 . $fish_path/oh-my-fish.fish
 
 # Load environment variables and components
-. env.fish
+
+set -x EDITOR vim
+set -x MAVEN_OPTS "-Xmx512m"
+
+switch (uname)
+  case Darwin
+    # Powerline integration
+
+    powerline-daemon -q
+    set fish_function_path $fish_function_path "/usr/local/lib/python2.7/site-packages/powerline/bindings/fish"
+    powerline-setup
+    # ---
+
+    set -x JAVA_HOME (/usr/libexec/java_home)
+    set -x SPARK_HOME (brew info apache-spark | grep /usr/local/Cellar/ | cut -d ' ' -f 1)
+  case  Linux
+    set -x JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64
+  case '*'
+end

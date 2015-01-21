@@ -1,6 +1,6 @@
 #!/usr/local/bin/fish
 
-~/Playground/dotfiles/fish/symlinks.sh
+ln -sf ~/Playground/dotfiles/fish/config.fish ~/.config/fish/config.fish
 
 ln -sf ~/Playground/dotfiles/git/gitconfig ~/.gitconfig
 ln -sf ~/Playground/dotfiles/git/gitignore ~/.gitignore
