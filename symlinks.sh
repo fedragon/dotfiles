@@ -1,25 +1,17 @@
 #!/usr/local/bin/fish
 
-rm ~/.config/fish/config.fish
-ln -s ~/Playground/dotfiles/fish/config.fish ~/.config/fish/config.fish
+~/Playground/dotfiles/fish/symlinks.sh
 
-rm ~/.gitconfig
-ln -s ~/Playground/dotfiles/git/gitconfig ~/.gitconfig
-rm ~/.gitignore
-ln -s ~/Playground/dotfiles/git/gitignore ~/.gitignore
+ln -sf ~/Playground/dotfiles/git/gitconfig ~/.gitconfig
+ln -sf ~/Playground/dotfiles/git/gitignore ~/.gitignore
 
-rm ~/.vimrc
-ln -s ~/Playground/dotfiles/vim/vimrc ~/.vimrc
+ln -sf ~/Playground/dotfiles/vim/vimrc ~/.vimrc
 
-rm ~/.oh-my-fish
-ln -s ~/Playground/oh-my-fish/ ~/.oh-my-fish
+ln -sf ~/Playground/oh-my-fish/ ~/.oh-my-fish
 
-rm ~/.tmux.conf
-ln -s ~/Playground/dotfiles/tmux/tmux.conf ~/.tmux.conf
+ln -sf ~/Playground/dotfiles/tmux/tmux.conf ~/.tmux.conf
 
-rm ~/.ctags
-ln -s ~/Playground/dotfiles/ctags ~/.ctags
+ln -sf ~/Playground/dotfiles/ctags ~/.ctags
 
-rm ~/.thymerc
-ln -s ~/Playground/dotfiles/thymerc ~/.thymerc
+ln -sf ~/Playground/dotfiles/thymerc ~/.thymerc
 
