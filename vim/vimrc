@@ -157,7 +157,7 @@ endif
 
 """ Syntastic """
 let g:syntastic_auto_loc_list=1
-let g:syntastic_mode_map = { "mode": "active", "passive_filetypes": ["sbt"] }
+let g:syntastic_mode_map = { "mode": "active", "passive_filetypes": ["sbt", "scala"] }
 
 map <silent> <Leader>e :Errors<CR>
 map <Leader>s :SyntasticToggleMode<CR>
