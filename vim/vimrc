@@ -34,6 +34,7 @@ Plugin 'Shougo/vimproc.vim'               " Required dependency
 
 " Git integration
 Plugin 'mhinz/vim-signify'                " Git info in gutter
+Plugin 'tpope/vim-fugitive'               " Git integration
 
 " Javascript
 Plugin 'jelera/vim-javascript-syntax'     " Syntax highlighting
