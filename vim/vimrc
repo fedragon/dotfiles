@@ -164,7 +164,7 @@ map <silent> <Leader>e :Errors<CR>
 map <Leader>s :SyntasticToggleMode<CR>
 
 """ Unite """
-call unite#custom#source('file,file/new,buffer,file_rec,file_rec/async', 'matchers', 'matcher_fuzzy')
+call unite#custom#source('file,file/new,buffer,file_rec,file_rec/async', 'matchers', ['matcher_fuzzy', 'converter_relative_word'])
 call unite#custom#source('file,file/new,buffer,file_rec,file_rec/async', 'sorters', 'sorter_rank')
 
 call unite#custom#source('file,file_rec,file_rec/async', 'ignore_pattern',
