@@ -54,9 +54,10 @@ Plugin 'xolox/vim-misc'                   " Required dependency
 
 " Scala
 Plugin 'derekwyatt/vim-scala'             " Basic syntax highlighting
-Plugin 'fedragon/vim-scalaConceal'        " Fancy unicode symbols
+Plugin 'fedragon/vim-scalaConceal'        " Fancy unicode symbols for Scala
 
 " Clojure
+Plugin 'fwolanski/vim-clojure-conceal'    " Fancy unicode symbols for Clojure
 Plugin 'guns/vim-clojure-highlight'       " Improved syntax highlighting
 Plugin 'guns/vim-clojure-static'          " Clojure syntax, basic indentation, indentation
 Plugin 'tpope/vim-fireplace'              " Evaluate code from a running repl
