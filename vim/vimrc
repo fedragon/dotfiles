@@ -21,8 +21,6 @@ Plugin 'scrooloose/syntastic'             " Syntax highlighting
 Plugin 'takac/vim-hardtime'               " Remove bad motion habits
 Plugin 'terryma/vim-expand-region'        " Expand selection
 Plugin 'tpope/vim-vinegar'                " Improved file explorer
-Plugin 'vim-scripts/paredit.vim'          " Easy parens management
-Plugin 'vim-scripts/taglist.vim'          " Navigate ctags
 
 " Color schemes
 Plugin 'morhetz/gruvbox'
@@ -62,6 +60,11 @@ Plugin 'fwolanski/vim-clojure-conceal'    " Fancy unicode symbols for Clojure
 Plugin 'guns/vim-clojure-highlight'       " Improved syntax highlighting
 Plugin 'guns/vim-clojure-static'          " Clojure syntax, basic indentation, indentation
 Plugin 'tpope/vim-fireplace'              " Evaluate code from a running repl
+Plugin 'vim-scripts/paredit.vim'          " Easy parens management
+
+" Ctags
+Plugin 'majutsushi/tagbar'                " Navigate ctags
+Plugin 'xolox/vim-easytags'               " Generate ctags
 
 " Tmux
 Plugin 'christoomey/vim-tmux-navigator'   " Navigate between vim splits and tmux panes
@@ -218,6 +221,11 @@ nnoremap <C-y> :Unite history/yank<cr>
 
 """ ctags """
 set tags=.tags,tags,.git/tags
+let g:easytags_events = ['BufReadPost', 'BufWritePost']
+let g:easytags_async = 1
+let g:easytags_dynamic_files = 2
+let g:easytags_resolve_links = 1
+let g:easytags_suppress_ctags_warning = 1
 
 "" vim-notes """
 let g:notes_directories = ['~/Notes']
@@ -296,6 +304,8 @@ if bufwinnr(1)
   nmap <Right> <C-w>>
   nmap <Left> <C-w><
 endif
+
+nmap <silent> <leader>b :TagbarToggle<CR>
 
 " thyme integration
 nmap <Leader>ts :!thyme -d<CR>
