@@ -1,5 +1,6 @@
 .DS\_Store
 *.sw?
+.idea/
 .tags
 target/
 vendor/
