@@ -263,13 +263,16 @@ let g:list_of_insert_keys = []
 " disable hardtime in unite & vim-vinegar buffers
 let g:hardtime_ignore_buffer_patterns = [ "[unite].*", "*/*" ]
 
+""" staircase
+" let g:staircase_use_sbt = 1
+
 """"""""""""""""
 """ Mappings """
 """"""""""""""""
 
 " Quickly edit and source ~/.vimrc
 nmap <silent> <Leader>ev :tabnew $MYVIMRC<CR>
-nmap <silent> <Leader>es :so $MYVIMRC<CR>
+nmap <silent> <Leader>sv :source $MYVIMRC<CR>
 
 " Quickly install new plugins
 nmap <silent> <Leader>pi :PluginInstall<CR>
