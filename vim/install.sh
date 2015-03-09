@@ -10,7 +10,7 @@ cd ~/.vim/bundle/vimproc.vim
 make
 cd -
 
-ln -s ~/Workspace/dotfiles/vim/vimrc ~/.vimrc
+ln -s ~/Playground/dotfiles/vim/vimrc ~/.vimrc
 
 # Ag.vim
 brew install the_silver_searcher
