@@ -4,7 +4,11 @@
 [credential]
   helper = cache --timeout=3600
 [alias]
+  a = add
   aa = add -A
+  b = branch
+  bd = branch -d
+  bD = branch -D
   c = commit -v
   cam = commit -a --amend -v
   co = checkout
