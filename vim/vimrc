@@ -73,9 +73,6 @@ Plugin 'christoomey/vim-tmux-navigator'   " Navigate between vim splits and tmux
 
 " Plugin 'tpope/vim-surround'               " Surround words
 
-" Angular
-" Plugin 'burnettk/vim-angular'
-
 " Haskell
 " Plugin 'bitc/vim-hdevtools'               " Provide type information
 " Plugin 'eagletmt/ghcmod-vim'              " Load buffer in ghc, infer types
@@ -306,10 +303,6 @@ if bufwinnr(1)
 endif
 
 nmap <silent> <leader>b :TagbarToggle<CR>
-
-" thyme integration
-nmap <Leader>ts :!thyme -d<CR>
-nmap <Leader>tb :!thyme -b<CR>
 
 """""""""""""""""""""""""""
 """ File types settings """
