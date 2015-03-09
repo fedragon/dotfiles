@@ -332,5 +332,5 @@ autocmd BufWritePre *.* :%s/\s\+$//e
 au FocusGained,BufEnter * :silent! !
 
 " Autosave on focus lost or when exiting the buffer
-au FocusLost,WinLeave * :silent! w
+" au FocusLost,WinLeave * :silent! w
 
