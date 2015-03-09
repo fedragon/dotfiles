@@ -18,7 +18,7 @@ Plugin 'rking/ag.vim'                     " Better grep
 Plugin 'Raimondi/delimitMate'             " Auto-close brackets
 Plugin 'scrooloose/nerdcommenter'         " Block comments
 Plugin 'scrooloose/syntastic'             " Syntax highlighting
-Plugin 'takac/vim-hardtime'               " Remove bad motion habits
+" Plugin 'takac/vim-hardtime'               " Remove bad motion habits
 Plugin 'terryma/vim-expand-region'        " Expand selection
 Plugin 'tpope/vim-vinegar'                " Improved file explorer
 
@@ -257,7 +257,7 @@ vmap     v <Plug>(expand_region_expand)
 vmap <C-v> <Plug>(expand_region_shrink)
 
 """ vim-hardtime """
-let g:hardtime_default_on = 1
+let g:hardtime_default_on = 0
 
 let g:list_of_normal_keys = ["h", "j", "k", "l"]
 let g:list_of_visual_keys = ["h", "j", "k", "l"]
