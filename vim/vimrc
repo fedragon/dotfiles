@@ -9,74 +9,59 @@ call plug#begin('~/.vim/plugged')
 """ Plugins """
 """""""""""""""
 
-Plug 'ervandew/supertab'                " Autocomplete with Tab
-Plug 'godlygeek/tabular'                " Tabularize text
-Plug 'kien/rainbow_parentheses.vim'     " Colorful parentheses
-Plug 'rking/ag.vim'                     " Better grep
-Plug 'Raimondi/delimitMate'             " Auto-close brackets
-Plug 'scrooloose/nerdcommenter'         " Block comments
-Plug 'scrooloose/syntastic'             " Syntax highlighting
-" Plug 'takac/vim-hardtime'               " Remove bad motion habits
-Plug 'terryma/vim-expand-region'        " Expand selection
-Plug 'tpope/vim-vinegar'                " Improved file explorer
+Plug 'ervandew/supertab'                                      " Autocomplete with Tab
+Plug 'godlygeek/tabular'                                      " Tabularize text
+Plug 'kien/rainbow_parentheses.vim'                           " Colorful parentheses
+Plug 'rking/ag.vim'                                           " Better grep
+Plug 'Raimondi/delimitMate'                                   " Auto-close brackets
+Plug 'scrooloose/nerdcommenter'                               " Block comments
+Plug 'scrooloose/syntastic'                                   " Syntax highlighting
+Plug 'terryma/vim-expand-region'                              " Expand selection
+Plug 'tpope/vim-vinegar'                                      " Improved file explorer
 
 " Color schemes
 Plug 'morhetz/gruvbox'
-Plug 'nanotech/jellybeans.vim'
+
 
 " Unite.vim
-Plug 'Shougo/vimproc.vim', {'do': 'make'} " Required dependency
-Plug 'Shougo/unite.vim'                   " Find files, grep & more
-Plug 'Shougo/neomru.vim'                  " Show recently opened files
+Plug 'Shougo/unite.vim'                                       " Find files, grep & more
+Plug 'Shougo/vimproc.vim', {'do': 'make'}                     " Required dependency
+" Plug 'Shougo/neomru.vim'                                    " Show recently opened files
 
 " Git integration
-Plug 'mhinz/vim-signify'                " Git info in gutter
-Plug 'tpope/vim-fugitive'               " Git integration
+Plug 'mhinz/vim-signify'                                      " Git info in gutter
+Plug 'tpope/vim-fugitive'                                     " Git integration
 
 " Javascript
-Plug 'jelera/vim-javascript-syntax'   , {'for': 'javascript'}  " Syntax highlighting
-Plug 'nathanaelkane/vim-indent-guides', {'for': 'javascript'}  " Show indent guides
-Plug 'pangloss/vim-javascript'        , {'for': 'javascript'}  " Highlighting + better indentation
-Plug 'walm/jshint.vim'                , {'for': 'javascript'}  " Hints
-
-" SASS
-Plug 'tpope/vim-haml'
+Plug 'jelera/vim-javascript-syntax'   , {'for': 'javascript'} " Syntax highlighting
+Plug 'nathanaelkane/vim-indent-guides', {'for': 'javascript'} " Show indent guides
+Plug 'pangloss/vim-javascript'        , {'for': 'javascript'} " Highlighting + better indentation
+Plug 'walm/jshint.vim'                , {'for': 'javascript'} " Hints
 
 " Fish
 Plug 'vim-scripts/fish-syntax'
 
 " Notes
 Plug 'xolox/vim-notes'
-Plug 'xolox/vim-misc'                   " Required dependency
+Plug 'xolox/vim-misc'                                         " Required dependency
 
 " Scala
-Plug 'derekwyatt/vim-scala'          , {'for': 'scala'}      " Basic syntax highlighting
-Plug 'fedragon/vim-scalaConceal'     , {'for': 'scala'}      " Fancy unicode symbols for Scala
+Plug 'derekwyatt/vim-scala'          , {'for': 'scala'}       " Basic syntax highlighting
+Plug 'fedragon/vim-scalaConceal'     , {'for': 'scala'}       " Fancy unicode symbols for Scala
 
 " Clojure
-Plug 'fwolanski/vim-clojure-conceal' , {'for': 'clojure'}    " Fancy unicode symbols for Clojure
-Plug 'guns/vim-clojure-highlight'    , {'for': 'clojure'}    " Improved syntax highlighting
-Plug 'guns/vim-clojure-static'       , {'for': 'clojure'}    " Clojure syntax, basic indentation, indentation
-Plug 'tpope/vim-fireplace'           , {'for': 'clojure'}    " Evaluate code from a running repl
-Plug 'vim-scripts/paredit.vim'       , {'for': 'clojure'}    " Easy parens management
+Plug 'fwolanski/vim-clojure-conceal' , {'for': 'clojure'}     " Fancy unicode symbols for Clojure
+Plug 'guns/vim-clojure-highlight'    , {'for': 'clojure'}     " Improved syntax highlighting
+Plug 'guns/vim-clojure-static'       , {'for': 'clojure'}     " Clojure syntax, basic indentation
+Plug 'tpope/vim-fireplace'           , {'for': 'clojure'}     " Evaluate code in a background repl
+Plug 'vim-scripts/paredit.vim'       , {'for': 'clojure'}     " Easy parens management
 
 " Ctags
-Plug 'majutsushi/tagbar'                " Navigate ctags
-Plug 'xolox/vim-easytags'               " Generate ctags
+Plug 'majutsushi/tagbar'                                      " Navigate ctags
+Plug 'xolox/vim-easytags'                                     " Generate ctags
 
 " Tmux
-Plug 'christoomey/vim-tmux-navigator'   " Navigate between vim splits and tmux panes
-
-""" Useful but currently not in use
-
-" Plugin 'tpope/vim-surround'               " Surround words
-
-" Haskell
-" Plugin 'bitc/vim-hdevtools'               " Provide type information
-" Plugin 'eagletmt/ghcmod-vim'              " Load buffer in ghc, infer types
-" Plugin 'eagletmt/neco-ghc'                " Auto completion
-" Plugin 'vim-scripts/Haskell-Conceal'      " Replace characters with unicode equivalents
-" Plugin 'wlangstroth/vim-haskell'          " syntax highlighting
+Plug 'christoomey/vim-tmux-navigator'                         " Seamless navigation between vim and tmux
 
 call plug#end()
 filetype plugin indent on
@@ -226,7 +211,7 @@ let g:easytags_suppress_ctags_warning = 1
 let g:notes_directories = ['~/Notes']
 
 """ vim-scala """
-let g:scala_sort_across_groups = 1          " Sort imports in groups
+let g:scala_sort_across_groups = 1
 
 """ Rainbow parentheses """
 au VimEnter * RainbowParenthesesActivate
@@ -250,19 +235,6 @@ au Filetype clojure let g:paredit_shortmaps = 1
 """ vim-expand-selection """
 vmap     v <Plug>(expand_region_expand)
 vmap <C-v> <Plug>(expand_region_shrink)
-
-""" vim-hardtime """
-let g:hardtime_default_on = 0
-
-let g:list_of_normal_keys = ["h", "j", "k", "l"]
-let g:list_of_visual_keys = ["h", "j", "k", "l"]
-let g:list_of_insert_keys = []
-
-" disable hardtime in unite & vim-vinegar buffers
-let g:hardtime_ignore_buffer_patterns = [ "[unite].*", "*/*" ]
-
-""" staircase
-" let g:staircase_use_sbt = 1
 
 """"""""""""""""
 """ Mappings """
@@ -305,6 +277,7 @@ if bufwinnr(1)
   nmap <Left> <C-w><
 endif
 
+" Toggle tagbar
 nmap <silent> <leader>b :TagbarToggle<CR>
 
 """""""""""""""""""""""""""
