@@ -1,16 +1,9 @@
 #!/usr/local/bin/fish
 
-mkdir -p ~/.vim/bundle
-mkdir -p ~/.vim/tmp
-
-git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-vim +PluginInstall +qall
-
-cd ~/.vim/bundle/vimproc.vim
-make
-cd -
-
+mkdir -p ~/.vim/autoload
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 ln -s ~/Playground/dotfiles/vim/vimrc ~/.vimrc
+vim +PlugInstall
 
 # Ag.vim
 brew install the_silver_searcher

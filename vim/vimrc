@@ -3,71 +3,69 @@ set shell=/bin/bash                       " required if using another shell
 set nocompatible
 filetype off
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+call plug#begin('~/.vim/plugged')
 
 """""""""""""""
 """ Plugins """
 """""""""""""""
 
-Plugin 'ervandew/supertab'                " Autocomplete with Tab
-Plugin 'gmarik/Vundle.vim'                " Plugin manager
-Plugin 'godlygeek/tabular'                " Tabularize text
-Plugin 'kien/rainbow_parentheses.vim'     " Colorful parentheses
-Plugin 'rking/ag.vim'                     " Better grep
-Plugin 'Raimondi/delimitMate'             " Auto-close brackets
-Plugin 'scrooloose/nerdcommenter'         " Block comments
-Plugin 'scrooloose/syntastic'             " Syntax highlighting
-" Plugin 'takac/vim-hardtime'               " Remove bad motion habits
-Plugin 'terryma/vim-expand-region'        " Expand selection
-Plugin 'tpope/vim-vinegar'                " Improved file explorer
+Plug 'ervandew/supertab'                " Autocomplete with Tab
+Plug 'godlygeek/tabular'                " Tabularize text
+Plug 'kien/rainbow_parentheses.vim'     " Colorful parentheses
+Plug 'rking/ag.vim'                     " Better grep
+Plug 'Raimondi/delimitMate'             " Auto-close brackets
+Plug 'scrooloose/nerdcommenter'         " Block comments
+Plug 'scrooloose/syntastic'             " Syntax highlighting
+" Plug 'takac/vim-hardtime'               " Remove bad motion habits
+Plug 'terryma/vim-expand-region'        " Expand selection
+Plug 'tpope/vim-vinegar'                " Improved file explorer
 
 " Color schemes
-Plugin 'morhetz/gruvbox'
-Plugin 'nanotech/jellybeans.vim'
+Plug 'morhetz/gruvbox'
+Plug 'nanotech/jellybeans.vim'
 
 " Unite.vim
-Plugin 'Shougo/neomru.vim'                " Show recently opened files
-Plugin 'Shougo/unite.vim'                 " Find files, grep & more
-Plugin 'Shougo/vimproc.vim'               " Required dependency
+Plug 'Shougo/vimproc.vim', {'do': 'make'} " Required dependency
+Plug 'Shougo/unite.vim'                   " Find files, grep & more
+Plug 'Shougo/neomru.vim'                  " Show recently opened files
 
 " Git integration
-Plugin 'mhinz/vim-signify'                " Git info in gutter
-Plugin 'tpope/vim-fugitive'               " Git integration
+Plug 'mhinz/vim-signify'                " Git info in gutter
+Plug 'tpope/vim-fugitive'               " Git integration
 
 " Javascript
-Plugin 'jelera/vim-javascript-syntax'     " Syntax highlighting
-Plugin 'nathanaelkane/vim-indent-guides'  " Show indent guides
-Plugin 'pangloss/vim-javascript'          " Highlighting + better indentation
-Plugin 'walm/jshint.vim'                  " Hints
+Plug 'jelera/vim-javascript-syntax'   , {'for': 'javascript'}  " Syntax highlighting
+Plug 'nathanaelkane/vim-indent-guides', {'for': 'javascript'}  " Show indent guides
+Plug 'pangloss/vim-javascript'        , {'for': 'javascript'}  " Highlighting + better indentation
+Plug 'walm/jshint.vim'                , {'for': 'javascript'}  " Hints
 
 " SASS
-Plugin 'tpope/vim-haml'
+Plug 'tpope/vim-haml'
 
 " Fish
-Plugin 'vim-scripts/fish-syntax'
+Plug 'vim-scripts/fish-syntax'
 
 " Notes
-Plugin 'xolox/vim-notes'
-Plugin 'xolox/vim-misc'                   " Required dependency
+Plug 'xolox/vim-notes'
+Plug 'xolox/vim-misc'                   " Required dependency
 
 " Scala
-Plugin 'derekwyatt/vim-scala'             " Basic syntax highlighting
-Plugin 'fedragon/vim-scalaConceal'        " Fancy unicode symbols for Scala
+Plug 'derekwyatt/vim-scala'          , {'for': 'scala'}      " Basic syntax highlighting
+Plug 'fedragon/vim-scalaConceal'     , {'for': 'scala'}      " Fancy unicode symbols for Scala
 
 " Clojure
-Plugin 'fwolanski/vim-clojure-conceal'    " Fancy unicode symbols for Clojure
-Plugin 'guns/vim-clojure-highlight'       " Improved syntax highlighting
-Plugin 'guns/vim-clojure-static'          " Clojure syntax, basic indentation, indentation
-Plugin 'tpope/vim-fireplace'              " Evaluate code from a running repl
-Plugin 'vim-scripts/paredit.vim'          " Easy parens management
+Plug 'fwolanski/vim-clojure-conceal' , {'for': 'clojure'}    " Fancy unicode symbols for Clojure
+Plug 'guns/vim-clojure-highlight'    , {'for': 'clojure'}    " Improved syntax highlighting
+Plug 'guns/vim-clojure-static'       , {'for': 'clojure'}    " Clojure syntax, basic indentation, indentation
+Plug 'tpope/vim-fireplace'           , {'for': 'clojure'}    " Evaluate code from a running repl
+Plug 'vim-scripts/paredit.vim'       , {'for': 'clojure'}    " Easy parens management
 
 " Ctags
-Plugin 'majutsushi/tagbar'                " Navigate ctags
-Plugin 'xolox/vim-easytags'               " Generate ctags
+Plug 'majutsushi/tagbar'                " Navigate ctags
+Plug 'xolox/vim-easytags'               " Generate ctags
 
 " Tmux
-Plugin 'christoomey/vim-tmux-navigator'   " Navigate between vim splits and tmux panes
+Plug 'christoomey/vim-tmux-navigator'   " Navigate between vim splits and tmux panes
 
 """ Useful but currently not in use
 
@@ -80,7 +78,7 @@ Plugin 'christoomey/vim-tmux-navigator'   " Navigate between vim splits and tmux
 " Plugin 'vim-scripts/Haskell-Conceal'      " Replace characters with unicode equivalents
 " Plugin 'wlangstroth/vim-haskell'          " syntax highlighting
 
-cal vundle#end()
+call plug#end()
 filetype plugin indent on
 
 """"""""""""""""""""""""
