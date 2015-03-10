@@ -273,7 +273,7 @@ nmap <silent> <Leader>ev :tabnew $MYVIMRC<CR>
 nmap <silent> <Leader>sv :source $MYVIMRC<CR>
 
 " Quickly install new plugins
-nmap <silent> <Leader>pi :PluginInstall<CR>
+nmap <silent> <Leader>pi :PlugInstall<CR>
 
 " Use ; to write commands, insteaf of :
 nnoremap ; :
