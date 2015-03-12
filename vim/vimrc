@@ -49,7 +49,7 @@ Plug 'xolox/vim-misc'                                         " Required depende
 
 " Scala
 Plug 'derekwyatt/vim-scala'          , {'for': 'scala'}       " Basic syntax highlighting
-Plug 'fedragon/vim-scalaConceal'     , {'for': 'scala'}       " Fancy unicode symbols for Scala
+" Plug 'fedragon/vim-scalaConceal'     , {'for': 'scala'}       " Fancy unicode symbols for Scala
 
 " Clojure
 Plug 'fwolanski/vim-clojure-conceal' , {'for': 'clojure'}     " Fancy unicode symbols for Clojure
