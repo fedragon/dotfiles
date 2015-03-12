@@ -2,7 +2,7 @@
 set fish_path $HOME/.oh-my-fish
 
 # Theme
-set fish_theme robbyrussell
+# set fish_theme robbyrussell
 
 alias tmux="tmux -2"
 
@@ -23,6 +23,9 @@ alias tmux="tmux -2"
 
 set -x EDITOR vim
 set -x MAVEN_OPTS "-Xmx512m"
+
+set -x LC_ALL "en_US.UTF-8"
+set -x LANG   "en_US.UTF-8"
 
 switch (uname)
   case Darwin
