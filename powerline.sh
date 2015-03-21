@@ -1,7 +1,7 @@
 #!/bin/sh
 
 brew install python
-pip install git+git://github.com/Lokaltog/powerline
+pip install powerline-status
 
 mkdir ~/.config/powerline
 cp -R /usr/local/lib/python2.7/site-packages/powerline/config_files/* ~/.config/powerline
