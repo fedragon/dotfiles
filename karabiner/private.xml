@@ -21,16 +21,6 @@
       </autogen>
     </item>
     <item>
-      <name>Disable CMD-Q in iTerm</name>
-      <identifier>user.iterm.cmdq</identifier>
-      <only>ITERM</only>
-      <autogen>
-        __KeyToKey__
-        KeyCode::Q, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND | ModifierFlag::NONE,
-        KeyCode::VK_NONE,
-      </autogen>
-    </item>
-    <item>
       <name>Disable CMD-R in iTerm</name>
       <identifier>user.iterm.cmdr</identifier>
       <only>ITERM</only>
@@ -39,52 +29,6 @@
         KeyCode::R, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND | ModifierFlag::NONE,
         KeyCode::VK_NONE,
       </autogen>
-    </item>
-  </item>
-  <item>
-    <name>Federico - Remap Arrow Keys to Option_R + WASD</name>
-    <item>
-      <name>Arrow up to Option_R + W</name>
-      <identifier>remap.arrowUpToOptionW</identifier>
-      <autogen>__KeyToKey__ KeyCode::W, ModifierFlag::OPTION_R, KeyCode::CURSOR_UP</autogen>
-    </item>
-    <item>
-      <name>Arrow left to Option_R + A</name>
-      <identifier>remap.arrowLeftToOptionA</identifier>
-      <autogen>__KeyToKey__ KeyCode::A, ModifierFlag::OPTION_R, KeyCode::CURSOR_LEFT</autogen>
-    </item>
-    <item>
-      <name>Arrow right to Option_R + D</name>
-      <identifier>remap.arrowRightToOptionD</identifier>
-      <autogen>__KeyToKey__ KeyCode::D, ModifierFlag::OPTION_R, KeyCode::CURSOR_RIGHT</autogen>
-    </item>
-    <item>
-      <name>Arrow down to Option_R + S</name>
-      <identifier>remap.arrowDownToOptionS</identifier>
-      <autogen>__KeyToKey__ KeyCode::S, ModifierFlag::OPTION_R, KeyCode::CURSOR_DOWN</autogen>
-    </item>
-  </item>
-  <item>
-    <name>Federico - Remap Arrow Keys to Fn + HJKL</name>
-    <item>
-      <name>Arrow up to Fn + K</name>
-      <identifier>remap.arrowUpToFnK</identifier>
-      <autogen>__KeyToKey__ KeyCode::K, ModifierFlag::FN, KeyCode::CURSOR_UP</autogen>
-    </item>
-    <item>
-      <name>Arrow left to Fn + H</name>
-      <identifier>remap.arrowLeftToFnH</identifier>
-      <autogen>__KeyToKey__ KeyCode::H, ModifierFlag::FN, KeyCode::CURSOR_LEFT</autogen>
-    </item>
-    <item>
-      <name>Arrow right to Fn + L</name>
-      <identifier>remap.arrowRightToFnL</identifier>
-      <autogen>__KeyToKey__ KeyCode::L, ModifierFlag::FN, KeyCode::CURSOR_RIGHT</autogen>
-    </item>
-    <item>
-      <name>Arrow down to Fn + J</name>
-      <identifier>remap.arrowDownToFnJ</identifier>
-      <autogen>__KeyToKey__ KeyCode::J, ModifierFlag::FN, KeyCode::CURSOR_DOWN</autogen>
     </item>
   </item>
 </root>
