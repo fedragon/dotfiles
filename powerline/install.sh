@@ -10,4 +10,3 @@ cp -R /usr/local/lib/python2.7/site-packages/powerline/config_files/* ~/.config/
 git clone https://github.com/Lokaltog/powerline-fonts.git
 
 echo "Don't forget to install Powerline patched fonts!"
-
