@@ -7,7 +7,7 @@ set -x LANG   "en_US.UTF-8"
 
 switch (uname)
   case Darwin
-    set fish_key_bindings fish_vi_key_bindings
+    set fish_key_bindings fish_user_key_bindings
     set fish_bind_mode insert
 
     # Powerline integration
