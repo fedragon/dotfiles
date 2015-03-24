@@ -1,4 +1,6 @@
 map -b ; :
 map -b : ;
+map -b J :bp<CR>
+map -b K :bn<CR>
 
 colorscheme solarized-dark
