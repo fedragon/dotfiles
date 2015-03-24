@@ -1,0 +1,4 @@
+map -b ; :
+map -b : ;
+
+colorscheme solarized-dark
