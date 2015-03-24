@@ -1,4 +1,4 @@
-#!/usr/local/bin/fish
+#!/bin/bash
 
 git clone https://github.com/yuroyoro/svm ~/.svm
 
@@ -13,4 +13,3 @@ brew install sbt
 ## SBT global plugins
 mkdir -p ~/.sbt/0.13/plugins
 ln -s ~/Playground/dotfiles/scala/plugins.sbt ~/.sbt/0.13/plugins/plugins.sbt
-

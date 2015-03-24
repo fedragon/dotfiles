@@ -1,4 +1,4 @@
-#!/usr/local/bin/fish
+#!/bin/bash
 
 cd ~/Playground
 git clone https://github.com/clojure/clojurescript.git

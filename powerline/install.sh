@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 brew install python
 pip install powerline-status
@@ -9,4 +9,7 @@ cp -R /usr/local/lib/python2.7/site-packages/powerline/config_files/* ~/.config/
 # Download Powerline patched fonts
 git clone https://github.com/Lokaltog/powerline-fonts.git
 
-echo "Don't forget to install Powerline patched fonts!"
+ln -sf ~/Playground/dotfiles/powerline/shell.json ~/.config/powerline/themes/shell/mine.json
+ln -sf ~/Playground/dotfiles/powerline/tmux.json ~/.config/powerline/themes/tmux/mine.json
+
+echo "TODO: manually install Powerline patched fonts!"

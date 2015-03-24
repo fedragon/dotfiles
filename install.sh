@@ -6,6 +6,8 @@
 mkdir -p ~/Playground
 git clone https://github.com/fedragon/dotfiles.git ~/Playground/dotfiles
 
+./git/symlinks.sh
+
 ./fish/install.sh
 ./powerline/install.sh
 ./tmux/install.sh
@@ -17,5 +19,4 @@ git clone https://github.com/fedragon/dotfiles.git ~/Playground/dotfiles
 ./javascript/install.sh
 ./scala/install.sh
 
-./symlinks.sh
-
+./ctags/install.sh
