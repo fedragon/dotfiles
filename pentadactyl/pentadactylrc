@@ -3,4 +3,6 @@ map -b : ;
 map -b J :bp<CR>
 map -b K :bn<CR>
 
-colorscheme solarized-dark
+colorscheme solarized-light
+
+highlight FontFixed -append font-size: 11pt !important;
