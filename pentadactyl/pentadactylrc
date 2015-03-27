@@ -1,7 +1,7 @@
 map -b ; :
 map -b : ;
-map -b j 5j<CR>
-map -b k 5k<CR>
+map -b j 3j<CR>
+map -b k 3k<CR>
 map -b J :bp<CR>
 map -b K :bn<CR>
 
