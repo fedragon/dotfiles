@@ -12,4 +12,4 @@ brew install sbt
 
 ## SBT global plugins
 mkdir -p ~/.sbt/0.13/plugins
-ln -s ~/Playground/dotfiles/scala/plugins.sbt ~/.sbt/0.13/plugins/plugins.sbt
+ln -s $(pwd)/plugins.sbt ~/.sbt/0.13/plugins/plugins.sbt

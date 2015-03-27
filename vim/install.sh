@@ -3,7 +3,7 @@
 mkdir -p ~/.vim/autoload
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-ln -sf ~/Playground/dotfiles/vim/vimrc ~/.vimrc
+ln -sf $(pwd)/vimrc ~/.vimrc
 vim +PlugInstall
 
 # Ag.vim

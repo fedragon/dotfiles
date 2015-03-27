@@ -2,4 +2,4 @@
 
 brew install tmux
 
-ln -sf ~/Playground/dotfiles/tmux/tmux.conf ~/.tmux.conf
+ln -sf $(pwd)/tmux.conf ~/.tmux.conf

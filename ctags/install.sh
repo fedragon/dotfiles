@@ -1,3 +1,3 @@
 #!/bin/bash
 
-ln -sf ~/Playground/dotfiles/ctags ~/.ctags
+ln -sf $(pwd)/ctags ~/.ctags

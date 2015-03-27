@@ -1,4 +1,4 @@
-#!/usr/local/bin/fish
+#!/bin/bash
 
-ln -sf ~/Playground/dotfiles/git/gitconfig ~/.gitconfig
-ln -sf ~/Playground/dotfiles/git/gitignore ~/.gitignore
+ln -sf $(pwd)/gitconfig ~/.gitconfig
+ln -sf $(pwd)/gitignore ~/.gitignore
