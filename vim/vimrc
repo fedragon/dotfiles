@@ -127,6 +127,14 @@ if has("gui_running")
     set guitablabel=%M\ %t
 endif
 
+" Enable persistent undo
+if exists("&undodir")
+    set undofile
+    let &undodir=&directory
+    set undolevels=500
+    set undoreload=500
+endif
+
 """"""""""""""""""""""""""""
 """ OS-specific settings """
 """"""""""""""""""""""""""""
