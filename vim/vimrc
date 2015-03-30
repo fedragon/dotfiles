@@ -259,11 +259,8 @@ let delimitMate_expand_cr = 1
 
 """ Paredit
 let g:paredit_leader          = '\'
-let g:paredit_electric_return = 0   " Insert an empty line if Enter is pressed before a closing paren
 let g:paredit_smartjump       = 1   " When pressing '(' jump to the nearest '(', '[', '{'
-
-" Enable short mappings only for Clojure files (to avoid J, O and other " mappings to be permanently overwritten)
-au Filetype clojure let g:paredit_shortmaps = 1
+let g:paredit_shortmaps       = 1
 
 """ vim-expand-selection
 vmap     v <Plug>(expand_region_expand)
