@@ -31,10 +31,15 @@
   ui = true
   pager = true
 [color "diff"]
-  meta = yellow bold
-  frag = magenta bold
-  old  = red bold
-  new  = green bold
+  meta = yellow
+  frag = magenta
+  old  = white red
+  new  = white green
+[color "interactive"]
+	prompt = black yellow
+	header = magenta
+	help = normal
+	error = normal
 [core]
   editor = /usr/bin/vim
 	excludesfile = ~/.gitignore
