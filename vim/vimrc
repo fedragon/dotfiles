@@ -15,7 +15,6 @@ Plug 'rking/ag.vim'                                           " Better grep
 Plug 'Raimondi/delimitMate'                                   " Auto-close brackets
 Plug 'scrooloose/nerdcommenter'                               " Block comments
 Plug 'scrooloose/syntastic'                                   " Syntax highlighting
-Plug 'terryma/vim-expand-region'                              " Expand selection
 Plug 'tpope/vim-vinegar'                                      " Improved file explorer
 
 " Color schemes
@@ -210,9 +209,6 @@ command! UniteClearCache call UniteClearCache()
 
 function! s:unite_settings()
   let b:SuperTabDisabled=1
-  imap <buffer><C-j> <Plug>(unite_select_next_line)
-  imap <buffer><C-k> <Plug>(unite_select_previous_line)
-
   imap <silent><buffer><expr> <C-s> unite#do_action('split')
   imap <silent><buffer><expr> <C-v> unite#do_action('vsplit')
   nmap <silent><buffer><expr> <C-s> unite#do_action('split')
@@ -261,10 +257,6 @@ let delimitMate_expand_cr = 1
 let g:paredit_leader          = '\'
 let g:paredit_smartjump       = 1   " When pressing '(' jump to the nearest '(', '[', '{'
 let g:paredit_shortmaps       = 1
-
-""" vim-expand-selection
-vmap     v <Plug>(expand_region_expand)
-vmap <C-v> <Plug>(expand_region_shrink)
 
 """"""""""""""""
 """ Mappings """
