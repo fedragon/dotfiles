@@ -6,6 +6,7 @@
 [alias]
   a = add
   aa = add -A
+  ap = add -p
   b = branch
   bd = branch -d
   bD = branch -D
@@ -13,6 +14,7 @@
   cam = commit -a --amend -v
   co = checkout
   cob = checkout -b
+  cot = checkout -t
   d = diff
   dc = diff --cached
   s = status
