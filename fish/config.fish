@@ -1,5 +1,6 @@
 # Load environment variables and components
 set -x EDITOR vim
+set -x SHELL  /usr/local/bin/fish
 set -x MAVEN_OPTS "-Xmx512m"
 
 set -x LC_ALL "en_US.UTF-8"
