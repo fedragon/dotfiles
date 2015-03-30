@@ -16,6 +16,7 @@ Plug 'Raimondi/delimitMate'                                   " Auto-close brack
 Plug 'scrooloose/nerdcommenter'                               " Block comments
 Plug 'scrooloose/syntastic'                                   " Syntax highlighting
 Plug 'tpope/vim-vinegar'                                      " Improved file explorer
+Plug 'xolox/vim-misc'                                         " Required dependency for vim-notes, vim-easytags
 
 " Color schemes
 Plug 'morhetz/gruvbox'
@@ -42,7 +43,6 @@ Plug 'vim-scripts/fish-syntax'
 
 " Notes
 Plug 'xolox/vim-notes'
-Plug 'xolox/vim-misc'                                         " Required dependency
 
 " Scala
 Plug 'derekwyatt/vim-scala'          , {'for': 'scala'}       " Basic syntax highlighting
