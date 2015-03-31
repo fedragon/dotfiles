@@ -31,10 +31,10 @@
   ui = true
   pager = true
 [color "diff"]
-  meta = blue
+  meta = white blue
   frag = magenta
-  old  = white red
-  new  = white green
+  old  = red
+  new  = green
 [color "interactive"]
 	prompt = black yellow
 	header = magenta
