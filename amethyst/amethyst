@@ -213,7 +213,7 @@
     "floating": [],
     "float-small-windows": true,
     "mouse-follows-focus": false,
-    "focus-follows-mouse": true,
+    "focus-follows-mouse": false,
     "enables-layout-hud": true,
     "enables-layout-hud-on-space-change": true
 }
