@@ -6,5 +6,5 @@ map -b J :bp<CR>
 map -b K :bn<CR>
 
 colorscheme solarized-light
-
 highlight FontFixed -append font-size: 11pt !important;
+set hintkeys="asdfghjkl"
