@@ -159,7 +159,7 @@ map <Leader>s :SyntasticToggleMode<CR>
 """ Unite
 
 " Grep in files
-nnoremap <C-/> :Unite grep:. <cr>
+nnoremap <C-g> :Unite grep:. <cr>
 
 if executable('ag')
   let s:ag_opts = '--smart-case --skip-vcs-ignores --hidden --depth 15 --nocolor --nogroup'
