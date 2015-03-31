@@ -31,7 +31,7 @@
   ui = true
   pager = true
 [color "diff"]
-  meta = yellow
+  meta = blue
   frag = magenta
   old  = white red
   new  = white green
