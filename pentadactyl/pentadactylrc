@@ -6,5 +6,11 @@ map -b J :bp<CR>
 map -b K :bn<CR>
 
 colorscheme solarized-light
+
+" customize fonts
 highlight FontFixed -append font-size: 11pt !important;
+highlight -a Hint font-size: 11pt !important;
+highlight -a Hint background-color: yellow !important;
+
+" only use the following set of keys to generate link hints
 set hintkeys="asdfghjkl"
