@@ -13,6 +13,8 @@ git clone https://github.com/fedragon/dotfiles.git ~/Playground/dotfiles
 ./tmux/install.sh
 ./vim/install.sh
 
+./karabiner/install.sh
+
 ./amethyst/install.sh
 
 ./clojure/install.sh
