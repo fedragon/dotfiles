@@ -10,6 +10,27 @@
     <productid>0x0611</productid>
   </deviceproductdef>
   <item>
+    <name>KBC Poker II</name>
+    <item>
+      <name>Escape Key to Backtick/Tilde</name>
+      <identifier>user.iterm.esc2backtick</identifier>
+      <device_only>DeviceVendor::KBC, DeviceProduct::POKERII</device_only>
+      <autogen>__KeyToKey__ KeyCode::ESCAPE, KeyCode::BACKQUOTE</autogen>
+    </item>
+    <item>
+      <name>Command_L to Option_L</name>
+      <identifier>user.iterm.cmdl2optl</identifier>
+      <device_only>DeviceVendor::KBC, DeviceProduct::POKERII</device_only>
+      <autogen>__KeyToKey__ KeyCode::COMMAND_L, KeyCode::OPTION_L</autogen>
+    </item>
+    <item>
+      <name>Option_L to Command_L</name>
+      <identifier>user.iterm.optl2cmdl</identifier>
+      <device_only>DeviceVendor::KBC, DeviceProduct::POKERII</device_only>
+      <autogen>__KeyToKey__ KeyCode::OPTION_L, KeyCode::COMMAND_L</autogen>
+    </item>
+  </item>
+  <item>
     <name>Ignore keys for iTerm2</name>
 
     <appdef>
@@ -38,21 +59,6 @@
         KeyCode::R, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND | ModifierFlag::NONE,
         KeyCode::VK_NONE,
       </autogen>
-    </item>
-  </item>
-  <item>
-    <name>KBC Poker II</name>
-    <item>
-      <name>Command_L to Option_L (only for Poker II keyboard)</name>
-      <identifier>user.iterm.cmdl2optl</identifier>
-      <device_only>DeviceVendor::KBC, DeviceProduct::POKERII</device_only>
-      <autogen>__KeyToKey__ KeyCode::COMMAND_L, KeyCode::OPTION_L</autogen>
-    </item>
-    <item>
-      <name>Option_L to Command_L (only for Poker II keyboard)</name>
-      <identifier>user.iterm.optl2cmdl</identifier>
-      <device_only>DeviceVendor::KBC, DeviceProduct::POKERII</device_only>
-      <autogen>__KeyToKey__ KeyCode::OPTION_L, KeyCode::COMMAND_L</autogen>
     </item>
   </item>
 </root>
