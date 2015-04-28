@@ -4,6 +4,10 @@ map -b j 3j<CR>
 map -b k 3k<CR>
 map -b J :bp<CR>
 map -b K :bn<CR>
+map -b <Up> <C-v><Up><CR>
+map -b <Down> <C-v><Down><CR>
+map -b <Left> <C-v><Left><CR>
+map -b <Right> <C-v><Right><CR>
 
 colorscheme solarized-light
 
