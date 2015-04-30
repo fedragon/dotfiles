@@ -29,7 +29,8 @@ Plug 'Shougo/unite.vim'                                       " Find files, grep
 Plug 'Shougo/vimproc.vim', {'do': 'make'}                     " Required dependency
 
 " Git integration
-Plug 'mhinz/vim-signify'                                      " Git info in gutter
+Plug 'airblade/vim-gitgutter'                                      " Git info in gutter
+"Plug 'mhinz/vim-signify'                                      " Git info in gutter
 Plug 'tpope/vim-fugitive'                                     " Git integration
 
 " Javascript
@@ -162,15 +163,18 @@ map <Leader>s :SyntasticToggleMode<CR>
 nnoremap <C-g> :Unite grep:. <cr>
 
 if executable('ag')
-  let s:ag_opts = '--smart-case --hidden --depth 15 --nocolor --nogroup'
+  let s:ag_opts = '--smart-case --hidden --depth 15 --nocolor --nogroup '.
+        \ '--ignore ".git" '.
+        \ '--ignore ".ivy2" '.
+        \ '--ignore ".m2" '
   let g:unite_source_rec_async_command = 'ag --follow '.s:ag_opts.' -g ""'
   let g:unite_source_grep_command = 'ag'
   let g:unite_source_grep_default_opts = '--ignore-case --line-numbers '.s:ag_opts
   let g:unite_source_grep_recursive_opt = ''
 else
   let g:unite_source_grep_command = 'grep'
+  let g:unite_source_grep_recursive_opt = ''
 endif
-let g:unite_source_grep_recursive_opt = ''
 
 " Navigate yank history
 let g:unite_source_history_yank_enable = 1
@@ -232,6 +236,10 @@ let g:paredit_leader          = '\'
 let g:paredit_electric_return = 0
 let g:paredit_smartjump       = 1   " When pressing '(' jump to the nearest '(', '[', '{'
 let g:paredit_shortmaps       = 1
+
+""" vim-gitgutter
+nmap <Leader>hk <Plug>GitGutterPrevHunk
+nmap <Leader>hj <Plug>GitGutterNextHunk
 
 """"""""""""""""
 """ Mappings """
