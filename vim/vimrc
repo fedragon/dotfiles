@@ -240,6 +240,8 @@ let g:paredit_shortmaps       = 1
 """ vim-gitgutter
 nmap <Leader>hk <Plug>GitGutterPrevHunk
 nmap <Leader>hj <Plug>GitGutterNextHunk
+nmap <Leader>hs <Plug>GitGutterStageHunk
+nmap <Leader>hr <Plug>GitGutterRevertHunk
 
 """"""""""""""""
 """ Mappings """
