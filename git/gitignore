@@ -1,6 +1,10 @@
-.DS\_Store
-*.sw?
-.idea/
-.tags
+/.idea/
+/project/boot/
+/project/plugins/project
 target/
-vendor/
+lib_managed/
+src_managed/
+test-output/
+*.iml
+.classpath_nb
+.tags
