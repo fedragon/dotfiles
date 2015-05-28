@@ -190,10 +190,10 @@ command! UniteClearCache call UniteClearCache()
 
 function! s:unite_settings()
   let b:SuperTabDisabled=1
-  imap <silent><buffer><expr> <C-s> unite#do_action('split')
-  imap <silent><buffer><expr> <C-v> unite#do_action('vsplit')
-  nmap <silent><buffer><expr> <C-s> unite#do_action('split')
-  nmap <silent><buffer><expr> <C-v> unite#do_action('vsplit')
+  inoremap <silent><buffer><expr> <C-s> unite#do_action('split')
+  inoremap <silent><buffer><expr> <C-v> unite#do_action('vsplit')
+  nnoremap <silent><buffer><expr> <C-s> unite#do_action('split')
+  nnoremap <silent><buffer><expr> <C-v> unite#do_action('vsplit')
 
   nmap <buffer> <Esc> <Plug>(unite_exit)
 endfunction
@@ -241,10 +241,10 @@ let g:paredit_smartjump       = 1   " When pressing '(' jump to the nearest '(',
 let g:paredit_shortmaps       = 1
 
 """ vim-gitgutter
-nmap <Leader>hk <Plug>GitGutterPrevHunk
-nmap <Leader>hj <Plug>GitGutterNextHunk
-nmap <Leader>hs <Plug>GitGutterStageHunk
-nmap <Leader>hr <Plug>GitGutterRevertHunk
+nnoremap <Leader>hk <Plug>GitGutterPrevHunk
+nnoremap <Leader>hj <Plug>GitGutterNextHunk
+nnoremap <Leader>hs <Plug>GitGutterStageHunk
+nnoremap <Leader>hr <Plug>GitGutterRevertHunk
 
 """ slimux
 nnoremap <Leader>sl :SlimuxREPLSendLine<CR>
@@ -256,12 +256,12 @@ nnoremap <leader>sb :SlimuxREPLSendBuffer<CR>
 """"""""""""""""
 
 " Quickly edit and source ~/.vimrc
-nmap <silent> <Leader>ev :tabnew $MYVIMRC<CR>
-nmap <silent> <Leader>sv :source $MYVIMRC<CR>
+nnoremap <silent> <Leader>ev :tabnew $MYVIMRC<CR>
+nnoremap <silent> <Leader>sv :source $MYVIMRC<CR>
 
 " Quickly install new plugins
-nmap <silent> <Leader>pi :PlugInstall<CR>
-nmap <silent> <Leader>pu :PlugUpdate<CR>
+nnoremap <silent> <Leader>pi :PlugInstall<CR>
+nnoremap <silent> <Leader>pu :PlugUpdate<CR>
 
 " Use ; to write commands, insteaf of :
 nnoremap ; :
@@ -271,28 +271,28 @@ vnoremap ; :
 inoremap jk <Esc>
 
 " clear search highlightings
-nmap <silent> <Leader>l :nohlsearch<CR>
+nnoremap <silent> <Leader>l :nohlsearch<CR>
 
 " clipboard shortcuts
-nmap <Leader>dd "+dd
-vmap <Leader>d "+d
-nmap <Leader>yy "+yy
-vmap <Leader>y "+y
-nmap <Leader>p "+p
-vmap <Leader>p "+p
-nmap <Leader>P "+P
-vmap <Leader>P "+P
+nnoremap <Leader>dd "+dd
+vnoremap <Leader>d "+d
+nnoremap <Leader>yy "+yy
+vnoremap <Leader>y "+y
+nnoremap <Leader>p "+p
+vnoremap <Leader>p "+p
+nnoremap <Leader>P "+P
+vnoremap <Leader>P "+P
 
 " resize split panes with arrows
 if bufwinnr(1)
-  nmap <Up> <C-w>+
-  nmap <Down> <C-w>-
-  nmap <Right> <C-w>>
-  nmap <Left> <C-w><
+  nnoremap <Up> <C-w>+
+  nnoremap <Down> <C-w>-
+  nnoremap <Right> <C-w>>
+  nnoremap <Left> <C-w><
 endif
 
 " Toggle tagbar
-nmap <silent> <leader>b :TagbarToggle<CR>
+nnoremap <silent> <leader>b :TagbarToggle<CR>
 
 """""""""""""""""""""""""""
 """ File types settings """
