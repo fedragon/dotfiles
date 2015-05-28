@@ -1,4 +1,4 @@
-set shell=/bin/bash                       " required if using another shell
+set shell=/bin/bash                                           " required if using another shell
 set nocompatible
 filetype off
 
@@ -29,8 +29,7 @@ Plug 'Shougo/unite.vim'                                       " Find files, grep
 Plug 'Shougo/vimproc.vim', {'do': 'make'}                     " Required dependency
 
 " Git integration
-Plug 'airblade/vim-gitgutter'                                      " Git info in gutter
-"Plug 'mhinz/vim-signify'                                      " Git info in gutter
+Plug 'airblade/vim-gitgutter'                                 " Git info in gutter
 Plug 'tpope/vim-fugitive'                                     " Git integration
 
 " Javascript
@@ -111,7 +110,7 @@ colorscheme gruvbox         " Set default color scheme
 set tabstop=2               " Soft tab indentation with 2 spaces
 set shiftwidth=2
 
-set smarttab
+set smarttab                " Use tabs at the beginning of line, spaces elsewhere
 set expandtab               " Use spaces instead of tabs
 
 set laststatus=2            " Always show status bar
