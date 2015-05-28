@@ -45,6 +45,9 @@ Plug 'vim-scripts/fish-syntax'
 " Notes
 Plug 'xolox/vim-notes'
 
+" Slimux
+Plug 'epeli/slimux'                                           " Send snippets to a REPL running in a Tmux pane
+
 " Scala
 Plug 'derekwyatt/vim-scala'          , {'for': 'scala'}       " Basic syntax highlighting
 " Plug 'fedragon/vim-scalaConceal'     , {'for': 'scala'}       " Fancy unicode symbols for Scala
@@ -154,8 +157,8 @@ endif
 let g:syntastic_auto_loc_list=1
 let g:syntastic_mode_map = { "mode": "active", "passive_filetypes": ["sbt", "scala"] }
 
-map <silent> <Leader>e :Errors<CR>
-map <Leader>s :SyntasticToggleMode<CR>
+nnoremap <silent> <Leader>se :Errors<CR>
+nnoremap <Leader>stm :SyntasticToggleMode<CR>
 
 """ Unite
 
@@ -242,6 +245,11 @@ nmap <Leader>hk <Plug>GitGutterPrevHunk
 nmap <Leader>hj <Plug>GitGutterNextHunk
 nmap <Leader>hs <Plug>GitGutterStageHunk
 nmap <Leader>hr <Plug>GitGutterRevertHunk
+
+""" slimux
+nnoremap <Leader>sl :SlimuxREPLSendLine<CR>
+vnoremap <Leader>ss :SlimuxREPLSendSelection<CR>
+nnoremap <leader>sb :SlimuxREPLSendBuffer<CR>
 
 """"""""""""""""
 """ Mappings """
