@@ -1,3 +1,3 @@
 function ll
-  command ls -laG $argv
+  ls -lhaG $argv
 end
