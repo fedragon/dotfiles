@@ -16,6 +16,7 @@ Plug 'Raimondi/delimitMate'                                   " Auto-close brack
 Plug 'scrooloose/nerdcommenter'                               " Block comments
 Plug 'scrooloose/syntastic'                                   " Syntax highlighting
 Plug 'tpope/vim-vinegar'                                      " Improved file explorer
+Plug 'vim-scripts/gitignore'                                  " Ignore files in gitignore
 Plug 'xolox/vim-misc'                                         " Required dependency for vim-notes, vim-easytags
 
 " Color schemes
@@ -199,9 +200,8 @@ endfunction
 autocmd FileType unite call s:unite_settings()
 
 """ CtrlP
-" let g:ctrlp_max_depth=20
 let g:ctrlp_max_files = 0
-let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+let g:ctrlp_user_command = ['.git', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_by_filename = 0
 let g:ctrlp_regexp = 0
@@ -240,10 +240,10 @@ let g:paredit_smartjump       = 1   " When pressing '(' jump to the nearest '(',
 let g:paredit_shortmaps       = 1
 
 """ vim-gitgutter
-nnoremap <Leader>hk <Plug>GitGutterPrevHunk
-nnoremap <Leader>hj <Plug>GitGutterNextHunk
-nnoremap <Leader>hs <Plug>GitGutterStageHunk
-nnoremap <Leader>hr <Plug>GitGutterRevertHunk
+nmap <Leader>hk <Plug>GitGutterPrevHunk
+nmap <Leader>hj <Plug>GitGutterNextHunk
+nmap <Leader>hs <Plug>GitGutterStageHunk
+nmap <Leader>hr <Plug>GitGutterRevertHunk
 
 """ slimux
 nnoremap <Leader>sl :SlimuxREPLSendLine<CR>
@@ -297,12 +297,6 @@ nnoremap <silent> <leader>b :TagbarToggle<CR>
 """ File types settings """
 """""""""""""""""""""""""""
 
-" Provide autocompletion options for tags in css, html files
-" (triggered with <C-x><C-o>)
-autocmd FileType css  set omnifunc=htmlcomplete#CompleteTags
-autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
-
-" Set filetype
 au BufRead,BufNewFile *.md                setlocal filetype=markdown
 au BufRead,BufNewFile *.sbt               setlocal filetype=sbt
 au BufRead,BufNewFile *.scala             setlocal filetype=scala
@@ -320,3 +314,17 @@ au FocusGained,BufEnter * :silent! !
 " Autosave on focus lost or when exiting the buffer
 " au FocusLost,WinLeave * :silent! w
 
+""""""""""""""""""""""""""""""""""
+""" Other functions            """
+""""""""""""""""""""""""""""""""""
+
+" vp doesn't replace paste buffer
+function! RestoreRegister()
+  let @" = s:restore_reg
+  return ''
+endfunction
+function! s:Repl()
+  let s:restore_reg = @"
+  return "p@=RestoreRegister()\<cr>"
+endfunction
+vmap <silent> <expr> p <sid>Repl()
