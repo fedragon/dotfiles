@@ -11,7 +11,6 @@ call plug#begin('~/.vim/plugged')
 Plug 'ervandew/supertab'                                      " Autocomplete with Tab
 Plug 'godlygeek/tabular'                                      " Tabularize text
 Plug 'kien/rainbow_parentheses.vim'                           " Colorful parentheses
-Plug 'rking/ag.vim'                                           " Better grep
 Plug 'Raimondi/delimitMate'                                   " Auto-close brackets
 Plug 'scrooloose/nerdcommenter'                               " Block comments
 Plug 'scrooloose/syntastic'                                   " Syntax highlighting
@@ -31,7 +30,6 @@ Plug 'Shougo/vimproc.vim', {'do': 'make'}                     " Required depende
 
 " Git integration
 Plug 'airblade/vim-gitgutter'                                 " Git info in gutter
-Plug 'tpope/vim-fugitive'                                     " Git integration
 
 " Javascript
 Plug 'jelera/vim-javascript-syntax'   , {'for': 'javascript'} " Syntax highlighting
@@ -50,7 +48,7 @@ Plug 'epeli/slimux'                                           " Send snippets to
 
 " Scala
 Plug 'derekwyatt/vim-scala'          , {'for': 'scala'}       " Basic syntax highlighting
-" Plug 'fedragon/vim-scalaConceal'     , {'for': 'scala'}       " Fancy unicode symbols for Scala
+Plug 'fedragon/vim-scalaConceal'     , {'for': 'scala'}       " Fancy unicode symbols for Scala
 
 " Clojure
 Plug 'fwolanski/vim-clojure-conceal' , {'for': 'clojure'}     " Fancy unicode symbols for Clojure
