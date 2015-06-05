@@ -12,6 +12,7 @@
   bD = branch -D
   c = commit -v
   cam = commit -a --amend -v
+  cm = commit --amend -v
   co = checkout
   cob = checkout -b
   cot = checkout -t
@@ -32,15 +33,15 @@
   ui = true
   pager = true
 [color "diff"]
-  meta = white blue
+  meta = blue
   frag = magenta
   old  = red
   new  = green
 [color "interactive"]
-	prompt = black yellow
+	prompt = yellow black
 	header = magenta
 	help = normal
-	error = normal
+	error = red black
 [core]
   editor = /usr/bin/vim
 	excludesfile = ~/.gitignore
