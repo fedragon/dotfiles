@@ -17,16 +17,20 @@
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
-     ;; auto-completion
+     auto-completion
+     '(company-mode :variables auto-completion-use-tab-instead-of-enter t)
      ;; better-defaults
+     clojure
      emacs-lisp
+     git
+     scala
+     themes-megapack
      ;; (git :variables
      ;;      git-gutter-use-fringe t)
      ;; markdown
      ;; org
      ;; shell
      ;; syntax-checking
-     themes-megapack
      )
    ;; List of additional packages that will be installed wihout being
    ;; wrapped in a layer. If you need some configuration for these
@@ -66,8 +70,7 @@ before layers configuration."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(gruvbox
-                         solarized-light
+   dotspacemacs-themes '(solarized-light
                          solarized-dark
                          leuven
                          monokai
@@ -148,7 +151,10 @@ before layers configuration."
    dotspacemacs-default-package-repository nil
    )
   ;; User initialization goes here
-  )
+  (setq-default
+   evil-escape-key-sequence "jk"
+   dotspacemacs-themes '(gruvbox))
+)
 
 (defun dotspacemacs/config ()
   "Configuration function.
