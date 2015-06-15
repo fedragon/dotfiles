@@ -10,6 +10,7 @@ git clone https://github.com/fedragon/dotfiles.git ~/Playground/dotfiles
 
 ./fish/install.sh
 ./powerline/install.sh
+./spacemacs/install.sh
 ./tmux/install.sh
 ./vim/install.sh
 
