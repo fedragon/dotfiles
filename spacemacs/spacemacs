@@ -22,11 +22,11 @@
      ;; better-defaults
      clojure
      emacs-lisp
-     git
+     (git :variables
+          git-gutter-use-fringe t)
      scala
+     spotify
      themes-megapack
-     ;; (git :variables
-     ;;      git-gutter-use-fringe t)
      ;; markdown
      ;; org
      ;; shell
@@ -151,9 +151,6 @@ before layers configuration."
    dotspacemacs-default-package-repository nil
    )
   ;; User initialization goes here
-  (setq-default
-   evil-escape-key-sequence "jk"
-   dotspacemacs-themes '(gruvbox))
 )
 
 (defun dotspacemacs/config ()
