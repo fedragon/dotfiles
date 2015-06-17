@@ -43,6 +43,6 @@
 	help = normal
 	error = red black
 [core]
-  editor = emacsclient
+  editor = emacsclient -t
 	excludesfile = ~/.gitignore
 
