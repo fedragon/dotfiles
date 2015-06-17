@@ -8,13 +8,13 @@ git clone https://github.com/fedragon/dotfiles.git ~/Playground/dotfiles
 
 ./git/symlinks.sh
 
+./karabiner/install.sh
+
 ./fish/install.sh
 ./powerline/install.sh
-./spacemacs/install.sh
 ./tmux/install.sh
 ./vim/install.sh
-
-./karabiner/install.sh
+./spacemacs/install.sh
 
 ./amethyst/install.sh
 
