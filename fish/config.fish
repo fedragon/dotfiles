@@ -1,5 +1,5 @@
 # Load environment variables and components
-set -x EDITOR vim
+set -x EDITOR "emacsclient -t"
 set -x SHELL  /usr/local/bin/fish
 set -x MAVEN_OPTS "-Xmx512m"
 
