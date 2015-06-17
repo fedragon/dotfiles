@@ -299,6 +299,9 @@ au BufRead,BufNewFile *.md                setlocal filetype=markdown
 au BufRead,BufNewFile *.sbt               setlocal filetype=sbt
 au BufRead,BufNewFile *.scala             setlocal filetype=scala
 
+" used for worksheets
+au BufRead,BufNewFile *.skala             setlocal filetype=scala
+
 """"""""""""""""""""""""""""""""""
 """ File manipulation settings """
 """"""""""""""""""""""""""""""""""
