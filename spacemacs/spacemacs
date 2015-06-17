@@ -27,6 +27,7 @@
      markdown
      scala
      shell-scripts
+     tmux
      ;; org
      ;; shell
      ;; syntax-checking
