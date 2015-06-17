@@ -22,6 +22,7 @@
      ;; better-defaults
      clojure
      emacs-lisp
+     fish-mode
      (git :variables
           git-gutter-use-fringe t)
      markdown
