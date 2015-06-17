@@ -24,13 +24,13 @@
      emacs-lisp
      (git :variables
           git-gutter-use-fringe t)
+     markdown
      scala
      spotify
+     ;; syntax-checking
      themes-megapack
-     ;; markdown
      ;; org
      ;; shell
-     ;; syntax-checking
      )
    ;; List of additional packages that will be installed wihout being
    ;; wrapped in a layer. If you need some configuration for these
@@ -157,7 +157,7 @@ before layers configuration."
   "Configuration function.
  This function is called at the very end of Spacemacs initialization after
 layers configuration."
-)
+  (global-linum-mode t))
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
