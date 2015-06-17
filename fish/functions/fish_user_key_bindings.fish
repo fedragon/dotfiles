@@ -1,7 +1,7 @@
 function fish_user_key_bindings
   fish_vi_key_bindings
 
-  bind -M insert -m default jk backward-char force-repaint
+  bind -M insert -m default fd backward-char force-repaint
 
   bind --erase \cf
   bind -M insert \cf end-of-line
