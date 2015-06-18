@@ -18,21 +18,21 @@
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
      auto-completion
-     '(company-mode :variables auto-completion-use-tab-instead-of-enter t)
-     ;; better-defaults
      clojure
+     (company-mode :variables
+                   auto-completion-use-tab-instead-of-enter t)
      emacs-lisp
      (git :variables
           git-gutter-use-fringe t)
      markdown
+     osx
      scala
+     (shell :variables
+            shell-default-shell 'ansi-term
+            shell-default-term-shell "/usr/local/bin/fish")
      shell-scripts
      themes-megapack
-     tmux
-     ;; org
-     ;; shell
-     ;; syntax-checking
-     )
+     tmux)
    ;; List of additional packages that will be installed wihout being
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages then consider to create a layer, you can also put the
