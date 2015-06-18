@@ -152,6 +152,8 @@ before layers configuration."
    dotspacemacs-default-package-repository nil
    )
   ;; User initialization goes here
+  ;; Escape using `jk`
+  (setq evil-escape-key-sequence "jk")
 )
 
 (defun dotspacemacs/config ()
