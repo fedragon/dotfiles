@@ -25,12 +25,13 @@
      (git :variables
           git-gutter-use-fringe t)
      markdown
-     osx
+     org
+     ;; osx
      scala
      (shell :variables
             shell-default-shell 'ansi-term
             shell-default-term-shell "/usr/local/bin/fish")
-     shell-scripts
+     shell-scripts   ;; fish support is defined here
      themes-megapack
      tmux)
    ;; List of additional packages that will be installed wihout being
@@ -164,7 +165,6 @@ layers configuration."
   (add-to-hooks 'linum-mode '(emacs-lisp-mode-hook))
   ;; Tab settings
   (setq-default tab-width 4 indent-tabs-mode nil)
-  (setq-default c-basic-offset 4 c-default-style "bsd")
   ;; Whitespace settings
   (setq whitespace-action '(auto-cleanup))
   (setq whitespace-style '(trailing space-before-tab indentation empty space-after-tab))
