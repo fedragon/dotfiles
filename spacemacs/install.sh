@@ -1,7 +1,7 @@
 #!/bin/bash
 
 brew tap railwaycat/emacsmacport
-brew install emacs-mac
+brew install emacs-mac --with-spacemacs-icon
 brew install coreutils
 
 git clone --recursive https://github.com/syl20bnr/spacemacs ~/.emacs.d
