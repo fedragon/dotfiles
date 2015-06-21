@@ -28,9 +28,10 @@
      org
      ;; osx
      scala
-     (shell :variables
-            shell-default-shell 'ansi-term
-            shell-default-term-shell "/usr/local/bin/fish")
+     search-engine
+     ;; (shell :variables
+     ;;        shell-default-shell 'ansi-term
+     ;;        shell-default-term-shell "/usr/local/bin/fish")
      shell-scripts   ;; fish support is defined here
      themes-megapack
      tmux
@@ -159,7 +160,8 @@ before layers configuration."
  This function is called at the very end of Spacemacs initialization after
 layers configuration."
   ;; Show line numbers
-  (add-to-hooks 'linum-mode '(emacs-lisp-mode-hook))
+  (global-hl-line-mode -1)
+  (global-linum-mode)
   ;; Tab settings
   (setq-default tab-width 4 indent-tabs-mode nil)
   ;; Whitespace settings
@@ -168,7 +170,6 @@ layers configuration."
   ;; Make evil-mode up/down operate in screen lines instead of logical lines
   (define-key evil-motion-state-map "j" 'evil-next-visual-line)
   (define-key evil-motion-state-map "k" 'evil-previous-visual-line)
-  ;; Also in visual mode
   (define-key evil-visual-state-map "j" 'evil-next-visual-line)
   (define-key evil-visual-state-map "k" 'evil-previous-visual-line)
   )
