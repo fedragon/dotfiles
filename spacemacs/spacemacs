@@ -21,19 +21,12 @@
 
      auto-completion
      clojure
-     (company-mode :variables
-                   auto-completion-use-tab-instead-of-enter t)
      emacs-lisp
      (git :variables
           git-gutter-use-fringe t)
      markdown
-     ;; org
-     ;; osx
      scala
      search-engine
-     ;; (shell :variables
-     ;;        shell-default-shell 'ansi-term
-     ;;        shell-default-term-shell "/usr/local/bin/fish")
      shell-scripts   ;; fish support is defined here
      themes-megapack
      tmux
