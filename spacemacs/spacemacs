@@ -17,6 +17,8 @@
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
+     fedragon
+
      auto-completion
      clojure
      (company-mode :variables
@@ -172,6 +174,8 @@ layers configuration."
   (define-key evil-motion-state-map "k" 'evil-previous-visual-line)
   (define-key evil-visual-state-map "j" 'evil-next-visual-line)
   (define-key evil-visual-state-map "k" 'evil-previous-visual-line)
+  ;; Jump to parent directory
+  ;; (define-key evil-motion-state-map "-" 'dired-jump)
   ;; Always ignore .class files
   (setq projectile-globally-ignored-file-suffixes '("class"))
   )
