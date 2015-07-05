@@ -21,13 +21,13 @@
 
      auto-completion
      clojure
+     diff-hl
      emacs-lisp
-     (git :variables
-          git-gutter-use-fringe t)
+     git
      markdown
      scala
      search-engine
-     shell-scripts   ;; fish support is defined here
+     shell-scripts   ;; fish syntax is defined here
      themes-megapack
      tmux
      )
@@ -41,7 +41,6 @@
    ;; If non-nil spacemacs will delete any orphan packages, i.e. packages that
    ;; are declared in a layer which is not a member of
    ;; the list `dotspacemacs-configuration-layers'
-   dotspacemacs-additional-packages '()
    dotspacemacs-delete-orphan-packages t))
 
 (defun dotspacemacs/init ()

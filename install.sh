@@ -1,4 +1,4 @@
-#!/bin/bash
+ #!/bin/bash
 
 ./homebrew.sh
 ./git/install.sh
