@@ -1,10 +1,12 @@
 #!/bin/bash
 
+# Homebrew & Cask
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+brew install caskroom/cask/brew-cask
 
+# Git (just the bare minimum required to clone)
 xcode-select --install
 brew install git
-brew install caskroom/cask/brew-cask
 
 mkdir -p ~/Playground
 git clone https://github.com/fedragon/dotfiles.git ~/Playground/dotfiles
@@ -23,3 +25,9 @@ cd ~/Playground/dotfiles
 ./amethyst/install.sh
 
 ./scala/install.sh
+
+brew install flux
+
+brew install firefox
+
+./pentadactyl/install.sh
