@@ -7,6 +7,7 @@ brew install caskroom/cask/brew-cask
 # Git (just the bare minimum required to clone)
 xcode-select --install
 brew install git
+brew install tig
 
 mkdir -p ~/Playground
 git clone https://github.com/fedragon/dotfiles.git ~/Playground/dotfiles
