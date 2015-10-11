@@ -1,0 +1,24 @@
+nnoremap ; :
+nnoremap : ;
+nnoremap j 3j<CR>
+nnoremap k 3k<CR>
+nnoremap J :bp<CR>
+nnoremap K :bn<CR>
+nnoremap <Up> <C-v><Up><CR>
+nnoremap <Down> <C-v><Down><CR>
+nnoremap <Left> <C-v><Left><CR>
+nnoremap <Right> <C-v><Right><CR>
+
+" only use the following set of keys to generate link hints
+set hintchars=hjklasdfgyuiopqwertnmzxcvb
+
+" increase font size in command line, hints & auto completions
+highlight CmdLine -append font-size: 11pt !important;
+highlight CompTitle -append font-size: 11pt !important;
+highlight CompDesc -append font-size: 11pt !important;
+highlight CompResult -append font-size: 11pt !important;
+highlight Hint -append font-size: 11pt !important;
+highlight HintElem -append font-size: 11pt !important;
+
+" change background color in hints
+highlight Hint -append background-color: red !important;
