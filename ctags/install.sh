@@ -1,3 +1,3 @@
 #!/bin/bash
 
-ln -sf $(pwd)/ctags ~/.ctags
+ln -sf $(pwd)/ctags/ctags ~/.ctags
