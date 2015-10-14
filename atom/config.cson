@@ -7,9 +7,6 @@
     packagesWithKeymapsDisabled: [
       "ex-mode"
     ]
-    disabledPackages: [
-      "symbols-view"
-    ]
   editor:
     invisibles: {}
     showInvisibles: true
