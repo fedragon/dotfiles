@@ -6,6 +6,7 @@
   core:
     packagesWithKeymapsDisabled: [
       "ex-mode"
+      "process-palette"
     ]
   editor:
     invisibles: {}
