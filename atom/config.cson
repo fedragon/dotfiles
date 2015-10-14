@@ -3,10 +3,6 @@
     userId: "d24989b1-c9e8-5791-7dda-c7c34a69e613"
   welcome:
     showOnStartup: false
-  "vim-mode-plus":
-    useClipboardAsDefaultRegister: true
-    useSmartcaseForSearch: true
-    incrementalSearch: true
   core:
     packagesWithKeymapsDisabled: [
       "ex-mode"
@@ -21,8 +17,7 @@
     useClipboardAsDefaultRegister: true
     useSmartcaseForSearch: true
   "symbols-view": {}
-  Ensime:
-    sbtExec: "/usr/local/bin/sbt"
   "file-icons": {}
-  "atom-ctags":
-    autoBuildTagsWhenActive: true
+  "fuzzy-finder":
+    preserveLastSearch: true
+    searchAllPanes: true
