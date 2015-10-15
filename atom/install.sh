@@ -7,3 +7,4 @@ apm install --packages-file $(pwd)/atom/packages
 mkdir -p ~/.atom
 ln -sf $(pwd)/atom/config.cson ~/.atom/config.cson
 ln -sf $(pwd)/atom/keymap.cson ~/.atom/keymap.cson
+ln -sf $(pwd)/atom/process-palette.json ~/.atom/process-palette.json
