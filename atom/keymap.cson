@@ -33,9 +33,16 @@
   'ctrl-l': 'window:focus-pane-on-right'
 
 'atom-text-editor.vim-mode.insert-mode':
-  'j k': 'vim-mode:activate-normal-mode'
+  'h t': 'vim-mode:activate-normal-mode'
 
 'atom-text-editor.vim-mode:not(.insert-mode)':
+  'd': 'vim-mode:move-left'
+  'h': 'vim-mode:move-down'
+  't': 'vim-mode:move-up'
+  'n': 'vim-mode:move-right'
+  'j': 'vim-mode:repeat-search'
+  'k': 'vim-mode:delete'
+  'l': 'vim-mode:till'
   ';': 'ex-mode:open'
 
 'body':
@@ -45,4 +52,4 @@
   'ctrl-l': 'window:focus-pane-on-right'
 
 '.platform-darwin':
-  'cmd-0': 'tree-view:toggle-focus'
+  'cmd-!': 'tree-view:toggle-focus'
