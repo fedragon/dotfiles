@@ -19,5 +19,3 @@
   "fuzzy-finder":
     preserveLastSearch: true
     searchAllPanes: true
-  "bracket-matcher":
-    autocompleteBrackets: false
