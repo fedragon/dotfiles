@@ -8,6 +8,10 @@
       "ex-mode"
       "process-palette"
     ]
+    disabledPackages: [
+      "ex-mode"
+      "vim-mode"
+    ]
   editor:
     invisibles: {}
     showInvisibles: true
@@ -19,3 +23,15 @@
   "fuzzy-finder":
     preserveLastSearch: true
     searchAllPanes: true
+  "bracket-matcher":
+    autocompleteBrackets: false
+  "find-and-replace":
+    focusEditorAfterSearch: true
+    openProjectFindResultsInRightPane: true
+    scrollToResultOnLiveSearch: true
+  "proto-repl":
+    leinPath: "/usr/local/bin/lein"
+  "vim-mode-plus":
+    useClipboardAsDefaultRegister: true
+    incrementalSearch: true
+    useSmartcaseForSearch: true
