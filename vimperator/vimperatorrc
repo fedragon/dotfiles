@@ -17,8 +17,4 @@ highlight CmdLine -append font-size: 11pt !important;
 highlight CompTitle -append font-size: 11pt !important;
 highlight CompDesc -append font-size: 11pt !important;
 highlight CompResult -append font-size: 11pt !important;
-highlight Hint -append font-size: 11pt !important;
-highlight HintElem -append font-size: 11pt !important;
-
-" change background color in hints
-highlight Hint -append background-color: red !important;
+highlight Hint font-size: 10px !important; background-color: red; color: black;
