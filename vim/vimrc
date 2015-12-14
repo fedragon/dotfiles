@@ -49,7 +49,6 @@ Plug 'epeli/slimux'                                           " Send snippets to
 " Scala
 Plug 'derekwyatt/vim-scala'          , {'for': 'scala'}       " Basic syntax highlighting
 "Plug 'fedragon/vim-scalaConceal'     , {'for': 'scala'}       " Fancy unicode symbols for Scala
-"Plug 'ensime/ensime-vim'             , {'for': 'scala'}
 
 " Clojure
 Plug 'fwolanski/vim-clojure-conceal' , {'for': 'clojure'}     " Fancy unicode symbols for Clojure
@@ -124,6 +123,7 @@ let mapleader="\<Space>"    " Remap leader to Space
 
 set showcmd                 " show partially-typed commands
 set wildmenu                " visual autocomplete for command menu
+set wildmode=longest,list,full
 
 set showmatch               " highlight matching parentheses
 
@@ -161,14 +161,9 @@ endif
 let g:syntastic_auto_loc_list=1
 let g:syntastic_mode_map = { "mode": "active", "passive_filetypes": ["sbt", "scala"] }
 
-nnoremap <silent> <Leader>se :Errors<CR>
-nnoremap <Leader>stm :SyntasticToggleMode<CR>
-
 """ Unite
 
-" Grep in files
-nnoremap <C-g> :Unite grep:. <cr>
-
+" Use The Silver Searcher
 if executable('ag')
   let s:ag_opts = '--smart-case --hidden --depth 15 --nocolor --nogroup '.
         \ '--ignore ".git" '.
@@ -185,7 +180,6 @@ endif
 
 " Navigate yank history
 let g:unite_source_history_yank_enable = 1
-nnoremap <C-y> :Unite history/yank<cr>
 
 function! UniteClearCache()
   let result = system("rm ~/.cache/unite -rf")
@@ -205,19 +199,19 @@ autocmd FileType unite call s:unite_settings()
 
 """ CtrlP
 let g:ctrlp_max_files = 0
-let g:ctrlp_user_command = ['.git', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+let g:ctrlp_user_command = ['.git', 'ag %s -l --nocolor -g ""']
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_by_filename = 0
 let g:ctrlp_regexp = 0
 let g:ctrlp_mruf_relative = 1
 
 """ ctags
-set tags=.tags,tags,.git/tags
-let g:easytags_events = ['BufReadPost', 'BufWritePost']
-let g:easytags_async = 1
-let g:easytags_dynamic_files = 2
-let g:easytags_resolve_links = 1
-let g:easytags_suppress_ctags_warning = 1
+set tags=.git/tags,.tags                                  " specify where tags should be stored
+let g:easytags_events = ['BufReadPost', 'BufWritePost']   " refresh tags for current file on read/write
+let g:easytags_async = 1                                  " run tags update asynchronously
+let g:easytags_dynamic_files = 2                          " create and write tags to a project tags file
+let g:easytags_resolve_links = 1                          " resolve symbolic links
+let g:easytags_suppress_ctags_warning = 0                 " suppress warnings
 
 "" vim-notes
 let g:notes_directories = ['~/Notes']
@@ -243,47 +237,28 @@ let g:paredit_electric_return = 0
 let g:paredit_smartjump       = 1   " When pressing '(' jump to the nearest '(', '[', '{'
 let g:paredit_shortmaps       = 1
 
-""" vim-gitgutter
-nmap <Leader>hk <Plug>GitGutterPrevHunk
-nmap <Leader>hj <Plug>GitGutterNextHunk
-nmap <Leader>hs <Plug>GitGutterStageHunk
-nmap <Leader>hr <Plug>GitGutterRevertHunk
-
-""" slimux
-nnoremap <Leader>sl :SlimuxREPLSendLine<CR>
-vnoremap <Leader>ss :SlimuxREPLSendSelection<CR>
-nnoremap <leader>sb :SlimuxREPLSendBuffer<CR>
-
 """"""""""""""""
 """ Mappings """
 """"""""""""""""
-
-" Quickly edit and source ~/.vimrc
-nnoremap <silent> <Leader>ev :tabnew $MYVIMRC<CR>
-nnoremap <silent> <Leader>sv :source $MYVIMRC<CR>
-
-" Quickly install new plugins
-nnoremap <silent> <Leader>pi :PlugInstall<CR>
-nnoremap <silent> <Leader>pu :PlugUpdate<CR>
 
 " Use ; to write commands, insteaf of :
 nnoremap ; :
 vnoremap ; :
 
-" highlight last inserted text
+" Do not copy the contents of an overwritten selection
+vnoremap p "_dP
+
+" Highlight last inserted text
 nnoremap gV `[v`]
 
-" make j,k jump to the wrapped part of a wrapped line, instead of jumping to the next
+" Make j,k jump to the wrapped part of a wrapped line, instead of jumping to the next
 nnoremap j gj
 nnoremap k gk
 
 " Use jk to return to Normal Mode
 inoremap jk <Esc>
 
-" clear search highlightings
-nnoremap <silent> <Leader>l :nohlsearch<CR>
-
-" clipboard shortcuts
+" Clipboard shortcuts
 nnoremap <Leader>dd "+dd
 vnoremap <Leader>d "+d
 nnoremap <Leader>yy "+yy
@@ -293,7 +268,7 @@ vnoremap <Leader>p "+p
 nnoremap <Leader>P "+P
 vnoremap <Leader>P "+P
 
-" disable arrow keys...
+" Disable arrow keys...
 nnoremap <up> <nop>
 nnoremap <down> <nop>
 nnoremap <left> <nop>
@@ -303,7 +278,7 @@ inoremap <down> <nop>
 inoremap <left> <nop>
 inoremap <right> <nop>
 
-" ...and use them resize split panes with arrows
+" ...and use them to resize split panes
 if bufwinnr(1)
   nnoremap <Up> <C-w>+
   nnoremap <Down> <C-w>-
@@ -311,8 +286,49 @@ if bufwinnr(1)
   nnoremap <Left> <C-w><
 endif
 
-" Toggle tagbar
-nnoremap <silent> <leader>b :TagbarToggle<CR>
+"""""""""""""""""""""""""""
+""""" Leader prefixes """""
+"""""""""""""""""""""""""""
+" Tagbar        | a
+" Vim-gitgutter | g
+" Syntastic     | n
+" PlugInstall   | p
+" Slimux        | s
+" Unite         | u
+" Vimrc         | v
+
+" Clear search highlightings
+nnoremap <silent> <Leader><Leader> :nohlsearch<CR>
+
+" Quickly edit and source ~/.vimrc
+nnoremap <silent> <Leader>ve :tabnew $MYVIMRC<CR>
+nnoremap <silent> <Leader>vs :source $MYVIMRC<CR>
+
+" Quickly install new plugins
+nnoremap <silent> <Leader>pi :PlugInstall<CR>
+nnoremap <silent> <Leader>pu :PlugUpdate<CR>
+
+""" Syntastic
+nnoremap <silent> <Leader>ne :Errors<CR>
+nnoremap <Leader>nm :SyntasticToggleMode<CR>
+
+""" Tagbar
+nnoremap <silent> <Leader>at :TagbarToggle<CR>
+
+""" Unite
+nnoremap <Leader>ug :Unite grep:. <cr>
+nnoremap <Leader>uy :Unite history/yank<cr>
+
+""" vim-gitgutter
+nmap <Leader>gk <Plug>GitGutterPrevHunk
+nmap <Leader>gj <Plug>GitGutterNextHunk
+nmap <Leader>gs <Plug>GitGutterStageHunk
+nmap <Leader>gr <Plug>GitGutterRevertHunk
+
+""" slimux
+nnoremap <Leader>sl :SlimuxREPLSendLine<CR>
+vnoremap <Leader>ss :SlimuxREPLSendSelection<CR>
+nnoremap <leader>sb :SlimuxREPLSendBuffer<CR>
 
 """""""""""""""""""""""""""
 """ File types settings """
@@ -334,21 +350,3 @@ autocmd BufWritePre *.* :%s/\s\+$//e
 
 " Reload when entering buffer or gaining focus
 au FocusGained,BufEnter * :silent! !
-
-" Autosave on focus lost or when exiting the buffer
-" au FocusLost,WinLeave * :silent! w
-
-""""""""""""""""""""""""""""""""""
-""" Other functions            """
-""""""""""""""""""""""""""""""""""
-
-" vp doesn't replace paste buffer
-function! RestoreRegister()
-  let @" = s:restore_reg
-  return ''
-endfunction
-function! s:Repl()
-  let s:restore_reg = @"
-  return "p@=RestoreRegister()\<cr>"
-endfunction
-vmap <silent> <expr> p <sid>Repl()
