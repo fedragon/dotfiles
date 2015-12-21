@@ -13,6 +13,7 @@ Plug 'godlygeek/tabular'                                      " Tabularize text
 Plug 'kien/rainbow_parentheses.vim'                           " Colorful parentheses
 Plug 'Raimondi/delimitMate'                                   " Auto-close brackets
 Plug 'scrooloose/nerdcommenter'                               " Block comments
+Plug 'scrooloose/nerdtree'                                    " File tree
 Plug 'scrooloose/syntastic'                                   " Syntax highlighting
 Plug 'tpope/vim-vinegar'                                      " Improved file explorer
 Plug 'vim-scripts/gitignore'                                  " Ignore files in gitignore
@@ -211,7 +212,7 @@ let g:easytags_events = ['BufReadPost', 'BufWritePost']   " refresh tags for cur
 let g:easytags_async = 1                                  " run tags update asynchronously
 let g:easytags_dynamic_files = 2                          " create and write tags to a project tags file
 let g:easytags_resolve_links = 1                          " resolve symbolic links
-let g:easytags_suppress_ctags_warning = 0                 " suppress warnings
+let g:easytags_suppress_ctags_warning = 1                 " suppress warnings
 
 "" vim-notes
 let g:notes_directories = ['~/Notes']
@@ -249,7 +250,7 @@ vnoremap ; :
 vnoremap p "_dP
 
 " Highlight last inserted text
-nnoremap gV `[v`]
+"nnoremap gV `[v`]
 
 " Make j,k jump to the wrapped part of a wrapped line, instead of jumping to the next
 nnoremap j gj
@@ -297,6 +298,9 @@ endif
 " Unite         | u
 " Vimrc         | v
 
+" Toggle NerdTree
+map <C-\> :NERDTreeToggle<CR>
+
 " Clear search highlightings
 nnoremap <silent> <Leader><Leader> :nohlsearch<CR>
 
@@ -316,14 +320,16 @@ nnoremap <Leader>nm :SyntasticToggleMode<CR>
 nnoremap <silent> <Leader>at :TagbarToggle<CR>
 
 """ Unite
-nnoremap <Leader>ug :Unite grep:. <cr>
-nnoremap <Leader>uy :Unite history/yank<cr>
+nnoremap <Leader>ug :Unite grep:. <CR>
+nnoremap <Leader>uw :UniteWithCursorWord grep:. <CR>
+nnoremap <Leader>uy :Unite history/yank<CR>
 
 """ vim-gitgutter
 nmap <Leader>gk <Plug>GitGutterPrevHunk
 nmap <Leader>gj <Plug>GitGutterNextHunk
-nmap <Leader>gs <Plug>GitGutterStageHunk
+nmap <Leader>gp <Plug>GitGutterPreviewHunk
 nmap <Leader>gr <Plug>GitGutterRevertHunk
+nmap <Leader>gs <Plug>GitGutterStageHunk
 
 """ slimux
 nnoremap <Leader>sl :SlimuxREPLSendLine<CR>
@@ -350,3 +356,4 @@ autocmd BufWritePre *.* :%s/\s\+$//e
 
 " Reload when entering buffer or gaining focus
 au FocusGained,BufEnter * :silent! !
+
