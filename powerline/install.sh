@@ -10,6 +10,5 @@ cp -R /usr/local/lib/python2.7/site-packages/powerline/config_files/* ~/.config/
 git clone https://github.com/Lokaltog/powerline-fonts.git
 
 ln -sf $(pwd)/powerline/shell.json ~/.config/powerline/themes/shell/mine.json
-ln -sf $(pwd)/powerline/tmux.json ~/.config/powerline/themes/tmux/mine.json
 
 echo "TODO: manually install Powerline patched fonts!"
