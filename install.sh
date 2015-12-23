@@ -23,6 +23,7 @@ cd ~/Playground/dotfiles
 ./powerline/install.sh
 ./tmux/install.sh
 ./atom/install.sh
+./kwm/install.sh
 
 ./amethyst/install.sh
 

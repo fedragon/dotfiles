@@ -1,0 +1,5 @@
+#!/bin/bash
+
+pushd ~/Playground/kwm/bin
+./kwm
+popd
