@@ -143,6 +143,11 @@ if exists("&undodir")
     set undoreload=500
 endif
 
+" Let `%` jump to closing xml/html tag, if/else, ...
+if !exists('g:loaded_matchit')
+  runtime macros/matchit.vim
+endif
+
 """"""""""""""""""""""""""""
 """ OS-specific settings """
 """"""""""""""""""""""""""""
