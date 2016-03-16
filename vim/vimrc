@@ -15,7 +15,7 @@ Plug 'Raimondi/delimitMate'                                   " Auto-close brack
 Plug 'scrooloose/nerdcommenter'                               " Block comments
 Plug 'scrooloose/nerdtree'                                    " File tree
 Plug 'scrooloose/syntastic'                                   " Syntax highlighting
-Plug 'tpope/vim-vinegar'                                      " Improved file explorer
+"Plug 'tpope/vim-vinegar'                                      " Improved file explorer
 Plug 'vim-scripts/gitignore'                                  " Ignore files in gitignore
 Plug 'xolox/vim-misc'                                         " Required dependency for vim-notes, vim-easytags
 
@@ -297,14 +297,16 @@ endif
 """""""""""""""""""""""""""
 " Tagbar        | a
 " Vim-gitgutter | g
-" Syntastic     | n
+" NERDTree      | n
+" Syntastic     | t
 " PlugInstall   | p
 " Slimux        | s
 " Unite         | u
 " Vimrc         | v
 
 " Toggle NerdTree
-map <C-\> :NERDTreeToggle<CR>
+noremap <Leader>nt :NERDTreeToggle<CR>
+noremap <Leader>nf :NERDTreeFind<CR>
 
 " Clear search highlightings
 nnoremap <silent> <Leader><Leader> :nohlsearch<CR>
@@ -318,8 +320,8 @@ nnoremap <silent> <Leader>pi :PlugInstall<CR>
 nnoremap <silent> <Leader>pu :PlugUpdate<CR>
 
 """ Syntastic
-nnoremap <silent> <Leader>ne :Errors<CR>
-nnoremap <Leader>nm :SyntasticToggleMode<CR>
+nnoremap <silent> <Leader>te :Errors<CR>
+nnoremap <Leader>tm :SyntasticToggleMode<CR>
 
 """ Tagbar
 nnoremap <silent> <Leader>at :TagbarToggle<CR>
