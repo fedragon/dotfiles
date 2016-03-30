@@ -341,6 +341,7 @@ nmap <Leader>gs <Plug>GitGutterStageHunk
 """ slimux
 nnoremap <Leader>sl :SlimuxREPLSendLine<CR>
 vnoremap <Leader>ss :SlimuxREPLSendSelection<CR>
+nnoremap <Leader>sp :SlimuxREPLSendParagraph<CR>
 nnoremap <leader>sb :SlimuxREPLSendBuffer<CR>
 
 """""""""""""""""""""""""""
