@@ -12,14 +12,8 @@ switch (uname)
     set fish_key_bindings fish_user_key_bindings
     set fish_bind_mode insert
 
-    # Powerline integration
-    powerline-daemon -q
-    set fish_function_path $fish_function_path "/usr/local/lib/python2.7/site-packages/powerline/bindings/fish"
-    powerline-setup
-    # ---
-
     set -x JAVA_HOME (/usr/libexec/java_home)
-    set -x SPARK_HOME (brew info apache-spark | grep /usr/local/Cellar/ | cut -d ' ' -f 1)
+    set -x SPARK_HOME (brew info apache-spark | grep '/usr/local/Cellar/' | cut -d ' ' -f 1)"/libexec/"
   case  Linux
     set -x JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64
   case '*'

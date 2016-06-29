@@ -1,10 +1,13 @@
 #!/bin/bash
 
 # Fish
-brew install fish
+brew reinstall --HEAD fish
 chsh -s /usr/local/bin/fish
 
 mkdir -p ~/.config/fish
+
+## Oh My Fish
+curl -L https://github.com/oh-my-fish/oh-my-fish/raw/master/bin/install | fish
 
 ln -sf $(pwd)/fish/config.fish ~/.config/fish/config.fish
 
@@ -13,8 +16,3 @@ mkdir -p ~/.config/fish/functions
 rm ~/.config/fish/functions/*
 
 cp $(pwd)/fish/functions/* ~/.config/fish/functions/
-
-## Completions
-mkdir -p ~/.config/fish/completions
-rm ~/.config/fish/completions/*
-cp $(pwd)/fish/completions/* ~/.config/fish/completions/
