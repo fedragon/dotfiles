@@ -20,7 +20,6 @@ cd ~/Playground/dotfiles
 
 ./fish/install.sh
 ./vim/install.sh
-./powerline/install.sh
 ./tmux/install.sh
 ./atom/install.sh
 ./kwm/install.sh
