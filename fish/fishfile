@@ -5,3 +5,4 @@ fisherman/host_info
 fisherman/humanize_duration
 fisherman/last_job_id
 fisherman/pwd_is_home
+oh-my-fish/plugin-sublime
