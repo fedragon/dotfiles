@@ -13,9 +13,6 @@ switch (uname)
     set fish_bind_mode insert
 
     set -x JAVA_HOME (/usr/libexec/java_home)
-    set -x SPARK_HOME (brew info apache-spark | grep '/usr/local/Cellar/' | cut -d ' ' -f 1)"/libexec/"
-  case  Linux
-    set -x JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64
   case '*'
 end
 
