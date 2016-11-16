@@ -90,12 +90,6 @@ ctrl + shift - x         :    kwmc window -m mark
 # Move Focused Window To Space
 cmd + ctrl - u        :    kwmc window -m space left
 cmd + ctrl - o        :    kwmc window -m space right
-cmd + ctrl - 1        :    kwmc window -m space 1
-cmd + ctrl - 2        :    kwmc window -m space 2
-cmd + ctrl - 3        :    kwmc window -m space 3
-cmd + ctrl - 4        :    kwmc window -m space 4
-cmd + ctrl - 5        :    kwmc window -m space 5
-cmd + ctrl - 6        :    kwmc window -m space 6
 
 # Move Focused Window To Screen
 ctrl + alt - 1           :    kwmc window -m display 0
