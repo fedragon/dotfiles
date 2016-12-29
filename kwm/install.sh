@@ -7,6 +7,6 @@ brew install koekeishiya/khd/khd
 
 mkdir -p ~/.kwm
 
-ln -sf "$src/kwm/khdrc" ~/.khdrc
+ln -sf "$src/kwm/khdrc" ~/.kwm/khdrc
 ln -sf "$src/kwm/kwmrc" ~/.kwm/kwmrc
 
