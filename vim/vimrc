@@ -19,6 +19,8 @@ Plug 'scrooloose/syntastic'                                   " Syntax highlight
 Plug 'vim-scripts/gitignore'                                  " Ignore files in gitignore
 Plug 'xolox/vim-misc'                                         " Required dependency for vim-notes, vim-easytags
 
+Plug 'vimwiki/vimwiki'
+
 " Color schemes
 Plug 'morhetz/gruvbox'
 
