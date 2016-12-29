@@ -21,17 +21,12 @@ cd ~/Playground/dotfiles
 ./fish/install.sh
 ./vim/install.sh
 ./tmux/install.sh
-./atom/install.sh
 ./kwm/install.sh
 
-./amethyst/install.sh
-
 ./scala/install.sh
-./ctags/install.sh
 
 ./sublime-text/install.sh
 
 brew cask install flux
 
 brew cask install firefox
-./vimperator/install.sh
