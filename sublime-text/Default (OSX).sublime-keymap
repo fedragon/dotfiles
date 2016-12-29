@@ -1,0 +1,66 @@
+[
+	{
+		"keys": [";"],
+		"command": "show_overlay",
+		"args": {"overlay": "command_palette", "text": ":"},
+		"context": [{"key": "setting.command_mode"}]
+	},
+  {
+    "keys": ["ctrl+\\"],
+    "command": "dired",
+    "args": {
+      "immediate": true,
+      "other_group": "left",
+      "project": true
+    }
+  },
+  {
+    "keys": ["ctrl+shift+super+p"],
+    "command": "project_manager",
+    "args": {
+      "action": "new"
+    }
+  },
+	{ "keys": ["ctrl+]"], "command": "goto_definition" },
+  { "keys": ["ctrl+["], "command": "jump_back" },
+
+  { "keys": ["ctrl+h"], "command": "focus_group", "args": { "group": 0 } },
+  { "keys": ["ctrl+l"], "command": "focus_group", "args": { "group": 1 } },
+
+  { "keys": ["alt+]"], "command": "move_to_neighboring_group" },
+  { "keys": ["alt+["], "command": "move_to_neighboring_group", "args": {"forward": false} },
+
+  // One column, one row
+  {
+    "keys": ["ctrl+w", "q"],
+    "command": "set_layout",
+    "args":
+    {
+      "cols": [0.0, 1.0],
+      "rows": [0.0, 1.0],
+      "cells": [[0, 0, 1, 1]]
+    }
+  },
+  // Two columns
+  {
+    "keys": ["ctrl+w", "v"],
+    "command": "set_layout",
+    "args":
+    {
+      "cols": [0.0, 0.5, 1.0],
+      "rows": [0.0, 1.0],
+      "cells": [[0, 0, 1, 1], [1, 0, 2, 1]]
+    }
+  },
+  // Two rows
+  {
+    "keys": ["ctrl+w", "s"],
+    "command": "set_layout",
+    "args":
+    {
+      "cols": [0.0, 1.0],
+      "rows": [0.0, 0.5, 1.0],
+      "cells": [[0, 0, 1, 1], [0, 1, 1, 2]]
+    }
+  }
+]

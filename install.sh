@@ -29,6 +29,8 @@ cd ~/Playground/dotfiles
 ./scala/install.sh
 ./ctags/install.sh
 
+./sublime-text/install.sh
+
 brew cask install flux
 
 brew cask install firefox

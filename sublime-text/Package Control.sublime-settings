@@ -6,17 +6,22 @@
 	"installed_packages":
 	[
 		"All Autocomplete",
+		"Colorsublime",
+		"Elm Language Support",
 		"FileBrowser",
-		"FileCommands",
+		"GitGutter",
 		"GitGutter-Edge",
+		"Indent XML",
+		"Markdown Preview",
 		"MarkdownLight",
+		"Materialize",
+		"OmniMarkupPreviewer",
 		"Package Control",
 		"Pretty JSON",
-		"Project Manager",
+		"ProjectManager",
 		"Rainbowth",
-		"Scala Syntax",
-		"Sublime Files",
 		"SublimeGit",
+		"Sublimerge 3",
 		"Vintageous"
 	]
 }

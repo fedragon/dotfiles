@@ -1,15 +1,31 @@
 {
 	"auto_match_enabled": false,
-	"color_scheme": "Packages/Color Scheme - Default/Monokai.tmTheme",
-	"font_size": 13,
+	"close_windows_when_empty": true,
+	"color_scheme": "Packages/Colorsublime - Themes/Tomorrow_Night.tmTheme",
+	"folder_exclude_patterns":
+	[
+		".git",
+		".idea",
+		"target/classes",
+		"target/cxf",
+		"target/resolution-cache",
+		"target/streams"
+	],
+	"font_size": 14,
 	"ignored_packages":
 	[
 		"Markdown"
 	],
 	"indent_subsequent_lines": false,
+	"index_exclude_patterns":
+	[
+		"*.class",
+		"*.log"
+	],
 	"scroll_past_end": false,
 	"tab_size": 2,
 	"translate_tabs_to_spaces": true,
 	"trim_trailing_white_space_on_save": true,
-	"vintageous_use_ctrl_keys": true
+	"vintageous_use_ctrl_keys": true,
+	"word_wrap": "false"
 }

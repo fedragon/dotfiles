@@ -1,7 +1,7 @@
 #!/bin/bash
 
 brew tap caskroom/versions
-brew cask install sublime-text3
+brew cask install sublime-text
 
 src="$(pwd)"
 
@@ -10,5 +10,5 @@ eval mkdir -p "$dest"
 
 eval ln -sf "$src/sublime-text/Package\ Control.sublime-settings" "$dest/Package\ Control.sublime-settings"
 eval ln -sf "$src/sublime-text/Preferences.sublime-settings" "$dest/Preferences.sublime-settings"
-eval ln -sf "$src/sublime-text/Scala2.sublime-settings" "$dest/Scala2.sublime-settings"
 eval ln -sf "$src/sublime-text/SublimeGit.sublime-settings" "$dest/SublimeGit.sublime-settings"
+eval ln -sf "$src/sublime-text/Default\ \(OSX\).sublime-keymap" "$dest/Default\ \(OSX\).sublime-keymap"
