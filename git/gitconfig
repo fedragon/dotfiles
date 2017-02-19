@@ -1,6 +1,3 @@
-[user]
-  name = Federico Ragona
-  email = federico.ragona@gmail.com
 [credential]
   helper = cache --timeout=3600
 [alias]
