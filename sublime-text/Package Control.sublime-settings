@@ -6,11 +6,12 @@
 	"installed_packages":
 	[
 		"All Autocomplete",
+		"ChannelRepositoryTools",
 		"Colorsublime",
 		"Elm Language Support",
+		"File Rename",
 		"FileBrowser",
 		"GitGutter",
-		"GitGutter-Edge",
 		"Indent XML",
 		"Markdown Preview",
 		"MarkdownLight",

@@ -62,5 +62,10 @@
       "rows": [0.0, 0.5, 1.0],
       "cells": [[0, 0, 1, 1], [0, 1, 1, 2]]
     }
+  },
+  // ScaFor
+  {
+    "keys": ["super+alt+l"],
+    "command": "scala_formatter_format_file",
   }
 ]

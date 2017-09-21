@@ -11,7 +11,7 @@
 		"target/resolution-cache",
 		"target/streams"
 	],
-	"font_size": 14,
+	"font_size": 12,
 	"ignored_packages":
 	[
 		"Markdown"
