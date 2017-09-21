@@ -45,11 +45,11 @@ prefix - d               :    kwmc window -z parent
 prefix - w               :    kwmc window -t focused
 
 # Mark Window
-cmd + alt + ctrl - m     :    kwmc window -mk focused
-cmd + alt + ctrl - h     :    kwmc window -mk west wrap
-cmd + alt + ctrl - l     :    kwmc window -mk east wrap
-cmd + alt + ctrl - j     :    kwmc window -mk south wrap
-cmd + alt + ctrl - k     :    kwmc window -mk north wrap
+cmd + alt + shift - m     :    kwmc window -mk focused
+cmd + alt + shift - h     :    kwmc window -mk west wrap
+cmd + alt + shift - l     :    kwmc window -mk east wrap
+cmd + alt + shift - j     :    kwmc window -mk south wrap
+cmd + alt + shift - k     :    kwmc window -mk north wrap
 
 # Give Focus To Window
 cmd + ctrl - h            :    kwmc window -f west
