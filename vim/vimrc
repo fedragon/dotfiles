@@ -8,65 +8,18 @@ call plug#begin('~/.vim/plugged')
 """ Plugins """
 """""""""""""""
 
-Plug 'ervandew/supertab'                                      " Autocomplete with Tab
-Plug 'godlygeek/tabular'                                      " Tabularize text
 Plug 'kien/rainbow_parentheses.vim'                           " Colorful parentheses
 Plug 'Raimondi/delimitMate'                                   " Auto-close brackets
-Plug 'scrooloose/nerdcommenter'                               " Block comments
-Plug 'scrooloose/nerdtree'                                    " File tree
 Plug 'scrooloose/syntastic'                                   " Syntax highlighting
-"Plug 'tpope/vim-vinegar'                                      " Improved file explorer
-Plug 'vim-scripts/gitignore'                                  " Ignore files in gitignore
-Plug 'xolox/vim-misc'                                         " Required dependency for vim-notes, vim-easytags
-
-Plug 'vimwiki/vimwiki'
 
 " Color schemes
 Plug 'morhetz/gruvbox'
 
-" CtrlP
-Plug 'kien/ctrlp.vim'                                         " Open files, buffers, most recently used files
-
-" Unite.vim
-Plug 'Shougo/unite.vim'                                       " Find files, grep & more
-Plug 'Shougo/vimproc.vim', {'do': 'make'}                     " Required dependency
-
 " Git integration
 Plug 'airblade/vim-gitgutter'                                 " Git info in gutter
 
-" Javascript
-Plug 'jelera/vim-javascript-syntax'   , {'for': 'javascript'} " Syntax highlighting
-Plug 'nathanaelkane/vim-indent-guides', {'for': 'javascript'} " Show indent guides
-Plug 'pangloss/vim-javascript'        , {'for': 'javascript'} " Highlighting + better indentation
-Plug 'walm/jshint.vim'                , {'for': 'javascript'} " Hints
-
 " Fish
 Plug 'vim-scripts/fish-syntax'
-
-" Notes
-Plug 'xolox/vim-notes'
-
-" Slimux
-Plug 'epeli/slimux'                                           " Send snippets to a REPL running in a Tmux pane
-
-" Scala
-Plug 'derekwyatt/vim-scala'          , {'for': 'scala'}       " Basic syntax highlighting
-"Plug 'fedragon/vim-scalaConceal'     , {'for': 'scala'}       " Fancy unicode symbols for Scala
-
-" Clojure
-Plug 'fwolanski/vim-clojure-conceal' , {'for': 'clojure'}     " Fancy unicode symbols for Clojure
-Plug 'guns/vim-clojure-highlight'    , {'for': 'clojure'}     " Improved syntax highlighting
-Plug 'guns/vim-clojure-static'       , {'for': 'clojure'}     " Clojure syntax, basic indentation
-Plug 'tpope/vim-fireplace'           , {'for': 'clojure'}     " Evaluate code in a background repl
-Plug 'vim-scripts/paredit.vim'       , {'for': 'clojure'}     " Easy parens management
-
-" Ctags
-Plug 'majutsushi/tagbar'                                      " Navigate ctags
-Plug 'xolox/vim-easytags'                                     " Generate ctags
-
-" Tmux
-Plug 'christoomey/vim-tmux-navigator'                         " Seamless navigation between vim and tmux
-Plug 'tmux-plugins/vim-tmux-focus-events'                     " Restore focus events in vim inside tmux
 
 call plug#end()
 filetype plugin indent on
@@ -145,19 +98,6 @@ if exists("&undodir")
     set undoreload=500
 endif
 
-" Let `%` jump to closing xml/html tag, if/else, ...
-if !exists('g:loaded_matchit')
-  runtime macros/matchit.vim
-endif
-
-""""""""""""""""""""""""""""
-""" OS-specific settings """
-""""""""""""""""""""""""""""
-
-if system("uname -s") == "Darwin\n"
-  set guifont=Source\ Code\ Pro\ for\ Powerline:h14
-endif
-
 """"""""""""""""""""""""""""""""
 """ Plugin-specific settings """
 """"""""""""""""""""""""""""""""
@@ -165,65 +105,6 @@ endif
 """ Syntastic
 let g:syntastic_auto_loc_list=1
 let g:syntastic_mode_map = { "mode": "active", "passive_filetypes": ["sbt", "scala"] }
-
-""" Unite
-
-" Use The Silver Searcher
-if executable('ag')
-  let s:ag_opts = '--smart-case --hidden --depth 15 --nocolor --nogroup '.
-        \ '--ignore ".git" '.
-        \ '--ignore ".ivy2" '.
-        \ '--ignore ".m2" '
-  let g:unite_source_rec_async_command = 'ag --follow '.s:ag_opts.' -g ""'
-  let g:unite_source_grep_command = 'ag'
-  let g:unite_source_grep_default_opts = '--ignore-case --line-numbers '.s:ag_opts
-  let g:unite_source_grep_recursive_opt = ''
-else
-  let g:unite_source_grep_command = 'grep'
-  let g:unite_source_grep_recursive_opt = ''
-endif
-
-" Navigate yank history
-let g:unite_source_history_yank_enable = 1
-
-function! UniteClearCache()
-  let result = system("rm ~/.cache/unite -rf")
-endfunction
-command! UniteClearCache call UniteClearCache()
-
-function! s:unite_settings()
-  let b:SuperTabDisabled=1
-  inoremap <silent><buffer><expr> <C-s> unite#do_action('split')
-  inoremap <silent><buffer><expr> <C-v> unite#do_action('vsplit')
-  nnoremap <silent><buffer><expr> <C-s> unite#do_action('split')
-  nnoremap <silent><buffer><expr> <C-v> unite#do_action('vsplit')
-
-  nmap <buffer> <Esc> <Plug>(unite_exit)
-endfunction
-autocmd FileType unite call s:unite_settings()
-
-""" CtrlP
-let g:ctrlp_max_files = 0
-let g:ctrlp_user_command = ['.git', 'ag %s -l --nocolor -g ""']
-let g:ctrlp_working_path_mode = 'ra'
-let g:ctrlp_by_filename = 0
-let g:ctrlp_regexp = 0
-let g:ctrlp_mruf_relative = 1
-
-""" ctags
-set tags=.git/tags,.tags                                  " specify where tags should be stored
-let g:easytags_events = ['BufReadPost', 'BufWritePost']   " refresh tags for current file on read/write
-let g:easytags_async = 1                                  " run tags update asynchronously
-let g:easytags_dynamic_files = 2                          " create and write tags to a project tags file
-let g:easytags_resolve_links = 1                          " resolve symbolic links
-let g:easytags_suppress_ctags_warning = 1                 " suppress warnings
-
-"" vim-notes
-let g:notes_directories = ['~/Notes']
-let g:notes_title_sync = 'no'
-
-""" vim-scala
-let g:scala_sort_across_groups = 1
 
 """ Rainbow parentheses
 au VimEnter * RainbowParenthesesActivate
@@ -235,12 +116,6 @@ au Syntax   * RainbowParenthesesLoadBraces
 au Filetype clojure let b:loaded_delimitMate = 1
 let delimitMate_autoclose = 1
 let delimitMate_expand_cr = 1
-
-""" Paredit
-let g:paredit_leader          = '\'
-let g:paredit_electric_return = 0
-let g:paredit_smartjump       = 1   " When pressing '(' jump to the nearest '(', '[', '{'
-let g:paredit_shortmaps       = 1
 
 """"""""""""""""
 """ Mappings """
@@ -292,67 +167,12 @@ if bufwinnr(1)
 endif
 
 """""""""""""""""""""""""""
-""""" Leader prefixes """""
-"""""""""""""""""""""""""""
-" Tagbar        | a
-" Vim-gitgutter | g
-" NERDTree      | n
-" Syntastic     | t
-" PlugInstall   | p
-" Slimux        | s
-" Unite         | u
-" Vimrc         | v
-
-" Toggle NerdTree
-noremap <Leader>nt :NERDTreeToggle<CR>
-noremap <Leader>nf :NERDTreeFind<CR>
-
-" Clear search highlightings
-nnoremap <silent> <Leader><Leader> :nohlsearch<CR>
-
-" Quickly edit and source ~/.vimrc
-nnoremap <silent> <Leader>ve :tabnew $MYVIMRC<CR>
-nnoremap <silent> <Leader>vs :source $MYVIMRC<CR>
-
-" Quickly install new plugins
-nnoremap <silent> <Leader>pi :PlugInstall<CR>
-nnoremap <silent> <Leader>pu :PlugUpdate<CR>
-
-""" Syntastic
-nnoremap <silent> <Leader>te :Errors<CR>
-nnoremap <Leader>tm :SyntasticToggleMode<CR>
-
-""" Tagbar
-nnoremap <silent> <Leader>at :TagbarToggle<CR>
-
-""" Unite
-nnoremap <Leader>ug :Unite grep:. <CR>
-nnoremap <Leader>uw :UniteWithCursorWord grep:. <CR>
-nnoremap <Leader>uy :Unite history/yank<CR>
-
-""" vim-gitgutter
-nmap <Leader>gk <Plug>GitGutterPrevHunk
-nmap <Leader>gj <Plug>GitGutterNextHunk
-nmap <Leader>gp <Plug>GitGutterPreviewHunk
-nmap <Leader>gr <Plug>GitGutterRevertHunk
-nmap <Leader>gs <Plug>GitGutterStageHunk
-
-""" slimux
-nnoremap <Leader>sl :SlimuxREPLSendLine<CR>
-vnoremap <Leader>ss :SlimuxREPLSendSelection<CR>
-nnoremap <Leader>sp :SlimuxREPLSendParagraph<CR>
-nnoremap <leader>sb :SlimuxREPLSendBuffer<CR>
-
-"""""""""""""""""""""""""""
 """ File types settings """
 """""""""""""""""""""""""""
 
 au BufRead,BufNewFile *.md                setlocal filetype=markdown
 au BufRead,BufNewFile *.sbt               setlocal filetype=sbt
 au BufRead,BufNewFile *.scala             setlocal filetype=scala
-
-" used for worksheets
-au BufRead,BufNewFile *.skala             setlocal filetype=scala
 
 """"""""""""""""""""""""""""""""""
 """ File manipulation settings """

@@ -1,45 +1,48 @@
 [credential]
-  helper = cache --timeout=3600
+  helper              = cache --timeout=3600
 [alias]
-  a = add
-  aa = add -A
-  ap = add -p
-  b = branch
-  bd = branch -d
-  bD = branch -D
-  c = commit -v
-  cam = commit -a --amend -v
-  cm = commit --amend -v
-  co = checkout
-  cob = checkout -b
-  cot = checkout -t
-  d = diff
-  dc = diff --cached
-  s = status
-  lf = log --follow -p
-  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
-  pr = pull --rebase
-  pu = push -u
+  a                   = add
+  aa                  = add -A
+  ap                  = add -p
+  b                   = branch
+  bd                  = branch -d
+  bD                  = branch -D
+  c                   = commit -v
+  cam                 = commit -a --amend -v
+  cm                  = commit --amend -v
+  co                  = checkout
+  cob                 = checkout -b
+  cot                 = checkout -t
+  d                   = diff
+  dc                  = diff --cached
+  fa                  = fetch --all
+  lf                  = log --follow -p
+  lg                  = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+  mf                  = merge --ff-only
+  pr                  = pull --rebase
+  pf                  = pull --ff-only
+  pu                  = push -u origin HEAD
+  s                   = status
 [push]
-	default = simple
+	default             = simple
 [color]
-  diff = auto
-  status = auto
-  branch = auto
-  interactive = auto
-  ui = true
-  pager = true
+  diff                = auto
+  status              = auto
+  branch              = auto
+  interactive         = auto
+  ui                  = true
+  pager               = true
 [color "diff"]
-  meta = blue
-  frag = magenta
-  old  = red
-  new  = green
+  meta                = blue
+  frag                = magenta
+  old                 = red
+  new                 = green
 [color "interactive"]
-	prompt = yellow black
-	header = magenta
-	help = normal
-	error = red black
+	prompt              = yellow black
+	header              = magenta
+	help                = normal
+	error               = red black
 [core]
-  editor = vim
-	excludesfile = ~/.gitignore
+  editor              = vim
+	excludesfile        = ~/.gitignore
 

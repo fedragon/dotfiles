@@ -14,6 +14,8 @@ switch (uname)
 
     set -x JAVA_HOME (/usr/libexec/java_home)
   case '*'
+    echo "I'm not ready for this OS!"
 end
 
 aliases
+
