@@ -25,3 +25,4 @@ brew cask install dropbox
 brew cask install 1password
 brew cask install amethyst
 brew cask install joplin
+brew cask install flux
