@@ -1,3 +1,9 @@
+[user]
+  # configured in ~/.gitconfig_local
+
+[include]
+  path = ~/.gitconfig_local
+
 [credential]
   helper              = cache --timeout=3600
 [alias]
