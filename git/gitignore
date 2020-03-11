@@ -1,6 +1,8 @@
-/project/boot/
-/project/plugins/project
-target/*
+.DS_Store
+
+.idea/
+
+**/target/*
 
 lib_managed/
 src_managed/
