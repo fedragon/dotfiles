@@ -1,3 +1,3 @@
 function extra
-  # nothing to see here
+  functions -c __switchenv switchenv
 end
