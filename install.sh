@@ -3,14 +3,13 @@
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 brew tap homebrew/cask-cask
 
-brew install git
-brew install tig
+./git/install.sh
 
-./git/symlinks.sh
-
-./karabiner/install.sh
+./cuttlefish/install.sh
 
 ./fish/install.sh
+
+./karabiner/install.sh
 
 ./vim/install.sh
 
@@ -18,13 +17,8 @@ brew cask install homebrew/cask-versions/java8
 
 ./scala/install.sh
 
-brew cask install iterm2
-brew cask install firefox
-brew cask install docker
-brew cask install dropbox
-brew cask install 1password
-brew cask install amethyst
-brew cask install joplin
-brew cask install flux
-brew cask install slack
+brew install bat exa
 
+./starship/install.sh
+
+brew cask install 1password amethyst docker dropbox firefox flux iterm2 obsidian slack
