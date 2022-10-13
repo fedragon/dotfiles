@@ -15,10 +15,8 @@ brew tap homebrew/cask-cask
 
 brew cask install homebrew/cask-versions/java8
 
-./scala/install.sh
-
 brew install bat exa
 
 ./starship/install.sh
 
-brew cask install 1password amethyst docker dropbox firefox flux iterm2 obsidian slack
+brew cask install 1password amethyst docker dropbox firefox iterm2 obsidian slack
