@@ -19,4 +19,6 @@ brew install bat exa
 
 ./starship/install.sh
 
-brew cask install 1password amethyst docker dropbox firefox iterm2 obsidian slack
+brew cask install 1password amethyst docker dropbox firefox goland iterm2 obsidian slack
+
+/usr/local/bin/fish -c enable_modal_editing com.googlecode.iterm2 com.jetbrains.goland com.microsoft.VSCode md.obsidian
