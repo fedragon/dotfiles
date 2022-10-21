@@ -1,5 +1,5 @@
 #!/bin/bash
 
-brew install startship
+brew install starship
 
 ln -sf $(pwd)/starship/starship.toml ~/.config/
